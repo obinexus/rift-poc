@@ -10,6 +10,7 @@
 /* RIFT_CLEANUP: Commented out missing header
  * #include "rift-0/core/tokenizer_rules.h"
  */
+#include "rift-0/core/rift_compat.h"
 #include <stdlib.h>
 
 /* RIFT_CLEANUP: Forward declarations to resolve type issues */

@@ -20,15 +20,15 @@ void lexer_set_flag(LexerContext* ctx, int flag); /* RIFT_CLEANUP: Fixed incompl
 // =====================
 // Heap-based Priority Queue (thread-safe)
 // =====================
-typedef struct Item {
+typedef struct {
     int priority;
     int value;
 } Item;
 
-typedef struct HeapQueue {
+typedef struct {
     Item* heap;
-    int size;
     int capacity;
+    int size;
     pthread_mutex_t lock;
 } HeapQueue;
 

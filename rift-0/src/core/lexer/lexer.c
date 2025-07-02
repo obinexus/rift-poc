@@ -4,6 +4,7 @@
  * Governance: #[gov:stage_0_core]
  */
 
+#include "rift-0/core/rift_compat.h"
 #include "rift-0/core/lexer/lexer.h"
 
 /* RIFT_CLEANUP: Forward declarations to resolve type issues */

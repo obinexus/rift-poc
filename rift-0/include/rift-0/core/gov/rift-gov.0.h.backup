@@ -1,9 +1,3 @@
-#ifndef RIFT_GOV_0_H_FIXED
-#define RIFT_GOV_0_H_FIXED
-
-/* Prevent duplicate definitions */
-#ifndef TOKEN_PATTERN_DEFINED
-#define TOKEN_PATTERN_DEFINED
 
 
 #ifndef RIFT_GOV_0_H
@@ -541,6 +535,3 @@ int rift_gov0_validate_nlink(const rift_nlink_integration_t *nlink);
  * for RIFT Stage-0 with proper type isolation.
  */
 
-
-#endif /* TOKEN_PATTERN_DEFINED */
-#endif /* RIFT_GOV_0_H_FIXED */

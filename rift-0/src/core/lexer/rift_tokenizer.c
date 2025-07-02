@@ -18,6 +18,7 @@
 /* RIFT_CLEANUP: Commented out missing header
  * #include "rift-0/core/rift_tokenizer.h"
  */
+#include "rift-0/core/rift_compat.h"
 #include <stdlib.h>
 
 /* RIFT_CLEANUP: Forward declarations to resolve type issues */

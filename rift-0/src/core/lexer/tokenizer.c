@@ -11,6 +11,7 @@
     #define _POSIX_C_SOURCE 199309L
   #endif
 #endif
+#include "rift-0/core/rift_compat.h"
 #include <time.h>
 
 /* RIFT_CLEANUP: Forward declarations to resolve type issues */

@@ -8,6 +8,7 @@
  */
 
 // Only standard includes needed for main/test
+#include "rift-0/core/rift_compat.h"
 #include <stdio.h>
 
 /* RIFT_CLEANUP: Forward declarations to resolve type issues */
