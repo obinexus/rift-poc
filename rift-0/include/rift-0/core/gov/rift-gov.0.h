@@ -1,6 +1,4 @@
 
-#ifndef RIFT_GOV_0_TYPES_DEFINED
-#define RIFT_GOV_0_TYPES_DEFINED
 
 #ifndef RIFT_GOV_0_H
 #define RIFT_GOV_0_H
@@ -9,14 +7,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
-
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #if defined(_WIN32) || defined(_WIN64)
-// POSIX pthreads are not available on Windows; provide minimal stubs for compatibility
 typedef void* pthread_mutex_t;
 #define pthread_mutex_init(mutex, attr)   (0)
 #define pthread_mutex_destroy(mutex)      (0)
@@ -25,6 +16,31 @@ typedef void* pthread_mutex_t;
 #else
 #include <pthread.h>
 #endif
+
+// --- Core Types: always visible, only one definition ---
+typedef struct {
+    const char* name;
+    const char* pattern;
+    int type; // Use RiftTokenType if available
+    bool is_quantum;
+} TokenPattern;
+
+typedef struct TokenMemoryGovernor {
+    size_t min_heap;
+    size_t max_heap;
+    size_t current_usage;
+    bool dynamic_allowed;
+    pthread_mutex_t mem_lock;
+} TokenMemoryGovernor;
+
+typedef struct {
+    void* classic_channel;
+    size_t classic_size;
+    void* quantum_channel;
+    size_t quantum_size;
+    uint8_t error_level;
+    char* error_msg;
+} DualChannelOutput;
 
 typedef struct {
     int stage_id;
@@ -40,6 +56,46 @@ typedef struct {
     size_t capacity;
     // Heap property: entries[0] is always the min (highest priority)
 } RiftStageQueue;
+
+typedef struct {
+    // Core state
+    bool initialized;
+    uint32_t stage_id;
+    uint32_t version;
+    // Token patterns
+    regex_t* patterns;
+    size_t pattern_count;
+    // Memory governance
+    TokenMemoryGovernor* mem_gov;
+    // Dual-channel configuration
+    bool dual_mode_enabled;
+    bool quantum_mode_active;
+    // Error tracking
+    uint8_t current_error_level;
+    char error_buffer[1024];
+    // AEGIS compliance
+    bool aegis_compliant;
+    uint64_t compliance_flags;
+    // Thread management
+    pthread_mutex_t ctx_lock;
+    uint32_t thread_count;
+} RiftStage0Context;
+
+typedef struct {
+    // Token fields
+    int type;
+    char* pattern;
+    char* value;
+    size_t line;
+    size_t column;
+    bool is_quantum;
+    bool is_collapsed;
+    uint64_t governance_flags;
+    void* metadata;
+} RiftToken;
+
+#ifdef __cplusplus
+extern "C" {
 #endif
 
 // Priority queue API
@@ -94,15 +150,12 @@ typedef struct BuildOutput {
     uint32_t warning_count;
 } BuildOutput;
 
-/* ===================================================================
- * Stage-0 Patterns (extern)
- * =================================================================== */
+
+// Stage-0 Patterns (extern)
 extern const TokenPattern stage0_patterns[];
 extern const size_t stage0_patterns_count;
 
-/* ===================================================================
- * Memory Governor API
- * =================================================================== */
+// Memory Governor API
 TokenMemoryGovernor* create_memory_governor(size_t min_heap, size_t max_heap);
 void* governed_malloc(TokenMemoryGovernor* gov, size_t size);
 void governed_free(TokenMemoryGovernor* gov, void* ptr, size_t size);
@@ -243,73 +296,8 @@ typedef enum {
     R_EOF
 } RiftTokenType;
 
-/* Token memory governance */
-typedef struct {
-    size_t min_heap;
-    size_t max_heap;
-    size_t current_usage;
-    bool dynamic_allowed;
-    pthread_mutex_t mem_lock;
-} TokenMemoryGovernor;
 
-/* Dual-channel output structure */
-/* Token memory governance */
-// (Removed duplicate TokenMemoryGovernor definition)
-
-/* Token structure with governance metadata */
-typedef struct {
-    RiftTokenType type;
-    char* pattern;
-    char* value;
-    size_t line;
-    size_t column;
-    bool is_quantum;
-    bool is_collapsed;
-    uint64_t governance_flags;
-    void* metadata;
-} RiftToken;
-
-/* Stage-0 tokenizer context */
-typedef struct {
-    /* Core state */
-    bool initialized;
-    uint32_t stage_id;
-    uint32_t version;
-    
-    /* Token patterns */
-    regex_t* patterns;
-    size_t pattern_count;
-    
-    /* Memory governance */
-    TokenMemoryGovernor* mem_gov;
-    
-    /* Dual-channel configuration */
-    bool dual_mode_enabled;
-    bool quantum_mode_active;
-    
-    /* Error tracking */
-    uint8_t current_error_level;
-    char error_buffer[1024];
-    
-    /* AEGIS compliance */
-    bool aegis_compliant;
-    uint64_t compliance_flags;
-    
-    /* Thread management */
-    pthread_mutex_t ctx_lock;
-    uint32_t thread_count;
-} RiftStage0Context;
-
-/* ===================================================================
- * Token Pattern Definitions
- * =================================================================== */
-
-typedef struct {
-    const char* name;
-    const char* pattern;
-    RiftTokenType type;
-    bool is_quantum;
-} TokenPattern;
+// ...existing code...
 
 
 
@@ -320,7 +308,7 @@ typedef enum {
  * Token Pattern Definitions
  * =================================================================== */
 
-// (Removed duplicate TokenPattern definition)
+// ...existing code...
     int semverx_lock;
     char entry_point[256];
     int nlink_enabled;
@@ -432,4 +420,3 @@ int rift_gov0_validate_nlink(const rift_nlink_integration_t *nlink);
 #endif
 
 #endif 
-/* No additional code needed. All duplicate definitions of TokenMemoryGovernor and TokenPattern have been removed, and only a single definition for each remains at the top of the file. All function prototypes and usages now refer to these single definitions. */
