@@ -1,25 +1,35 @@
 
 #ifndef RIFT_GOV_0_TYPES_DEFINED
 #define RIFT_GOV_0_TYPES_DEFINED
+
+#ifndef RIFT_GOV_0_H
+#define RIFT_GOV_0_H
+
+#include <stddef.h>
+#include <stdbool.h>
+#include <stdint.h>
+
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
 
-// --- Core Stage-Bound Types ---
-typedef struct {
-    const char* name;
-    const char* pattern;
-    int type; // Use RiftTokenType if available
-    bool is_quantum;
-} TokenPattern;
+#include <stddef.h>
+#include <stdbool.h>
 
-typedef struct TokenMemoryGovernor {
-    size_t min_heap;
-    size_t max_heap;
-    size_t current_usage;
-    bool dynamic_allowed;
-    pthread_mutex_t mem_lock;
-} TokenMemoryGovernor;
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#if defined(_WIN32) || defined(_WIN64)
+// POSIX pthreads are not available on Windows; provide minimal stubs for compatibility
+typedef void* pthread_mutex_t;
+#define pthread_mutex_init(mutex, attr)   (0)
+#define pthread_mutex_destroy(mutex)      (0)
+#define pthread_mutex_lock(mutex)         (0)
+#define pthread_mutex_unlock(mutex)       (0)
+#else
+#include <pthread.h>
+#endif
 
 typedef struct {
     int stage_id;
@@ -53,18 +63,6 @@ RiftStageEntry* rift_stage_queue_find_by_id(RiftStageQueue* queue, int stage_id)
 RiftStageEntry* rift_stage_queue_find_by_name(RiftStageQueue* queue, const char* name);
 
 
-#ifndef RIFT_GOV_0_H
-#define RIFT_GOV_0_H
-
-#include <stddef.h>
-#include <stdbool.h>
-#include <stdint.h>
-#include <pthread.h>
-
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 
 /* ===================================================================

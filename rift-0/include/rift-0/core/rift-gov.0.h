@@ -3,10 +3,19 @@
 #ifndef RIFT_GOV_0_H
 #define RIFT_GOV_0_H
 
+
 #include <stddef.h>
 #include <stdbool.h>
-#include <stdint.h>
+#if defined(_WIN32) || defined(_WIN64)
+// POSIX pthreads are not available on Windows; provide minimal stubs for compatibility
+typedef void* pthread_mutex_t;
+#define pthread_mutex_init(mutex, attr)   (0)
+#define pthread_mutex_destroy(mutex)      (0)
+#define pthread_mutex_lock(mutex)         (0)
+#define pthread_mutex_unlock(mutex)       (0)
+#else
 #include <pthread.h>
+#endif
 
 
 #ifdef __cplusplus

@@ -13,13 +13,13 @@ Compilation of the C compiler identification source "CMakeCCompilerId.c" produce
 The C compiler identification is GNU, found in "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/3.25.1/CompilerIdC/a.out"
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-YG4bJ3
+Change Dir: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-J4pFv5
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_eb24e/fast && gmake[1]: Entering directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-YG4bJ3'
-/usr/bin/gmake  -f CMakeFiles/cmTC_eb24e.dir/build.make CMakeFiles/cmTC_eb24e.dir/build
-gmake[2]: Entering directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-YG4bJ3'
-Building C object CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc   -v -o CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_45006/fast && gmake[1]: Entering directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-J4pFv5'
+/usr/bin/gmake  -f CMakeFiles/cmTC_45006.dir/build.make CMakeFiles/cmTC_45006.dir/build
+gmake[2]: Entering directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-J4pFv5'
+Building C object CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -29,8 +29,8 @@ Configured with: ../src/configure -v --with-pkgversion='Debian 12.2.0-14' --with
 Thread model: posix
 Supported LTO compression algorithms: zlib zstd
 gcc version 12.2.0 (Debian 12.2.0-14) 
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_eb24e.dir/'
- /usr/lib/gcc/x86_64-linux-gnu/12/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_eb24e.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/cc5ti4yh.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_45006.dir/'
+ /usr/lib/gcc/x86_64-linux-gnu/12/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_45006.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/ccv1HqYV.s
 GNU C17 (Debian 12.2.0-14) version 12.2.0 (x86_64-linux-gnu)
 	compiled by GNU C version 12.2.0, GMP version 6.2.1, MPFR version 4.1.1-p1, MPC version 1.3.1, isl version isl-0.25-GMP
 
@@ -52,15 +52,15 @@ GNU C17 (Debian 12.2.0-14) version 12.2.0 (x86_64-linux-gnu)
 warning: MPFR header version 4.1.1-p1 differs from library version 4.2.0.
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 Compiler executable checksum: cc72d2b9b5048fedc2be9051c917b40b
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_eb24e.dir/'
- as -v --64 -o CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.o /tmp/cc5ti4yh.s
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_45006.dir/'
+ as -v --64 -o CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.o /tmp/ccv1HqYV.s
 GNU assembler version 2.40 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.40
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.'
-Linking C executable cmTC_eb24e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eb24e.dir/link.txt --verbose=1
-/usr/bin/cc  -v CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.o -o cmTC_eb24e 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.'
+Linking C executable cmTC_45006
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_45006.dir/link.txt --verbose=1
+/usr/bin/cc  -v CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.o -o cmTC_45006 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper
@@ -73,11 +73,11 @@ Supported LTO compression algorithms: zlib zstd
 gcc version 12.2.0 (Debian 12.2.0-14) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_eb24e' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_eb24e.'
- /usr/lib/gcc/x86_64-linux-gnu/12/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/cc5uOI1d.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_eb24e /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_eb24e' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_eb24e.'
-gmake[2]: Leaving directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-YG4bJ3'
-gmake[1]: Leaving directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-YG4bJ3'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_45006' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_45006.'
+ /usr/lib/gcc/x86_64-linux-gnu/12/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/cco4QQcr.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_45006 /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_45006' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_45006.'
+gmake[2]: Leaving directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-J4pFv5'
+gmake[1]: Leaving directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-J4pFv5'
 
 
 
@@ -98,13 +98,13 @@ Parsed C implicit include dir info from above output: rv=done
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-YG4bJ3]
+  ignore line: [Change Dir: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-J4pFv5]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_eb24e/fast && gmake[1]: Entering directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-YG4bJ3']
-  ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_eb24e.dir/build.make CMakeFiles/cmTC_eb24e.dir/build]
-  ignore line: [gmake[2]: Entering directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-YG4bJ3']
-  ignore line: [Building C object CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c]
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_45006/fast && gmake[1]: Entering directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-J4pFv5']
+  ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_45006.dir/build.make CMakeFiles/cmTC_45006.dir/build]
+  ignore line: [gmake[2]: Entering directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-J4pFv5']
+  ignore line: [Building C object CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -114,8 +114,8 @@ Parsed C implicit link information from above output:
   ignore line: [Thread model: posix]
   ignore line: [Supported LTO compression algorithms: zlib zstd]
   ignore line: [gcc version 12.2.0 (Debian 12.2.0-14) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_eb24e.dir/']
-  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/12/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_eb24e.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/cc5ti4yh.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_45006.dir/']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/12/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/share/cmake-3.25/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_45006.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/ccv1HqYV.s]
   ignore line: [GNU C17 (Debian 12.2.0-14) version 12.2.0 (x86_64-linux-gnu)]
   ignore line: [	compiled by GNU C version 12.2.0  GMP version 6.2.1  MPFR version 4.1.1-p1  MPC version 1.3.1  isl version isl-0.25-GMP]
   ignore line: []
@@ -137,15 +137,15 @@ Parsed C implicit link information from above output:
   ignore line: [warning: MPFR header version 4.1.1-p1 differs from library version 4.2.0.]
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
   ignore line: [Compiler executable checksum: cc72d2b9b5048fedc2be9051c917b40b]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_eb24e.dir/']
-  ignore line: [ as -v --64 -o CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.o /tmp/cc5ti4yh.s]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_45006.dir/']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.o /tmp/ccv1HqYV.s]
   ignore line: [GNU assembler version 2.40 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.40]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.']
-  ignore line: [Linking C executable cmTC_eb24e]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eb24e.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.o -o cmTC_eb24e ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.']
+  ignore line: [Linking C executable cmTC_45006]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_45006.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.o -o cmTC_45006 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper]
@@ -158,13 +158,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 12.2.0 (Debian 12.2.0-14) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/12/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/12/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_eb24e' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_eb24e.']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/12/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/cc5uOI1d.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_eb24e /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_45006' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_45006.']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/12/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper -plugin-opt=-fresolution=/tmp/cco4QQcr.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_45006 /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/12 -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/12/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/12/../../.. CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/12/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/12/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/12/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/12/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cc5uOI1d.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cco4QQcr.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -180,7 +180,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-pie] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_eb24e] ==> ignore
+    arg [cmTC_45006] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/Scrt1.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/../../../x86_64-linux-gnu/crti.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/12/crtbeginS.o]
@@ -192,7 +192,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/12/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/12/../../..]
-    arg [CMakeFiles/cmTC_eb24e.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_45006.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -224,18 +224,18 @@ Parsed C implicit link information from above output:
 
 
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
-Change Dir: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-CZffax
+Change Dir: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-EhazAH
 
-Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_cc1ad/fast && gmake[1]: Entering directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-CZffax'
-/usr/bin/gmake  -f CMakeFiles/cmTC_cc1ad.dir/build.make CMakeFiles/cmTC_cc1ad.dir/build
-gmake[2]: Entering directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-CZffax'
-Building C object CMakeFiles/cmTC_cc1ad.dir/src.c.o
-/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -std=c11 -o CMakeFiles/cmTC_cc1ad.dir/src.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-CZffax/src.c
-Linking C executable cmTC_cc1ad
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cc1ad.dir/link.txt --verbose=1
-/usr/bin/cc CMakeFiles/cmTC_cc1ad.dir/src.c.o -o cmTC_cc1ad 
-gmake[2]: Leaving directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-CZffax'
-gmake[1]: Leaving directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-CZffax'
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_9cc4c/fast && gmake[1]: Entering directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-EhazAH'
+/usr/bin/gmake  -f CMakeFiles/cmTC_9cc4c.dir/build.make CMakeFiles/cmTC_9cc4c.dir/build
+gmake[2]: Entering directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-EhazAH'
+Building C object CMakeFiles/cmTC_9cc4c.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -std=c11 -o CMakeFiles/cmTC_9cc4c.dir/src.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-EhazAH/src.c
+Linking C executable cmTC_9cc4c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9cc4c.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_9cc4c.dir/src.c.o -o cmTC_9cc4c 
+gmake[2]: Leaving directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-EhazAH'
+gmake[1]: Leaving directory '/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/CMakeScratch/TryCompile-EhazAH'
 
 
 Source file was:
