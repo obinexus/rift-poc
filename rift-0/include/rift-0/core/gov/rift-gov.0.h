@@ -1,3 +1,40 @@
+#include <stdint.h>
+#include <stddef.h>
+#include <stdbool.h>
+
+/* ===================================================================
+ * Stage Tracker and Priority Queue for Stage-Bound Processing
+ * =================================================================== */
+
+typedef struct {
+    int stage_id;
+    int priority; // Lower = higher priority (min-heap)
+    char name[64];
+    char description[256];
+    bool active;
+} RiftStageEntry;
+
+typedef struct {
+    RiftStageEntry* entries;
+    size_t count;
+    size_t capacity;
+    // Heap property: entries[0] is always the min (highest priority)
+} RiftStageQueue;
+
+// Priority queue API
+void rift_stage_queue_init(RiftStageQueue* queue, size_t capacity);
+void rift_stage_queue_free(RiftStageQueue* queue);
+void rift_stage_queue_push(RiftStageQueue* queue, const RiftStageEntry* entry);
+RiftStageEntry rift_stage_queue_pop(RiftStageQueue* queue);
+bool rift_stage_queue_empty(const RiftStageQueue* queue);
+
+// Stage tracker API
+void rift_stage_tracker_load_from_xml(RiftStageQueue* queue, const char* xml_path);
+void rift_stage_tracker_load_from_json(RiftStageQueue* queue, const char* json_path);
+
+// Utility: Find stage by name or id
+RiftStageEntry* rift_stage_queue_find_by_id(RiftStageQueue* queue, int stage_id);
+RiftStageEntry* rift_stage_queue_find_by_name(RiftStageQueue* queue, const char* name);
 
 
 #ifndef RIFT_GOV_0_H

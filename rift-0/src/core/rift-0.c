@@ -403,19 +403,33 @@ BuildOutput* generate_build_output(RiftStage0Context* ctx, DualChannelOutput* du
 void rift_stage0_destroy(RiftStage0Context* ctx) {
     if (!ctx) return;
     
-    /* Free regex patterns */
-    for (size_t i = 0; i < ctx->pattern_count; i++) {
-        regfree(&ctx->patterns[i]);
+    // Example: Use stage queue for stage-bound cleanup (expand as needed)
+    RiftStageQueue stage_queue;
+    rift_stage_queue_init(&stage_queue, 8);
+    rift_stage_tracker_load_from_xml(&stage_queue, "gov.riftrc.0.in.xml");
+    while (!rift_stage_queue_empty(&stage_queue)) {
+        RiftStageEntry entry = rift_stage_queue_pop(&stage_queue);
+        if (entry.active) {
+            // For demonstration, only handle tokenization stage cleanup
+            if (strcmp(entry.name, "tokenization") == 0) {
+                for (size_t i = 0; i < ctx->pattern_count; i++) {
+                    regfree(&ctx->patterns[i]);
+                }
+                free(ctx->patterns);
+            }
+            // Add more stage-specific cleanup as needed
+        }
     }
-    free(ctx->patterns);
-    
+    rift_stage_queue_free(&stage_queue);
+
     /* Free memory governor */
     if (ctx->mem_gov) {
         pthread_mutex_destroy(&ctx->mem_gov->mem_lock);
         free(ctx->mem_gov);
     }
-    
+
     pthread_mutex_destroy(&ctx->ctx_lock);
     free(ctx);
 }
+
 
