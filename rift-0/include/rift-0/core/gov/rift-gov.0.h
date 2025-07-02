@@ -9,12 +9,6 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#include <stdint.h>
-#include <stddef.h>
-#include <stdbool.h>
-
-#include <stddef.h>
-#include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -64,6 +58,27 @@ RiftStageEntry* rift_stage_queue_find_by_name(RiftStageQueue* queue, const char*
 
 
 
+
+/* ===================================================================
+ * Token Pattern Definitions (move up for forward reference)
+ * =================================================================== */
+typedef struct {
+    const char* name;
+    const char* pattern;
+    int type; // Use int here for forward compatibility, or RiftTokenType if available
+    int is_quantum;
+} TokenPattern;
+
+/* ===================================================================
+ * Token memory governance (move up for forward reference)
+ * =================================================================== */
+typedef struct {
+    size_t min_heap;
+    size_t max_heap;
+    size_t current_usage;
+    bool dynamic_allowed;
+    pthread_mutex_t mem_lock;
+} TokenMemoryGovernor;
 
 /* ===================================================================
  * Stage-0 Configuration Structure (from schema)
