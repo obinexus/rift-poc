@@ -1,2 +1,0 @@
-/usr/bin/ar qc obj/librift-stage0.a "CMakeFiles/rift-stage0-static.dir/src/core/rift-0.c.o"
-/usr/bin/ranlib obj/librift-stage0.a
