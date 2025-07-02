@@ -17,7 +17,85 @@ void print_usage() {
     printf("  uml-generate <pattern> <source> Generate UML code\n");
     printf("  --help                  Show this help message\n");
 }
-
+/**
+ * @brief Main validation entry point
+ * @param argc Argument count
+ * @param argv Argument vector
+ * @return int Exit code (0 = success, non-zero = failure)
+ */
+int main(int argc, char *argv[]) {
+    if (argc < 2) {
+        fprintf(stderr, "Usage: %s <project_root> [--verbose] [--strict]\n", argv[0]);
+        return 1;
+    }
+    
+    validation_context_t ctx;
+    validation_result_t result = rift_validation_init(&ctx, argv[1]);
+    
+    if (result != VALIDATION_SUCCESS) {
+        fprintf(stderr, "[AEGIS] Failed to initialize validation context\n");
+        return 1;
+    }
+    
+    // Parse command line options
+    for (int i = 2; i < argc; i++) {
+        if (strcmp(argv[i], "--verbose") == 0) {
+            ctx.verbose_mode = 1;
+        } else if (strcmp(argv[i], "--strict") == 0) {
+            ctx.strict_mode = 1;
+        }
+    }
+    
+    printf("AEGIS RIFT Governance Validation Engine v1.0.0\n");
+    printf("Project Root: %s\n", ctx.project_root);
+    printf("Validation Mode: %s\n", ctx.strict_mode ? "Strict" : "Standard");
+    
+    // Execute pipeline validation
+    result = validate_complete_pipeline(&ctx);
+    
+    // Report results
+    switch (result) {
+        case VALIDATION_SUCCESS:
+            printf("[SUCCESS] All governance validation passed\n");
+            break;
+            
+        case VALIDATION_SEMVERX_VIOLATION:
+            printf("[CRITICAL] SemVerX violation detected - BUILD HALT\n");
+            break;
+            
+        case VALIDATION_EXPIRED_GOVERNANCE:
+            printf("[CRITICAL] Expired governance detected - BUILD HALT\n");
+            break;
+            
+        case VALIDATION_MISSING_GOVERNANCE:
+            printf("[WARNING] Missing governance files detected\n");
+            break;
+            
+        case VALIDATION_SCHEMA_VIOLATION:
+            printf("[WARNING] Schema violations detected\n");
+            break;
+            
+        default:
+            printf("[ERROR] Validation failed with code: %d\n", result);
+            break;
+    }
+    
+    rift_validation_cleanup(&ctx);
+    
+    // Return appropriate exit code
+    switch (result) {
+        case VALIDATION_SUCCESS:
+            return 0;
+        case VALIDATION_SEMVERX_VIOLATION:
+        case VALIDATION_EXPIRED_GOVERNANCE:
+            return 1;  // Critical failure
+        case VALIDATION_MISSING_GOVERNANCE:
+        case VALIDATION_SCHEMA_VIOLATION:
+            return 2;  // Warning state
+        default:
+            return 3;  // General error
+    }
+}
 int main(int argc, char* argv[]) {
     if (argc < 2 || strcmp(argv[1], "--help") == 0) {
         print_usage();
