@@ -1,3 +1,61 @@
+#ifdef __cplusplus
+extern "C" {
+#endif
+/* ===================================================================
+ * Stage-0 Configuration Structure (from schema)
+ * =================================================================== */
+typedef struct {
+    /* Memory governance */
+    size_t min_heap_size;
+    size_t max_heap_size;
+    bool enable_dynamic_allocation;
+    /* Channel configuration */
+    bool enable_dual_channel;
+    bool enable_quantum_mode;
+    size_t classic_channel_size;
+    size_t quantum_channel_size;
+    /* Error handling */
+    uint8_t default_error_level;
+    bool enable_panic_mode;
+    bool auto_fix_errors;
+    /* AEGIS compliance */
+    bool aegis_compliant;
+    uint64_t compliance_flags;
+    const char* governance_file;
+    /* Threading */
+    uint32_t thread_count;
+    bool enable_parallel_tokenization;
+} RiftStage0Config;
+
+/* ===================================================================
+ * Build Output Structure
+ * =================================================================== */
+typedef struct BuildOutput {
+    char* obj_path;    // build/obj/*.o
+    char* bin_path;    // build/bin/*
+    char* lib_path;    // build/lib/*.so
+    char* arc_path;    // build/lib/*.a
+    bool build_success;
+    uint32_t error_count;
+    uint32_t warning_count;
+} BuildOutput;
+
+/* ===================================================================
+ * Stage-0 Patterns (extern)
+ * =================================================================== */
+extern const TokenPattern stage0_patterns[];
+extern const size_t stage0_patterns_count;
+
+/* ===================================================================
+ * Memory Governor API
+ * =================================================================== */
+TokenMemoryGovernor* create_memory_governor(size_t min_heap, size_t max_heap);
+void* governed_malloc(TokenMemoryGovernor* gov, size_t size);
+void governed_free(TokenMemoryGovernor* gov, void* ptr, size_t size);
+
+#ifdef __cplusplus
+}
+#endif
 
 #ifndef RIFT_GOV_0_H
 #define RIFT_GOV_0_H
