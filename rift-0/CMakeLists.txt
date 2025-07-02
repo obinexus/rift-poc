@@ -17,7 +17,7 @@ option(ENABLE_QUANTUM_MODE "Enable quantum channel processing" ON)
 option(AEGIS_COMPLIANCE "Enable AEGIS governance compliance" ON)
 option(BUILD_TESTS "Build QA test suite" ON)
 option(ENABLE_PANIC_MODE "Enable panic mode for critical errors" ON)
-option(BUILD_EXAMPLES "Build example programs" ON)
+option(BUILD_EXAMPLES "Build example programs" OFF)
 
 # ===================================================================
 # CMake Configuration
@@ -79,6 +79,9 @@ include_directories(
 # ===================================================================
 # Source Organization
 # ===================================================================
+set(RIFT_CORE_SOURCES
+    src/core/rift-0.c
+)
 set(RIFT_CORE_SOURCES
     src/core/rift-0.c
 )
