@@ -30,14 +30,15 @@
 
 RiftStage0Context* rift_stage0_create(void) {
     RiftStage0Context* ctx = calloc(1, sizeof(RiftStage0Context));
+    if (!ctx) return NULL;
     ctx->mem_gov = create_memory_governor(1024 * 1024, 16 * 1024 * 1024); // 1MB min, 16MB max
+    if (!ctx->mem_gov) {
+        free(ctx);
+        return NULL;
+    }
     // Use a fixed pattern count or define stage0_patterns in one place only
     extern size_t stage0_patterns_count; // Declare this in a header and define it where stage0_patterns is defined
     ctx->pattern_count = stage0_patterns_count;
-    ctx->patterns = calloc(ctx->pattern_count, sizeof(regex_t));
-        return NULL;
-    }
-    ctx->pattern_count = sizeof(stage0_patterns) / sizeof(stage0_patterns[0]);
     ctx->patterns = calloc(ctx->pattern_count, sizeof(regex_t));
     if (!ctx->patterns) {
         free(ctx->mem_gov);
@@ -61,8 +62,6 @@ RiftStage0Context* rift_stage0_create(void) {
         }
     }
     
-/* Enable dual-channel mode by default */
-    
     /* Enable dual-channel mode by default */
     ctx->dual_mode_enabled = true;
     ctx->quantum_mode_active = false;
@@ -79,7 +78,9 @@ RiftStage0Context* rift_stage0_create(void) {
     printf("  Memory limits: %zu - %zu bytes\n", ctx->mem_gov->min_heap, ctx->mem_gov->max_heap);
     
     return ctx;
+
 }
+    
 
 RiftToken* create_token(RiftStage0Context* ctx, RiftTokenType type, 
                        const char* value, size_t line, size_t col) {
