@@ -57,14 +57,15 @@ void set_error_level(DualChannelOutput* output, int level, const char* msg);
 #ifndef TOKEN_PATTERN_DEFINED
 #define TOKEN_PATTERN_DEFINED
 typedef struct TokenPattern {
-	const char* name;
-	const char* pattern;
-	int token_type;
+    const char* name;
+    const char* pattern;
+    int token_type;
 } TokenPattern;
 #endif
 
-extern const TokenPattern stage0_patterns[];
-extern const size_t stage0_patterns_count;
+
+// Extern declaration for stage0_patterns if defined elsewhere
+// Memory governance API
 // Memory governance API
 TokenMemoryGovernor* create_memory_governor(size_t min_heap, size_t max_heap);
 void* governed_malloc(TokenMemoryGovernor* gov, size_t size);
