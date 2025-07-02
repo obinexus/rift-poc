@@ -143,6 +143,7 @@ tests/clean: tests/CMakeFiles/test_policy2_matrix.dir/clean
 tests/clean: tests/CMakeFiles/generate_test_data.dir/clean
 tests/clean: tests/CMakeFiles/run_unit_tests.dir/clean
 tests/clean: tests/CMakeFiles/run_all_tests.dir/clean
+tests/clean: tests/CMakeFiles/coverage.dir/clean
 .PHONY : tests/clean
 
 #=============================================================================
@@ -152,7 +153,7 @@ tests/clean: tests/CMakeFiles/run_all_tests.dir/clean
 CMakeFiles/rift-stage0.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=12,13,14,15,16,17,18,19,20,21,22,23,24,25,26 "Built target rift-stage0"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=13,14,15,16,17,18,19,20,21,22,23,24,25,26,27 "Built target rift-stage0"
 .PHONY : CMakeFiles/rift-stage0.dir/all
 
 # Build rule for subdir invocation for target.
@@ -178,7 +179,7 @@ CMakeFiles/rift-stage0.dir/clean:
 CMakeFiles/rift-stage0-static.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=42,43,44,45,46,47,48,49,50,51,52,53,54,55,56 "Built target rift-stage0-static"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=43,44,45,46,47,48,49,50,51,52,53,54,55,56,57 "Built target rift-stage0-static"
 .PHONY : CMakeFiles/rift-stage0-static.dir/all
 
 # Build rule for subdir invocation for target.
@@ -204,7 +205,7 @@ CMakeFiles/rift-stage0-static.dir/clean:
 CMakeFiles/rift-stage0-soa.dir/all: CMakeFiles/riftlang.exe.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=27,28,29,30,31,32,33,34,35,36,37,38,39,40,41 "Built target rift-stage0-soa"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=28,29,30,31,32,33,34,35,36,37,38,39,40,41,42 "Built target rift-stage0-soa"
 .PHONY : CMakeFiles/rift-stage0-soa.dir/all
 
 # Build rule for subdir invocation for target.
@@ -230,7 +231,7 @@ CMakeFiles/rift-stage0-soa.dir/clean:
 CMakeFiles/rift-0.dir/all: CMakeFiles/rift-stage0.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-0.dir/build.make CMakeFiles/rift-0.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-0.dir/build.make CMakeFiles/rift-0.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=6,7,8,9,10,11 "Built target rift-0"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=7,8,9,10,11,12 "Built target rift-0"
 .PHONY : CMakeFiles/rift-0.dir/all
 
 # Build rule for subdir invocation for target.
@@ -256,7 +257,7 @@ CMakeFiles/rift-0.dir/clean:
 CMakeFiles/riftlang.exe.dir/all: CMakeFiles/rift-stage0.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=59,60 "Built target riftlang.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=60,61 "Built target riftlang.exe"
 .PHONY : CMakeFiles/riftlang.exe.dir/all
 
 # Build rule for subdir invocation for target.
@@ -282,7 +283,7 @@ CMakeFiles/riftlang.exe.dir/clean:
 CMakeFiles/rift.exe.dir/all: CMakeFiles/rift-stage0-soa.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift.exe.dir/build.make CMakeFiles/rift.exe.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift.exe.dir/build.make CMakeFiles/rift.exe.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=57,58 "Built target rift.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=58,59 "Built target rift.exe"
 .PHONY : CMakeFiles/rift.exe.dir/all
 
 # Build rule for subdir invocation for target.
@@ -308,7 +309,7 @@ CMakeFiles/rift.exe.dir/clean:
 CMakeFiles/create_artifacts.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/create_artifacts.dir/build.make CMakeFiles/create_artifacts.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/create_artifacts.dir/build.make CMakeFiles/create_artifacts.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=3 "Built target create_artifacts"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=4 "Built target create_artifacts"
 .PHONY : CMakeFiles/create_artifacts.dir/all
 
 # Build rule for subdir invocation for target.
@@ -386,7 +387,7 @@ CMakeFiles/clean-all.dir/clean:
 CMakeFiles/validate.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/validate.dir/build.make CMakeFiles/validate.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/validate.dir/build.make CMakeFiles/validate.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=71 "Built target validate"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=72 "Built target validate"
 .PHONY : CMakeFiles/validate.dir/all
 
 # Build rule for subdir invocation for target.
@@ -412,7 +413,7 @@ CMakeFiles/validate.dir/clean:
 CMakeFiles/organize_objects.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/organize_objects.dir/build.make CMakeFiles/organize_objects.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/organize_objects.dir/build.make CMakeFiles/organize_objects.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=5 "Built target organize_objects"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=6 "Built target organize_objects"
 .PHONY : CMakeFiles/organize_objects.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1166,7 +1167,7 @@ tests/CMakeFiles/ContinuousSubmit.dir/clean:
 tests/CMakeFiles/test_utils.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_utils.dir/build.make tests/CMakeFiles/test_utils.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_utils.dir/build.make tests/CMakeFiles/test_utils.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=69,70 "Built target test_utils"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=70,71 "Built target test_utils"
 .PHONY : tests/CMakeFiles/test_utils.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1193,7 +1194,7 @@ tests/CMakeFiles/test_tokenizer_validation.dir/all: CMakeFiles/rift-stage0-stati
 tests/CMakeFiles/test_tokenizer_validation.dir/all: tests/CMakeFiles/test_utils.dir/all
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_tokenizer_validation.dir/build.make tests/CMakeFiles/test_tokenizer_validation.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_tokenizer_validation.dir/build.make tests/CMakeFiles/test_tokenizer_validation.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=67,68 "Built target test_tokenizer_validation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=68,69 "Built target test_tokenizer_validation"
 .PHONY : tests/CMakeFiles/test_tokenizer_validation.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1220,7 +1221,7 @@ tests/CMakeFiles/test_tokenizer.dir/all: CMakeFiles/rift-stage0-static.dir/all
 tests/CMakeFiles/test_tokenizer.dir/all: tests/CMakeFiles/test_utils.dir/all
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_tokenizer.dir/build.make tests/CMakeFiles/test_tokenizer.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_tokenizer.dir/build.make tests/CMakeFiles/test_tokenizer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=65,66 "Built target test_tokenizer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=66,67 "Built target test_tokenizer"
 .PHONY : tests/CMakeFiles/test_tokenizer.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1247,7 +1248,7 @@ tests/CMakeFiles/test_policy2_matrix.dir/all: CMakeFiles/rift-stage0-static.dir/
 tests/CMakeFiles/test_policy2_matrix.dir/all: tests/CMakeFiles/test_utils.dir/all
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_policy2_matrix.dir/build.make tests/CMakeFiles/test_policy2_matrix.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_policy2_matrix.dir/build.make tests/CMakeFiles/test_policy2_matrix.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=63,64 "Built target test_policy2_matrix"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=64,65 "Built target test_policy2_matrix"
 .PHONY : tests/CMakeFiles/test_policy2_matrix.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1273,7 +1274,7 @@ tests/CMakeFiles/test_policy2_matrix.dir/clean:
 tests/CMakeFiles/generate_test_data.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/generate_test_data.dir/build.make tests/CMakeFiles/generate_test_data.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/generate_test_data.dir/build.make tests/CMakeFiles/generate_test_data.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=4 "Built target generate_test_data"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=5 "Built target generate_test_data"
 .PHONY : tests/CMakeFiles/generate_test_data.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1301,7 +1302,7 @@ tests/CMakeFiles/run_unit_tests.dir/all: tests/CMakeFiles/test_tokenizer.dir/all
 tests/CMakeFiles/run_unit_tests.dir/all: tests/CMakeFiles/test_policy2_matrix.dir/all
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/run_unit_tests.dir/build.make tests/CMakeFiles/run_unit_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/run_unit_tests.dir/build.make tests/CMakeFiles/run_unit_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=62 "Built target run_unit_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=63 "Built target run_unit_tests"
 .PHONY : tests/CMakeFiles/run_unit_tests.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1327,7 +1328,7 @@ tests/CMakeFiles/run_unit_tests.dir/clean:
 tests/CMakeFiles/run_all_tests.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/run_all_tests.dir/build.make tests/CMakeFiles/run_all_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/run_all_tests.dir/build.make tests/CMakeFiles/run_all_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=61 "Built target run_all_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=62 "Built target run_all_tests"
 .PHONY : tests/CMakeFiles/run_all_tests.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1345,6 +1346,32 @@ run_all_tests: tests/CMakeFiles/run_all_tests.dir/rule
 tests/CMakeFiles/run_all_tests.dir/clean:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/run_all_tests.dir/build.make tests/CMakeFiles/run_all_tests.dir/clean
 .PHONY : tests/CMakeFiles/run_all_tests.dir/clean
+
+#=============================================================================
+# Target rules for target tests/CMakeFiles/coverage.dir
+
+# All Build rule for target.
+tests/CMakeFiles/coverage.dir/all:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/coverage.dir/build.make tests/CMakeFiles/coverage.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/coverage.dir/build.make tests/CMakeFiles/coverage.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=3 "Built target coverage"
+.PHONY : tests/CMakeFiles/coverage.dir/all
+
+# Build rule for subdir invocation for target.
+tests/CMakeFiles/coverage.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/coverage.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles 0
+.PHONY : tests/CMakeFiles/coverage.dir/rule
+
+# Convenience name for target.
+coverage: tests/CMakeFiles/coverage.dir/rule
+.PHONY : coverage
+
+# clean rule for target.
+tests/CMakeFiles/coverage.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/coverage.dir/build.make tests/CMakeFiles/coverage.dir/clean
+.PHONY : tests/CMakeFiles/coverage.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

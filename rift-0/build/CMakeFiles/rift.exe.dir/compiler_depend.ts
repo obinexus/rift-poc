@@ -1,2 +1,2 @@
 # CMAKE generated file: DO NOT EDIT!
-# Timestamp file for custom commands dependencies management for rift.exe.
+# Timestamp file for compiler generated dependencies management for rift.exe.

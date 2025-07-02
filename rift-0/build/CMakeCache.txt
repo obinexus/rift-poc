@@ -17,17 +17,11 @@
 //Enable AEGIS framework compliance
 AEGIS_COMPLIANCE:BOOL=ON
 
-//Build example programs
-BUILD_EXAMPLES:BOOL=OFF
-
 //Build executable targets
 BUILD_EXECUTABLES:BOOL=ON
 
 //Build shared libraries
 BUILD_SHARED_LIBS:BOOL=ON
-
-//No help, variable specified on the command line.
-BUILD_SOA_ARCHIVE:UNINITIALIZED=ON
 
 //Build static libraries
 BUILD_STATIC_LIBS:BOOL=ON
@@ -46,7 +40,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=Release
+CMAKE_BUILD_TYPE:STRING=Debug
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -271,12 +265,6 @@ RIFT-Stage0_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 RIFT-Stage0_SOURCE_DIR:STATIC=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0
 
-//Enable PoliC zero-trust governance validation
-RIFT_ENABLE_GOVERNANCE:BOOL=ON
-
-//Maximum number of RIFT compilation stages (0-6)
-RIFT_MAX_STAGES:STRING=7
-
 //Maximum heap size (16MB)
 RIFT_MEMORY_MAX_HEAP:STRING=16777216
 
@@ -288,18 +276,6 @@ RIFT_MEMORY_PAGE_SIZE:STRING=4096
 
 //Memory scheduler type
 RIFT_MEMORY_SCHEDULER:STRING=minmax
-
-//Value Computed by CMake
-RIFT_Stage0_BINARY_DIR:STATIC=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build
-
-//Value Computed by CMake
-RIFT_Stage0_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-RIFT_Stage0_SOURCE_DIR:STATIC=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0
-
-//Enable thread-safe compilation with Go-style concurrency
-RIFT_THREAD_SAFETY:BOOL=ON
 
 //Name of the computer/site where compile is being run
 SITE:STRING=OBINexus
@@ -458,8 +434,6 @@ MAKECOMMAND-ADVANCED:INTERNAL=1
 MEMORYCHECK_COMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MEMORYCHECK_SUPPRESSIONS_FILE
 MEMORYCHECK_SUPPRESSIONS_FILE-ADVANCED:INTERNAL=1
-//RIFT stage macros loaded
-RIFT_STAGE_MACROS_LOADED:INTERNAL=TRUE
 //ADVANCED property for variable: SITE
 SITE-ADVANCED:INTERNAL=1
 //linker supports push/pop state

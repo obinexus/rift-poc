@@ -6,5 +6,5 @@ C_DEFINES = -DAEGIS_TEST_COMPLIANCE=1 -DRIFT_TEST_MODE=1 -D_GNU_SOURCE -D_POSIX_
 
 C_INCLUDES = -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0 -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/tests
 
-C_FLAGS = -O3 -DNDEBUG -Wall -Wextra -Wpedantic -Wno-unused-parameter -Wno-unused-function -Werror=implicit-function-declaration -Werror=incompatible-pointer-types -Werror=int-conversion -Wno-nested-externs -std=gnu11
+C_FLAGS = -g3 -O0 -DDEBUG -Wall -Wextra -Wpedantic -Wno-unused-parameter -Wno-unused-function -Werror=implicit-function-declaration -Werror=incompatible-pointer-types -Werror=int-conversion -Wno-nested-externs -std=gnu11
 

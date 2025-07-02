@@ -51,6 +51,7 @@
 /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/tests/CMakeFiles/generate_test_data.dir
 /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/tests/CMakeFiles/run_unit_tests.dir
 /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/tests/CMakeFiles/run_all_tests.dir
+/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/tests/CMakeFiles/coverage.dir
 /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/tests/CMakeFiles/test.dir
 /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/tests/CMakeFiles/edit_cache.dir
 /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/tests/CMakeFiles/rebuild_cache.dir
