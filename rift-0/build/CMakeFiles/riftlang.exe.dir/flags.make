@@ -6,5 +6,5 @@ C_DEFINES = -D_GNU_SOURCE -D_POSIX_C_SOURCE=200809L
 
 C_INCLUDES = -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0
 
-C_FLAGS = -g3 -O0 -DDEBUG -Wall -Wextra -Wpedantic -Wno-unused-parameter -Wno-unused-function -Werror=implicit-function-declaration -Werror=incompatible-pointer-types -Werror=int-conversion -Wno-nested-externs -std=gnu11
+C_FLAGS = -O3 -DNDEBUG -Wall -Wextra -Wpedantic -Wno-unused-parameter -Wno-unused-function -Werror=implicit-function-declaration -Werror=incompatible-pointer-types -Werror=int-conversion -Wno-nested-externs -std=gnu11
 

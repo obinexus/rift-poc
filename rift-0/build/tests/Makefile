@@ -661,20 +661,6 @@ run_all_tests/fast:
 	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/run_all_tests.dir/build.make tests/CMakeFiles/run_all_tests.dir/build
 .PHONY : run_all_tests/fast
 
-# Convenience name for target.
-tests/CMakeFiles/coverage.dir/rule:
-	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/coverage.dir/rule
-.PHONY : tests/CMakeFiles/coverage.dir/rule
-
-# Convenience name for target.
-coverage: tests/CMakeFiles/coverage.dir/rule
-.PHONY : coverage
-
-# fast build rule for target.
-coverage/fast:
-	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/coverage.dir/build.make tests/CMakeFiles/coverage.dir/build
-.PHONY : coverage/fast
-
 qa_assert.o: qa_assert.c.o
 .PHONY : qa_assert.o
 
@@ -812,7 +798,6 @@ help:
 	@echo "... NightlySubmit"
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
-	@echo "... coverage"
 	@echo "... generate_test_data"
 	@echo "... run_all_tests"
 	@echo "... run_unit_tests"

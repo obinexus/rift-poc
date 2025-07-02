@@ -769,19 +769,6 @@ run_all_tests/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/run_all_tests.dir/build.make tests/CMakeFiles/run_all_tests.dir/build
 .PHONY : run_all_tests/fast
 
-#=============================================================================
-# Target rules for targets named coverage
-
-# Build rule for target.
-coverage: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 coverage
-.PHONY : coverage
-
-# fast build rule for target.
-coverage/fast:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/coverage.dir/build.make tests/CMakeFiles/coverage.dir/build
-.PHONY : coverage/fast
-
 src/cli/commands/ext_command.o: src/cli/commands/ext_command.c.o
 .PHONY : src/cli/commands/ext_command.o
 
@@ -1371,7 +1358,6 @@ help:
 	@echo "... NightlyUpdate"
 	@echo "... clean-all"
 	@echo "... collect_artifacts"
-	@echo "... coverage"
 	@echo "... create_artifacts"
 	@echo "... generate_test_data"
 	@echo "... organize_objects"
