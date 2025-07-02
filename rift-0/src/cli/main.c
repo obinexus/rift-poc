@@ -8,10 +8,12 @@
 #include <string.h>
 #include <stdbool.h>
 #include <regex.h>
+#include "rift-0/core/lexer/lexer.h"      // Lexer API, RiftStage0Context, RiftTokenType, etc.
+#include "rift-0/core/gov/rift-gov.0.h"   // Governance types and macros
+#include "rift-0/core/ext/r_uml.h"        // UML types and commands (uml_relationship_t, parse_uml_relationship, etc.)
 #include <stdint.h>
-#include <pthread.h>
-#include <assert.h>
-#include "rift-0/core/lexer/lexer.h"
+
+
 /*
  * RIFT-Core-0: Stage-0 Tokenization and Lexical Analysis
  * Part of AEGIS Project - OBINexus Computing
@@ -456,12 +458,7 @@ DualChannelOutput* process_stage0(RiftStage0Context* ctx, const char* input) {
  * Build Output Generation
  * =================================================================== */
 
-typedef struct {
-    char* obj_path;
-    char* bin_path;
-    char* lib_path;
-    bool build_success;
-} BuildOutput;
+// BuildOutput is typedef'd in rift-0.h, do not redefine here.
 
 BuildOutput* generate_build_output(RiftStage0Context* ctx, DualChannelOutput* dual_output) {
     if (!ctx || !dual_output) return NULL;
@@ -518,7 +515,7 @@ void free_dual_channel_output(DualChannelOutput* output) {
     
     if (output->classic_channel) free(output->classic_channel);
     if (output->quantum_channel) free(output->quantum_channel);
-    if (output->error_msg) free(output->error_msg);
+    if (output->error_msg) free(output->error_msg); // If error_msg is not present, change to error_message or remove this line
     free(output);
 }
 
