@@ -333,7 +333,7 @@ int main(int argc, char* argv[]) {
         printf("-------------------------------------------------------\n");
         
         for (size_t i = 0; i < test_count; i++) {
-            if (qa_test_cases[i].type == cat) {
+            if (qa_test_cases[i].type == (QAAssertionType)cat) {
                 run_single_test(&qa_test_cases[i], &results);
             }
         }
