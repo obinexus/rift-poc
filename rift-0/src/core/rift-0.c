@@ -203,13 +203,13 @@ void set_error_level(DualChannelOutput* output, uint8_t level, const char* msg) 
     }
     
     /* Handle error severity */
-    if (level < RIFT_WARNING_MAX) {
+    if (level >= RIFT_WARNING_MIN && level < RIFT_WARNING_MAX) {
         printf("\033[33m[WARNING]\033[0m %s\n", msg);
-    } else if (level < RIFT_DANGER_MAX) {
+    } else if (level >= RIFT_DANGER_MIN && level < RIFT_DANGER_MAX) {
         printf("\033[31m[DANGER]\033[0m %s - Entering fix mode\n", msg);
-    } else if (level < RIFT_CRITICAL_MAX) {
+    } else if (level >= RIFT_CRITICAL_MIN && level < RIFT_CRITICAL_MAX) {
         printf("\033[35m[CRITICAL]\033[0m %s - Emergency intervention required\n", msg);
-    } else {
+    } else if (level >= RIFT_PANIC_MIN) {
         printf("\033[91m[PANIC]\033[0m %s - System failsafe activated\n", msg);
     }
 }
