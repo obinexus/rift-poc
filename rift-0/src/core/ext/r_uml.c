@@ -6,6 +6,9 @@
 #include <stdint.h>
 #include <pthread.h>
 #include "rift-0/core/ext/r_uml.h"
+
+#include "rift-0/core/gov/rift-gov.0.h"
+
 // OBINexus RIFT UML Pattern Implementation
 // Regex-based relationship parsing with governance validation
 
