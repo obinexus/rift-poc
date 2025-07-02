@@ -14,6 +14,7 @@
 #include <pthread.h>
 #include <assert.h>
 
+#include <ctype.h>
 /* ===================================================================
  * RIFT Stage-0 Core Definitions
  * =================================================================== */
@@ -262,7 +263,7 @@ RiftStage0Context* rift_stage0_create(void) {
     ctx->dual_mode_enabled = true;
     ctx->quantum_mode_active = false;
     ctx->aegis_compliant = true;
-    ctx->compliance_flags = 0xAEG15;
+    ctx->compliance_flags = 0xAE615;
     ctx->thread_count = 4;
     
     pthread_mutex_init(&ctx->ctx_lock, NULL);
