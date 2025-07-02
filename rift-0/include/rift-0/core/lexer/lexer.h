@@ -45,10 +45,56 @@ typedef struct RegexAutomaton {
     State* current_state;
 } RegexAutomaton;
 
+
+// Token types for type-safe tokenization
+typedef enum {
+    TOKEN_TYPE_UNKNOWN = 0,
+    TOKEN_TYPE_IDENTIFIER,
+    TOKEN_TYPE_NUMBER,
+    TOKEN_TYPE_OPERATOR,
+    TOKEN_TYPE_KEYWORD,
+    TOKEN_TYPE_STRING,
+    TOKEN_TYPE_CHAR,
+    TOKEN_TYPE_RAW_STRING,
+    TOKEN_TYPE_RAW_CHAR,
+    TOKEN_TYPE_WHITESPACE,
+    TOKEN_TYPE_SPECIAL,
+    TOKEN_TYPE_EOF
+} TokenType;
+
 typedef struct TokenNode {
-    char* type;
+    TokenType type;
     char* value;
+    size_t length;
+    void* memory; // For memory-governed allocation
 } TokenNode;
+
+// Lexer flags for modular feature control
+typedef enum {
+    LEXER_FLAG_NONE = 0,
+    LEXER_FLAG_RAW_STRING = 1 << 0,
+    LEXER_FLAG_RAW_CHAR = 1 << 1,
+    LEXER_FLAG_GLOBAL_TB = 1 << 2, // [tb] global match
+    LEXER_FLAG_TOP_DOWN = 1 << 3,
+    LEXER_FLAG_SHIFT_REDUCE = 1 << 4
+} LexerFlags;
+
+// Lexer context for modular parsing
+typedef struct {
+    RegexAutomaton* automaton;
+    LexerFlags flags;
+    size_t token_count;
+    TokenNode** tokens;
+} LexerContext;
+
+// API for flag management
+void lexer_set_flag(LexerContext* ctx, LexerFlags flag);
+void lexer_clear_flag(LexerContext* ctx, LexerFlags flag);
+bool lexer_flag_enabled(const LexerContext* ctx, LexerFlags flag);
+
+// Modular token creation
+TokenNode* token_create(TokenType type, const char* value, size_t length);
+void token_destroy(TokenNode* token);
 
 typedef struct IRGenerator {
     RegexAutomaton* automaton;
@@ -57,20 +103,8 @@ typedef struct IRGenerator {
     size_t node_capacity;
 } IRGenerator;
 
-// Function declarations
-State* state_create(const char* pattern, bool is_final);
-void state_destroy(State* state);
-bool state_matches(State* state, const char* text);
 
-RegexAutomaton* automaton_create(void);
-void automaton_destroy(RegexAutomaton* automaton);
-State* automaton_add_state(RegexAutomaton* automaton, const char* pattern, bool is_final);
-bool automaton_add_transition(RegexAutomaton* automaton, State* from, const char* pattern, State* to);
-State* automaton_get_next_state(RegexAutomaton* automaton, const char* input);
-
-IRGenerator* ir_generator_create(RegexAutomaton* automaton);
-void ir_generator_destroy(IRGenerator* generator);
-TokenNode* ir_generator_process_token(IRGenerator* generator, const char* token);
+// ...existing code...
 
 #ifdef __cplusplus
 }
