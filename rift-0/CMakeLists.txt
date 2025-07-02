@@ -1,313 +1,281 @@
-# Root CMakeLists.txt for RIFT Stage-0
-# Part of AEGIS Project - OBINexus Computing
-cmake_minimum_required(VERSION 3.16)
+# RIFT Stage-0 Root CMake Configuration
+# AEGIS Project - OBINexus Computing
+# Build Flow: config/ → cmake/ → Makefile → build/obj → librift-0.{a,so} → bin/rift-N
 
-# Project definition
-project(RIFT_Stage0
+cmake_minimum_required(VERSION 3.16)
+project(RIFT_Stage0 
     VERSION 0.1.0
-    DESCRIPTION "RIFT Language Stage-0 Tokenizer Implementation"
+    DESCRIPTION "RIFT Language Stage-0 Tokenizer with Dual-Channel Output"
     LANGUAGES C
 )
 
 # ===================================================================
-# Global Options
+# Project Structure Configuration
 # ===================================================================
-option(BUILD_SHARED_LIBS "Build shared libraries" ON)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+set(RIFT_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+set(RIFT_INCLUDE_DIR ${RIFT_ROOT_DIR}/include)
+set(RIFT_SOURCE_DIR ${RIFT_ROOT_DIR}/src)
+set(RIFT_TEST_DIR ${RIFT_ROOT_DIR}/tests)
+set(RIFT_CONFIG_DIR ${RIFT_ROOT_DIR}/config)
+
+# Output directories
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_OBJECT_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/obj)
+
+# ===================================================================
+# Build Options
+# ===================================================================
+option(BUILD_SHARED_LIBS "Build shared libraries (.so)" ON)
+option(BUILD_STATIC_LIBS "Build static libraries (.a)" ON)
+option(BUILD_SOA_ARCHIVE "Build intermediate .so.a archive" ON)
 option(ENABLE_QUANTUM_MODE "Enable quantum channel processing" ON)
 option(AEGIS_COMPLIANCE "Enable AEGIS governance compliance" ON)
-option(BUILD_TESTS "Build QA test suite" ON)
+option(BUILD_TESTS "Build test suite" ON)
 option(ENABLE_PANIC_MODE "Enable panic mode for critical errors" ON)
 option(BUILD_EXAMPLES "Build example programs" OFF)
 
 # ===================================================================
-# CMake Configuration
+# Compiler Configuration
 # ===================================================================
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-# Module path for custom CMake modules
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+# Compiler flags
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wpedantic -fPIC")
+set(CMAKE_C_FLAGS_DEBUG "-g -O0 -DDEBUG -DRIFT_DEBUG_MODE=1")
+set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG -DRIFT_RELEASE_MODE=1")
 
-# ===================================================================
-# Compiler Configuration
-# ===================================================================
-if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
-    add_compile_options(
-        -Wall
-        -Wextra
-        -Wpedantic
-        -Wno-unused-parameter
-        -Wno-unused-variable
-    )
-    
-    if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-        add_compile_options(-g -O0 -DDEBUG)
-    elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
-        add_compile_options(-O3 -DNDEBUG)
-    endif()
-endif()
-
-# ===================================================================
-# Dependencies
-# ===================================================================
+# Thread support
+set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 
 # ===================================================================
-# Output Directories
+# Load CMake Modules
 # ===================================================================
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/obj)
-
-# Create directories
-file(MAKE_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
-file(MAKE_DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
-file(MAKE_DIRECTORY ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY})
+include(cmake/RIFTStage0.cmake)
+include(cmake/rift_stage_macros.cmake)
 
 # ===================================================================
-# Include Directories
+# Configuration Processing
 # ===================================================================
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}/include
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/rift-0
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/rift-0/core
-    ${CMAKE_BINARY_DIR}  # For generated files
-)
-
-# ===================================================================
-# Source Organization
-# ===================================================================
-set(RIFT_CORE_SOURCES
-    src/core/rift-0.c
-)
-set(RIFT_CORE_SOURCES
-    src/core/rift-0.c
-)
-
-set(RIFT_CLI_SOURCES
-    src/cli/main.c
-)
-
-# ===================================================================
-# Generate Configuration Header
-# ===================================================================
+# Generate config header
 configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/rift-0/core/config.h.in
+    ${RIFT_INCLUDE_DIR}/rift-0/core/config.h.in
     ${CMAKE_BINARY_DIR}/rift_config.h
     @ONLY
 )
 
-# ===================================================================
-# RIFT Stage-0 Core Library
-# ===================================================================
-add_library(rift-stage0 SHARED ${RIFT_CORE_SOURCES})
-
-target_include_directories(rift-stage0 PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-    $<INSTALL_INTERFACE:include>
-)
-
-target_link_libraries(rift-stage0 
-    PUBLIC
-        Threads::Threads
-    PRIVATE
-        m  # Math library
-        ${CMAKE_DL_LIBS}  # Dynamic loading
-)
-
-set_target_properties(rift-stage0 PROPERTIES
-    VERSION ${PROJECT_VERSION}
-    SOVERSION 0
-    OUTPUT_NAME "rift-stage0"
-    POSITION_INDEPENDENT_CODE ON
-)
+# Generate governance files
+generate_governance_file(0)
 
 # ===================================================================
-# RIFT Stage-0 Static Library
+# Source File Organization
 # ===================================================================
-add_library(rift-stage0-static STATIC ${RIFT_CORE_SOURCES})
-
-target_include_directories(rift-stage0-static PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+# Core library sources
+set(RIFT_CORE_SOURCES
+    ${RIFT_SOURCE_DIR}/core/rift-0.c
+    ${RIFT_SOURCE_DIR}/core/gov/rift-gov.0.c
+    ${RIFT_SOURCE_DIR}/core/gov/rift_sim.c
+    ${RIFT_SOURCE_DIR}/core/gov/stage_queue.c
+    ${RIFT_SOURCE_DIR}/core/lexer/lexer.c
+    ${RIFT_SOURCE_DIR}/core/lexer/lexer_flag.c
+    ${RIFT_SOURCE_DIR}/core/lexer/rift_tokenizer.c
+    ${RIFT_SOURCE_DIR}/core/lexer/tokenizer.c
+    ${RIFT_SOURCE_DIR}/core/lexer/tokenizer_match.c
+    ${RIFT_SOURCE_DIR}/core/lexer/tokenizer_rules.c
+    ${RIFT_SOURCE_DIR}/core/lexer/tokenizer_utilities.c
+    ${RIFT_SOURCE_DIR}/core/ext/r_uml.c
 )
 
-set_target_properties(rift-stage0-static PROPERTIES
-    OUTPUT_NAME "rift-stage0"
-    POSITION_INDEPENDENT_CODE ON
+# CLI sources
+set(RIFT_CLI_SOURCES
+    ${RIFT_SOURCE_DIR}/cli/main.c
+    ${RIFT_SOURCE_DIR}/cli/commands/ext_command.c
+    ${RIFT_SOURCE_DIR}/cli/commands/lexer_command.c
+    ${RIFT_SOURCE_DIR}/cli/commands/r_command.c
+    ${RIFT_SOURCE_DIR}/cli/commands/rift_gov_command.c
 )
 
 # ===================================================================
-# Intermediate .so.a Archive
+# Include Directories Configuration
 # ===================================================================
-add_custom_command(
-    OUTPUT ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/rift-stage0.so.a
-    COMMAND ${CMAKE_AR} rcs ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/rift-stage0.so.a 
-            $<TARGET_FILE:rift-stage0-static>
-    DEPENDS rift-stage0-static
-    COMMENT "Creating intermediate .so.a archive for toolchain"
-)
-
-add_custom_target(rift-stage0-soa ALL
-    DEPENDS ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/rift-stage0.so.a
+# Set up include paths so files can be included as #include "rift-0/..."
+include_directories(
+    ${RIFT_INCLUDE_DIR}
+    ${CMAKE_BINARY_DIR}  # For generated config headers
 )
 
 # ===================================================================
-# RIFT Executables
+# Build Libraries
 # ===================================================================
+# Static library (.a)
+if(BUILD_STATIC_LIBS)
+    add_library(rift-stage0-static STATIC ${RIFT_CORE_SOURCES})
+    set_target_properties(rift-stage0-static PROPERTIES
+        OUTPUT_NAME "rift-0"
+        ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}
+        POSITION_INDEPENDENT_CODE ON
+    )
+    target_include_directories(rift-stage0-static PUBLIC
+        $<BUILD_INTERFACE:${RIFT_INCLUDE_DIR}>
+        $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
+        $<INSTALL_INTERFACE:include>
+    )
+    configure_stage_target(rift-stage0-static 0)
+endif()
 
-# Main tokenizer executable
-add_executable(riftlang.exe ${RIFT_CLI_SOURCES})
-target_link_libraries(riftlang.exe PRIVATE rift-stage0)
+# Shared library (.so)
+if(BUILD_SHARED_LIBS)
+    add_library(rift-stage0 SHARED ${RIFT_CORE_SOURCES})
+    set_target_properties(rift-stage0 PROPERTIES
+        OUTPUT_NAME "rift-0"
+        VERSION ${PROJECT_VERSION}
+        SOVERSION 0
+        LIBRARY_OUTPUT_DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}
+    )
+    target_include_directories(rift-stage0 PUBLIC
+        $<BUILD_INTERFACE:${RIFT_INCLUDE_DIR}>
+        $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
+        $<INSTALL_INTERFACE:include>
+    )
+    configure_stage_target(rift-stage0 0)
+endif()
 
-# Stage-0 test executable
-add_executable(rift-0 src/cli/main.c)
-target_link_libraries(rift-0 PRIVATE rift-stage0)
-
-# ===================================================================
-# Governance Configuration
-# ===================================================================
-if(AEGIS_COMPLIANCE)
-    # Generate governance file
-    file(WRITE ${CMAKE_BINARY_DIR}/gov.riftrc.0
-"# RIFT Stage-0 Governance Configuration
-# Auto-generated by CMake
-
-[stage]
-id = 0
-version = ${PROJECT_VERSION}
-compliance = aegis
-
-[memory]
-min_heap = 1048576    # 1MB
-max_heap = 16777216   # 16MB
-scheduler = minmax
-dynamic_allocation = true
-
-[error_handling]
-warning_range = 0-3    # Yellow platter
-danger_range = 3-6     # Orange region (auto-fix)
-critical_range = 6-9   # Red region (emergency)
-panic_range = 9-12     # Failsafe mode
-auto_panic_failsafe = ${ENABLE_PANIC_MODE}
-
-[channels]
-classic_enabled = true
-quantum_enabled = ${ENABLE_QUANTUM_MODE}
-isolation_level = strict
-
-[governance]
-zero_trust = true
-anti_ghosting = true
-audit_trail = enabled
-compliance_level = strict
-
-[toolchain]
-path = riftlang.exe -> .so.a -> rift.exe -> gosilang
-")
-    
-    message(STATUS "Generated governance file: gov.riftrc.0")
+# Intermediate .so.a archive (toolchain requirement)
+if(BUILD_SOA_ARCHIVE AND BUILD_STATIC_LIBS)
+    add_custom_target(rift-stage0-soa ALL
+        COMMAND ${CMAKE_AR} rcs ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/librift-0.so.a 
+                $<TARGET_OBJECTS:rift-stage0-static>
+        DEPENDS rift-stage0-static
+        COMMENT "Creating intermediate .so.a archive for toolchain"
+    )
 endif()
 
 # ===================================================================
-# Testing Framework
+# Build Executables
+# ===================================================================
+# riftlang.exe - Stage-0 tokenizer executable
+add_executable(riftlang.exe ${RIFT_CLI_SOURCES})
+target_link_libraries(riftlang.exe PRIVATE
+    $<IF:$<BOOL:${BUILD_SHARED_LIBS}>,rift-stage0,rift-stage0-static>
+    Threads::Threads
+)
+set_target_properties(riftlang.exe PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
+)
+
+# rift-0 - CLI interface
+add_executable(rift-0 ${RIFT_CLI_SOURCES})
+target_link_libraries(rift-0 PRIVATE
+    $<IF:$<BOOL:${BUILD_SHARED_LIBS}>,rift-stage0,rift-stage0-static>
+    Threads::Threads
+)
+set_target_properties(rift-0 PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
+)
+
+# rift.exe - Final stage executable (symbolic)
+add_custom_target(rift.exe ALL
+    COMMAND ${CMAKE_COMMAND} -E create_symlink 
+            $<TARGET_FILE:riftlang.exe> 
+            ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/rift.exe
+    DEPENDS riftlang.exe
+    COMMENT "Creating rift.exe symlink"
+)
+
+# ===================================================================
+# Object File Management
+# ===================================================================
+# Custom target to organize object files
+add_custom_target(organize_objects ALL
+    COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_BINARY_DIR}/obj/core
+    COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_BINARY_DIR}/obj/cli
+    COMMENT "Organizing object files"
+)
+
+# Move object files to obj/ directory after compilation
+if(BUILD_STATIC_LIBS)
+    add_custom_command(TARGET rift-stage0-static POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                $<TARGET_OBJECTS:rift-stage0-static>
+                ${CMAKE_BINARY_DIR}/obj/core/
+        COMMENT "Moving core object files to obj/core/"
+    )
+endif()
+
+# ===================================================================
+# Build Validation
+# ===================================================================
+add_custom_target(validate ALL
+    COMMAND ${CMAKE_COMMAND} -E echo "Validating RIFT Stage-0 build..."
+    COMMAND test -f ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/librift-0.so || echo "Warning: librift-0.so not built"
+    COMMAND test -f ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}/librift-0.a || echo "Warning: librift-0.a not built"
+    COMMAND test -f ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/riftlang.exe || echo "Error: riftlang.exe not built"
+    DEPENDS riftlang.exe
+    COMMENT "Build validation complete"
+)
+
+# ===================================================================
+# Test Configuration
 # ===================================================================
 if(BUILD_TESTS)
     enable_testing()
-    include(CTest)
-    
-    # Test categories for QA assertions
-    set(QA_TEST_CATEGORIES
-        TruePositive    # Valid tokens correctly identified
-        TrueNegative    # Invalid tokens correctly rejected
-        FalsePositive   # Invalid tokens incorrectly accepted
-        FalseNegative   # Valid tokens incorrectly rejected
-    )
-    
-    # Add test subdirectory if it exists
-    if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/tests)
-        add_subdirectory(tests)
-    endif()
-    
-    # Create QA test targets
-    foreach(category ${QA_TEST_CATEGORIES})
-        add_test(
-            NAME QA_${category}
-            COMMAND ${CMAKE_COMMAND} -E echo "Running ${category} tests..."
-        )
-    endforeach()
+    add_subdirectory(tests)
 endif()
 
 # ===================================================================
-# Examples
+# Installation Rules
 # ===================================================================
-if(BUILD_EXAMPLES AND EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/fixtures/stage-0/examples)
-#    add_subdirectory(fixtures/stage-0)
-endif()
-
-# ===================================================================
-# Installation
-# ===================================================================
-include(GNUInstallDirs)
-
-# Install targets
 install(TARGETS rift-stage0 rift-stage0-static riftlang.exe rift-0
-    EXPORT RiftStage0Targets
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION bin
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
 )
 
-# Install headers
-install(DIRECTORY include/rift-0
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-    FILES_MATCHING PATTERN "*.h"
+install(DIRECTORY ${RIFT_INCLUDE_DIR}/rift-0
+    DESTINATION include
 )
 
-# Install .so.a file
-install(FILES ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/rift-stage0.so.a
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}
+install(FILES ${CMAKE_BINARY_DIR}/rift_config.h
+    DESTINATION include/rift-0
 )
 
-# Install governance file
-if(AEGIS_COMPLIANCE)
-    install(FILES ${CMAKE_BINARY_DIR}/gov.riftrc.0
-        DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/rift
-    )
-endif()
+install(FILES ${CMAKE_BINARY_DIR}/gov.riftrc.0
+    DESTINATION etc/rift
+)
 
 # ===================================================================
-# Custom Targets
+# Package Configuration
 # ===================================================================
-
-# Validate AEGIS compliance
-add_custom_target(validate
-    COMMAND ${CMAKE_COMMAND} -E echo "Validating AEGIS compliance..."
-    COMMAND ${CMAKE_COMMAND} -E echo "  ✓ Zero-trust governance"
-    COMMAND ${CMAKE_COMMAND} -E echo "  ✓ Dual-channel output"
-    COMMAND ${CMAKE_COMMAND} -E echo "  ✓ Anti-ghosting protocol"
-    COMMAND ${CMAKE_COMMAND} -E echo "  ✓ Quantum resource management"
-    DEPENDS rift-stage0
+configure_file(
+    ${RIFT_CONFIG_DIR}/rift-0.pc.in
+    ${CMAKE_BINARY_DIR}/rift-0.pc
+    @ONLY
 )
 
-# Clean all build artifacts
+install(FILES ${CMAKE_BINARY_DIR}/rift-0.pc
+    DESTINATION lib/pkgconfig
+)
+
+# ===================================================================
+# Clean Targets
+# ===================================================================
 add_custom_target(clean-all
     COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/bin
-    COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/lib
+    COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/lib  
     COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/obj
-    COMMENT "Cleaning all build artifacts"
+    COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/CMakeFiles
+    COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/CMakeCache.txt
+    COMMENT "Deep clean of all build artifacts"
 )
 
 # ===================================================================
-# Load Stage-0 specific configuration
-# ===================================================================
-if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/cmake/RIFTStage0.cmake)
-    include(RIFTStage0)
-endif()
-
-# ===================================================================
-# Summary
+# Build Summary
 # ===================================================================
 message(STATUS "")
 message(STATUS "RIFT Stage-0 Configuration Summary")
@@ -323,13 +291,11 @@ message(STATUS "  Panic mode:       ${ENABLE_PANIC_MODE}")
 message(STATUS "  Build tests:      ${BUILD_TESTS}")
 message(STATUS "  Build examples:   ${BUILD_EXAMPLES}")
 message(STATUS "")
-message(STATUS "Toolchain: riftlang.exe → .so.a → rift.exe → gosilang")
+message(STATUS "Libraries:")
+message(STATUS "  Static (.a):      ${BUILD_STATIC_LIBS}")
+message(STATUS "  Shared (.so):     ${BUILD_SHARED_LIBS}")
+message(STATUS "  Archive (.so.a):  ${BUILD_SOA_ARCHIVE}")
+message(STATUS "")
+message(STATUS "Toolchain: rift-0 for RIFT")
 message(STATUS "==================================")
 message(STATUS "")
-
-# ===================================================================
-# Subdirectory: rift-0 (Tokenizer Stage)
-# ===================================================================
-if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/rift-0/CMakeLists.txt)
-    add_subdirectory(rift-0)
-endif()
