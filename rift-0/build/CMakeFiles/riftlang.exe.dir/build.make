@@ -83,86 +83,22 @@ CMakeFiles/riftlang.exe.dir/src/cli/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/riftlang.exe.dir/src/cli/main.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/main.c -o CMakeFiles/riftlang.exe.dir/src/cli/main.c.s
 
-CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.o: CMakeFiles/riftlang.exe.dir/flags.make
-CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.o: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/ext_command.c
-CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.o: CMakeFiles/riftlang.exe.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.o -MF CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.o.d -o CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/ext_command.c
-
-CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/ext_command.c > CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.i
-
-CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/ext_command.c -o CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.s
-
-CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.o: CMakeFiles/riftlang.exe.dir/flags.make
-CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.o: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/lexer_command.c
-CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.o: CMakeFiles/riftlang.exe.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.o -MF CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.o.d -o CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/lexer_command.c
-
-CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/lexer_command.c > CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.i
-
-CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/lexer_command.c -o CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.s
-
-CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.o: CMakeFiles/riftlang.exe.dir/flags.make
-CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.o: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/r_command.c
-CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.o: CMakeFiles/riftlang.exe.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.o -MF CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.o.d -o CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/r_command.c
-
-CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/r_command.c > CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.i
-
-CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/r_command.c -o CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.s
-
-CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.o: CMakeFiles/riftlang.exe.dir/flags.make
-CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.o: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/rift_gov_command.c
-CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.o: CMakeFiles/riftlang.exe.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.o -MF CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.o.d -o CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/rift_gov_command.c
-
-CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/rift_gov_command.c > CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.i
-
-CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/rift_gov_command.c -o CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.s
-
 # Object files for target riftlang.exe
 riftlang_exe_OBJECTS = \
-"CMakeFiles/riftlang.exe.dir/src/cli/main.c.o" \
-"CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.o" \
-"CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.o" \
-"CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.o" \
-"CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.o"
+"CMakeFiles/riftlang.exe.dir/src/cli/main.c.o"
 
 # External object files for target riftlang.exe
 riftlang_exe_EXTERNAL_OBJECTS =
 
-bin/riftlang.exe: CMakeFiles/riftlang.exe.dir/src/cli/main.c.o
-bin/riftlang.exe: CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.o
-bin/riftlang.exe: CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.o
-bin/riftlang.exe: CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.o
-bin/riftlang.exe: CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.o
-bin/riftlang.exe: CMakeFiles/riftlang.exe.dir/build.make
-bin/riftlang.exe: lib/librift-0.so.0.1.0
-bin/riftlang.exe: CMakeFiles/riftlang.exe.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable bin/riftlang.exe"
+bin/riftlang: CMakeFiles/riftlang.exe.dir/src/cli/main.c.o
+bin/riftlang: CMakeFiles/riftlang.exe.dir/build.make
+bin/riftlang: lib/librift-0.so.0.1.0
+bin/riftlang: CMakeFiles/riftlang.exe.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable bin/riftlang"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/riftlang.exe.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/riftlang.exe.dir/build: bin/riftlang.exe
+CMakeFiles/riftlang.exe.dir/build: bin/riftlang
 .PHONY : CMakeFiles/riftlang.exe.dir/build
 
 CMakeFiles/riftlang.exe.dir/clean:

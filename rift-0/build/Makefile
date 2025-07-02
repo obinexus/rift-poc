@@ -172,19 +172,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named rift-stage0-static
-
-# Build rule for target.
-rift-stage0-static: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rift-stage0-static
-.PHONY : rift-stage0-static
-
-# fast build rule for target.
-rift-stage0-static/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/build
-.PHONY : rift-stage0-static/fast
-
-#=============================================================================
 # Target rules for targets named rift-stage0
 
 # Build rule for target.
@@ -196,6 +183,19 @@ rift-stage0: cmake_check_build_system
 rift-stage0/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/build
 .PHONY : rift-stage0/fast
+
+#=============================================================================
+# Target rules for targets named rift-stage0-static
+
+# Build rule for target.
+rift-stage0-static: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rift-stage0-static
+.PHONY : rift-stage0-static
+
+# fast build rule for target.
+rift-stage0-static/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/build
+.PHONY : rift-stage0-static/fast
 
 #=============================================================================
 # Target rules for targets named rift-stage0-soa
@@ -211,19 +211,6 @@ rift-stage0-soa/fast:
 .PHONY : rift-stage0-soa/fast
 
 #=============================================================================
-# Target rules for targets named riftlang.exe
-
-# Build rule for target.
-riftlang.exe: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 riftlang.exe
-.PHONY : riftlang.exe
-
-# fast build rule for target.
-riftlang.exe/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/build
-.PHONY : riftlang.exe/fast
-
-#=============================================================================
 # Target rules for targets named rift-0
 
 # Build rule for target.
@@ -235,6 +222,19 @@ rift-0: cmake_check_build_system
 rift-0/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-0.dir/build.make CMakeFiles/rift-0.dir/build
 .PHONY : rift-0/fast
+
+#=============================================================================
+# Target rules for targets named riftlang.exe
+
+# Build rule for target.
+riftlang.exe: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 riftlang.exe
+.PHONY : riftlang.exe
+
+# fast build rule for target.
+riftlang.exe/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/build
+.PHONY : riftlang.exe/fast
 
 #=============================================================================
 # Target rules for targets named rift.exe
@@ -250,30 +250,30 @@ rift.exe/fast:
 .PHONY : rift.exe/fast
 
 #=============================================================================
-# Target rules for targets named organize_objects
+# Target rules for targets named create_artifacts
 
 # Build rule for target.
-organize_objects: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 organize_objects
-.PHONY : organize_objects
+create_artifacts: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 create_artifacts
+.PHONY : create_artifacts
 
 # fast build rule for target.
-organize_objects/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/organize_objects.dir/build.make CMakeFiles/organize_objects.dir/build
-.PHONY : organize_objects/fast
+create_artifacts/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/create_artifacts.dir/build.make CMakeFiles/create_artifacts.dir/build
+.PHONY : create_artifacts/fast
 
 #=============================================================================
-# Target rules for targets named validate
+# Target rules for targets named collect_artifacts
 
 # Build rule for target.
-validate: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 validate
-.PHONY : validate
+collect_artifacts: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 collect_artifacts
+.PHONY : collect_artifacts
 
 # fast build rule for target.
-validate/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/validate.dir/build.make CMakeFiles/validate.dir/build
-.PHONY : validate/fast
+collect_artifacts/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/collect_artifacts.dir/build.make CMakeFiles/collect_artifacts.dir/build
+.PHONY : collect_artifacts/fast
 
 #=============================================================================
 # Target rules for targets named clean-all
@@ -289,24 +289,491 @@ clean-all/fast:
 .PHONY : clean-all/fast
 
 #=============================================================================
-# Target rules for targets named qa_assert
+# Target rules for targets named validate
 
 # Build rule for target.
-qa_assert: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 qa_assert
-.PHONY : qa_assert
+validate: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 validate
+.PHONY : validate
 
 # fast build rule for target.
-qa_assert/fast:
-	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qa_assert.dir/build.make tests/CMakeFiles/qa_assert.dir/build
-.PHONY : qa_assert/fast
+validate/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/validate.dir/build.make CMakeFiles/validate.dir/build
+.PHONY : validate/fast
+
+#=============================================================================
+# Target rules for targets named organize_objects
+
+# Build rule for target.
+organize_objects: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 organize_objects
+.PHONY : organize_objects
+
+# fast build rule for target.
+organize_objects/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/organize_objects.dir/build.make CMakeFiles/organize_objects.dir/build
+.PHONY : organize_objects/fast
+
+#=============================================================================
+# Target rules for targets named Experimental
+
+# Build rule for target.
+Experimental: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Experimental
+.PHONY : Experimental
+
+# fast build rule for target.
+Experimental/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/Experimental.dir/build.make tests/CMakeFiles/Experimental.dir/build
+.PHONY : Experimental/fast
+
+#=============================================================================
+# Target rules for targets named Nightly
+
+# Build rule for target.
+Nightly: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Nightly
+.PHONY : Nightly
+
+# fast build rule for target.
+Nightly/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/Nightly.dir/build.make tests/CMakeFiles/Nightly.dir/build
+.PHONY : Nightly/fast
+
+#=============================================================================
+# Target rules for targets named Continuous
+
+# Build rule for target.
+Continuous: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Continuous
+.PHONY : Continuous
+
+# fast build rule for target.
+Continuous/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/Continuous.dir/build.make tests/CMakeFiles/Continuous.dir/build
+.PHONY : Continuous/fast
+
+#=============================================================================
+# Target rules for targets named NightlyMemoryCheck
+
+# Build rule for target.
+NightlyMemoryCheck: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyMemoryCheck
+.PHONY : NightlyMemoryCheck
+
+# fast build rule for target.
+NightlyMemoryCheck/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyMemoryCheck.dir/build.make tests/CMakeFiles/NightlyMemoryCheck.dir/build
+.PHONY : NightlyMemoryCheck/fast
+
+#=============================================================================
+# Target rules for targets named NightlyStart
+
+# Build rule for target.
+NightlyStart: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyStart
+.PHONY : NightlyStart
+
+# fast build rule for target.
+NightlyStart/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyStart.dir/build.make tests/CMakeFiles/NightlyStart.dir/build
+.PHONY : NightlyStart/fast
+
+#=============================================================================
+# Target rules for targets named NightlyUpdate
+
+# Build rule for target.
+NightlyUpdate: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyUpdate
+.PHONY : NightlyUpdate
+
+# fast build rule for target.
+NightlyUpdate/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyUpdate.dir/build.make tests/CMakeFiles/NightlyUpdate.dir/build
+.PHONY : NightlyUpdate/fast
+
+#=============================================================================
+# Target rules for targets named NightlyConfigure
+
+# Build rule for target.
+NightlyConfigure: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyConfigure
+.PHONY : NightlyConfigure
+
+# fast build rule for target.
+NightlyConfigure/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyConfigure.dir/build.make tests/CMakeFiles/NightlyConfigure.dir/build
+.PHONY : NightlyConfigure/fast
+
+#=============================================================================
+# Target rules for targets named NightlyBuild
+
+# Build rule for target.
+NightlyBuild: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyBuild
+.PHONY : NightlyBuild
+
+# fast build rule for target.
+NightlyBuild/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyBuild.dir/build.make tests/CMakeFiles/NightlyBuild.dir/build
+.PHONY : NightlyBuild/fast
+
+#=============================================================================
+# Target rules for targets named NightlyTest
+
+# Build rule for target.
+NightlyTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyTest
+.PHONY : NightlyTest
+
+# fast build rule for target.
+NightlyTest/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyTest.dir/build.make tests/CMakeFiles/NightlyTest.dir/build
+.PHONY : NightlyTest/fast
+
+#=============================================================================
+# Target rules for targets named NightlyCoverage
+
+# Build rule for target.
+NightlyCoverage: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyCoverage
+.PHONY : NightlyCoverage
+
+# fast build rule for target.
+NightlyCoverage/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyCoverage.dir/build.make tests/CMakeFiles/NightlyCoverage.dir/build
+.PHONY : NightlyCoverage/fast
+
+#=============================================================================
+# Target rules for targets named NightlyMemCheck
+
+# Build rule for target.
+NightlyMemCheck: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyMemCheck
+.PHONY : NightlyMemCheck
+
+# fast build rule for target.
+NightlyMemCheck/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyMemCheck.dir/build.make tests/CMakeFiles/NightlyMemCheck.dir/build
+.PHONY : NightlyMemCheck/fast
+
+#=============================================================================
+# Target rules for targets named NightlySubmit
+
+# Build rule for target.
+NightlySubmit: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlySubmit
+.PHONY : NightlySubmit
+
+# fast build rule for target.
+NightlySubmit/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlySubmit.dir/build.make tests/CMakeFiles/NightlySubmit.dir/build
+.PHONY : NightlySubmit/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalStart
+
+# Build rule for target.
+ExperimentalStart: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalStart
+.PHONY : ExperimentalStart
+
+# fast build rule for target.
+ExperimentalStart/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalStart.dir/build.make tests/CMakeFiles/ExperimentalStart.dir/build
+.PHONY : ExperimentalStart/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalUpdate
+
+# Build rule for target.
+ExperimentalUpdate: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalUpdate
+.PHONY : ExperimentalUpdate
+
+# fast build rule for target.
+ExperimentalUpdate/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalUpdate.dir/build.make tests/CMakeFiles/ExperimentalUpdate.dir/build
+.PHONY : ExperimentalUpdate/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalConfigure
+
+# Build rule for target.
+ExperimentalConfigure: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalConfigure
+.PHONY : ExperimentalConfigure
+
+# fast build rule for target.
+ExperimentalConfigure/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalConfigure.dir/build.make tests/CMakeFiles/ExperimentalConfigure.dir/build
+.PHONY : ExperimentalConfigure/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalBuild
+
+# Build rule for target.
+ExperimentalBuild: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalBuild
+.PHONY : ExperimentalBuild
+
+# fast build rule for target.
+ExperimentalBuild/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalBuild.dir/build.make tests/CMakeFiles/ExperimentalBuild.dir/build
+.PHONY : ExperimentalBuild/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalTest
+
+# Build rule for target.
+ExperimentalTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalTest
+.PHONY : ExperimentalTest
+
+# fast build rule for target.
+ExperimentalTest/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalTest.dir/build.make tests/CMakeFiles/ExperimentalTest.dir/build
+.PHONY : ExperimentalTest/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalCoverage
+
+# Build rule for target.
+ExperimentalCoverage: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalCoverage
+.PHONY : ExperimentalCoverage
+
+# fast build rule for target.
+ExperimentalCoverage/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalCoverage.dir/build.make tests/CMakeFiles/ExperimentalCoverage.dir/build
+.PHONY : ExperimentalCoverage/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalMemCheck
+
+# Build rule for target.
+ExperimentalMemCheck: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalMemCheck
+.PHONY : ExperimentalMemCheck
+
+# fast build rule for target.
+ExperimentalMemCheck/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalMemCheck.dir/build.make tests/CMakeFiles/ExperimentalMemCheck.dir/build
+.PHONY : ExperimentalMemCheck/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalSubmit
+
+# Build rule for target.
+ExperimentalSubmit: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalSubmit
+.PHONY : ExperimentalSubmit
+
+# fast build rule for target.
+ExperimentalSubmit/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalSubmit.dir/build.make tests/CMakeFiles/ExperimentalSubmit.dir/build
+.PHONY : ExperimentalSubmit/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousStart
+
+# Build rule for target.
+ContinuousStart: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousStart
+.PHONY : ContinuousStart
+
+# fast build rule for target.
+ContinuousStart/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousStart.dir/build.make tests/CMakeFiles/ContinuousStart.dir/build
+.PHONY : ContinuousStart/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousUpdate
+
+# Build rule for target.
+ContinuousUpdate: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousUpdate
+.PHONY : ContinuousUpdate
+
+# fast build rule for target.
+ContinuousUpdate/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousUpdate.dir/build.make tests/CMakeFiles/ContinuousUpdate.dir/build
+.PHONY : ContinuousUpdate/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousConfigure
+
+# Build rule for target.
+ContinuousConfigure: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousConfigure
+.PHONY : ContinuousConfigure
+
+# fast build rule for target.
+ContinuousConfigure/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousConfigure.dir/build.make tests/CMakeFiles/ContinuousConfigure.dir/build
+.PHONY : ContinuousConfigure/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousBuild
+
+# Build rule for target.
+ContinuousBuild: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousBuild
+.PHONY : ContinuousBuild
+
+# fast build rule for target.
+ContinuousBuild/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousBuild.dir/build.make tests/CMakeFiles/ContinuousBuild.dir/build
+.PHONY : ContinuousBuild/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousTest
+
+# Build rule for target.
+ContinuousTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousTest
+.PHONY : ContinuousTest
+
+# fast build rule for target.
+ContinuousTest/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousTest.dir/build.make tests/CMakeFiles/ContinuousTest.dir/build
+.PHONY : ContinuousTest/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousCoverage
+
+# Build rule for target.
+ContinuousCoverage: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousCoverage
+.PHONY : ContinuousCoverage
+
+# fast build rule for target.
+ContinuousCoverage/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousCoverage.dir/build.make tests/CMakeFiles/ContinuousCoverage.dir/build
+.PHONY : ContinuousCoverage/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousMemCheck
+
+# Build rule for target.
+ContinuousMemCheck: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousMemCheck
+.PHONY : ContinuousMemCheck
+
+# fast build rule for target.
+ContinuousMemCheck/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousMemCheck.dir/build.make tests/CMakeFiles/ContinuousMemCheck.dir/build
+.PHONY : ContinuousMemCheck/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousSubmit
+
+# Build rule for target.
+ContinuousSubmit: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousSubmit
+.PHONY : ContinuousSubmit
+
+# fast build rule for target.
+ContinuousSubmit/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousSubmit.dir/build.make tests/CMakeFiles/ContinuousSubmit.dir/build
+.PHONY : ContinuousSubmit/fast
+
+#=============================================================================
+# Target rules for targets named test_utils
+
+# Build rule for target.
+test_utils: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_utils
+.PHONY : test_utils
+
+# fast build rule for target.
+test_utils/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_utils.dir/build.make tests/CMakeFiles/test_utils.dir/build
+.PHONY : test_utils/fast
+
+#=============================================================================
+# Target rules for targets named test_tokenizer_validation
+
+# Build rule for target.
+test_tokenizer_validation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_tokenizer_validation
+.PHONY : test_tokenizer_validation
+
+# fast build rule for target.
+test_tokenizer_validation/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_tokenizer_validation.dir/build.make tests/CMakeFiles/test_tokenizer_validation.dir/build
+.PHONY : test_tokenizer_validation/fast
+
+#=============================================================================
+# Target rules for targets named test_tokenizer
+
+# Build rule for target.
+test_tokenizer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_tokenizer
+.PHONY : test_tokenizer
+
+# fast build rule for target.
+test_tokenizer/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_tokenizer.dir/build.make tests/CMakeFiles/test_tokenizer.dir/build
+.PHONY : test_tokenizer/fast
+
+#=============================================================================
+# Target rules for targets named test_policy2_matrix
+
+# Build rule for target.
+test_policy2_matrix: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_policy2_matrix
+.PHONY : test_policy2_matrix
+
+# fast build rule for target.
+test_policy2_matrix/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_policy2_matrix.dir/build.make tests/CMakeFiles/test_policy2_matrix.dir/build
+.PHONY : test_policy2_matrix/fast
+
+#=============================================================================
+# Target rules for targets named generate_test_data
+
+# Build rule for target.
+generate_test_data: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 generate_test_data
+.PHONY : generate_test_data
+
+# fast build rule for target.
+generate_test_data/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/generate_test_data.dir/build.make tests/CMakeFiles/generate_test_data.dir/build
+.PHONY : generate_test_data/fast
+
+#=============================================================================
+# Target rules for targets named run_unit_tests
+
+# Build rule for target.
+run_unit_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_unit_tests
+.PHONY : run_unit_tests
+
+# fast build rule for target.
+run_unit_tests/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/run_unit_tests.dir/build.make tests/CMakeFiles/run_unit_tests.dir/build
+.PHONY : run_unit_tests/fast
+
+#=============================================================================
+# Target rules for targets named run_all_tests
+
+# Build rule for target.
+run_all_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_all_tests
+.PHONY : run_all_tests
+
+# fast build rule for target.
+run_all_tests/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/run_all_tests.dir/build.make tests/CMakeFiles/run_all_tests.dir/build
+.PHONY : run_all_tests/fast
 
 src/cli/commands/ext_command.o: src/cli/commands/ext_command.c.o
 .PHONY : src/cli/commands/ext_command.o
 
 # target to build an object file
 src/cli/commands/ext_command.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-0.dir/build.make CMakeFiles/rift-0.dir/src/cli/commands/ext_command.c.o
 .PHONY : src/cli/commands/ext_command.c.o
 
@@ -315,7 +782,6 @@ src/cli/commands/ext_command.i: src/cli/commands/ext_command.c.i
 
 # target to preprocess a source file
 src/cli/commands/ext_command.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-0.dir/build.make CMakeFiles/rift-0.dir/src/cli/commands/ext_command.c.i
 .PHONY : src/cli/commands/ext_command.c.i
 
@@ -324,7 +790,6 @@ src/cli/commands/ext_command.s: src/cli/commands/ext_command.c.s
 
 # target to generate assembly for a file
 src/cli/commands/ext_command.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-0.dir/build.make CMakeFiles/rift-0.dir/src/cli/commands/ext_command.c.s
 .PHONY : src/cli/commands/ext_command.c.s
 
@@ -333,7 +798,6 @@ src/cli/commands/lexer_command.o: src/cli/commands/lexer_command.c.o
 
 # target to build an object file
 src/cli/commands/lexer_command.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-0.dir/build.make CMakeFiles/rift-0.dir/src/cli/commands/lexer_command.c.o
 .PHONY : src/cli/commands/lexer_command.c.o
 
@@ -342,7 +806,6 @@ src/cli/commands/lexer_command.i: src/cli/commands/lexer_command.c.i
 
 # target to preprocess a source file
 src/cli/commands/lexer_command.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-0.dir/build.make CMakeFiles/rift-0.dir/src/cli/commands/lexer_command.c.i
 .PHONY : src/cli/commands/lexer_command.c.i
 
@@ -351,7 +814,6 @@ src/cli/commands/lexer_command.s: src/cli/commands/lexer_command.c.s
 
 # target to generate assembly for a file
 src/cli/commands/lexer_command.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-0.dir/build.make CMakeFiles/rift-0.dir/src/cli/commands/lexer_command.c.s
 .PHONY : src/cli/commands/lexer_command.c.s
 
@@ -360,7 +822,6 @@ src/cli/commands/r_command.o: src/cli/commands/r_command.c.o
 
 # target to build an object file
 src/cli/commands/r_command.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-0.dir/build.make CMakeFiles/rift-0.dir/src/cli/commands/r_command.c.o
 .PHONY : src/cli/commands/r_command.c.o
 
@@ -369,7 +830,6 @@ src/cli/commands/r_command.i: src/cli/commands/r_command.c.i
 
 # target to preprocess a source file
 src/cli/commands/r_command.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-0.dir/build.make CMakeFiles/rift-0.dir/src/cli/commands/r_command.c.i
 .PHONY : src/cli/commands/r_command.c.i
 
@@ -378,7 +838,6 @@ src/cli/commands/r_command.s: src/cli/commands/r_command.c.s
 
 # target to generate assembly for a file
 src/cli/commands/r_command.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-0.dir/build.make CMakeFiles/rift-0.dir/src/cli/commands/r_command.c.s
 .PHONY : src/cli/commands/r_command.c.s
 
@@ -387,7 +846,6 @@ src/cli/commands/rift_gov_command.o: src/cli/commands/rift_gov_command.c.o
 
 # target to build an object file
 src/cli/commands/rift_gov_command.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-0.dir/build.make CMakeFiles/rift-0.dir/src/cli/commands/rift_gov_command.c.o
 .PHONY : src/cli/commands/rift_gov_command.c.o
 
@@ -396,7 +854,6 @@ src/cli/commands/rift_gov_command.i: src/cli/commands/rift_gov_command.c.i
 
 # target to preprocess a source file
 src/cli/commands/rift_gov_command.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-0.dir/build.make CMakeFiles/rift-0.dir/src/cli/commands/rift_gov_command.c.i
 .PHONY : src/cli/commands/rift_gov_command.c.i
 
@@ -405,7 +862,6 @@ src/cli/commands/rift_gov_command.s: src/cli/commands/rift_gov_command.c.s
 
 # target to generate assembly for a file
 src/cli/commands/rift_gov_command.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-0.dir/build.make CMakeFiles/rift-0.dir/src/cli/commands/rift_gov_command.c.s
 .PHONY : src/cli/commands/rift_gov_command.c.s
 
@@ -414,8 +870,9 @@ src/cli/main.o: src/cli/main.c.o
 
 # target to build an object file
 src/cli/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/src/cli/main.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-0.dir/build.make CMakeFiles/rift-0.dir/src/cli/main.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/src/cli/main.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift.exe.dir/build.make CMakeFiles/rift.exe.dir/src/cli/main.c.o
 .PHONY : src/cli/main.c.o
 
 src/cli/main.i: src/cli/main.c.i
@@ -423,8 +880,9 @@ src/cli/main.i: src/cli/main.c.i
 
 # target to preprocess a source file
 src/cli/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/src/cli/main.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-0.dir/build.make CMakeFiles/rift-0.dir/src/cli/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/src/cli/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift.exe.dir/build.make CMakeFiles/rift.exe.dir/src/cli/main.c.i
 .PHONY : src/cli/main.c.i
 
 src/cli/main.s: src/cli/main.c.s
@@ -432,8 +890,9 @@ src/cli/main.s: src/cli/main.c.s
 
 # target to generate assembly for a file
 src/cli/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/src/cli/main.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-0.dir/build.make CMakeFiles/rift-0.dir/src/cli/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/riftlang.exe.dir/build.make CMakeFiles/riftlang.exe.dir/src/cli/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift.exe.dir/build.make CMakeFiles/rift.exe.dir/src/cli/main.c.s
 .PHONY : src/cli/main.c.s
 
 src/core/ext/r_uml.o: src/core/ext/r_uml.c.o
@@ -441,8 +900,9 @@ src/core/ext/r_uml.o: src/core/ext/r_uml.c.o
 
 # target to build an object file
 src/core/ext/r_uml.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/ext/r_uml.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/ext/r_uml.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/ext/r_uml.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/ext/r_uml.c.o
 .PHONY : src/core/ext/r_uml.c.o
 
 src/core/ext/r_uml.i: src/core/ext/r_uml.c.i
@@ -450,8 +910,9 @@ src/core/ext/r_uml.i: src/core/ext/r_uml.c.i
 
 # target to preprocess a source file
 src/core/ext/r_uml.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/ext/r_uml.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/ext/r_uml.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/ext/r_uml.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/ext/r_uml.c.i
 .PHONY : src/core/ext/r_uml.c.i
 
 src/core/ext/r_uml.s: src/core/ext/r_uml.c.s
@@ -459,17 +920,49 @@ src/core/ext/r_uml.s: src/core/ext/r_uml.c.s
 
 # target to generate assembly for a file
 src/core/ext/r_uml.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/ext/r_uml.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/ext/r_uml.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/ext/r_uml.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/ext/r_uml.c.s
 .PHONY : src/core/ext/r_uml.c.s
+
+src/core/gov/r_governance_validation.o: src/core/gov/r_governance_validation.c.o
+.PHONY : src/core/gov/r_governance_validation.o
+
+# target to build an object file
+src/core/gov/r_governance_validation.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/gov/r_governance_validation.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/r_governance_validation.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/gov/r_governance_validation.c.o
+.PHONY : src/core/gov/r_governance_validation.c.o
+
+src/core/gov/r_governance_validation.i: src/core/gov/r_governance_validation.c.i
+.PHONY : src/core/gov/r_governance_validation.i
+
+# target to preprocess a source file
+src/core/gov/r_governance_validation.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/gov/r_governance_validation.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/r_governance_validation.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/gov/r_governance_validation.c.i
+.PHONY : src/core/gov/r_governance_validation.c.i
+
+src/core/gov/r_governance_validation.s: src/core/gov/r_governance_validation.c.s
+.PHONY : src/core/gov/r_governance_validation.s
+
+# target to generate assembly for a file
+src/core/gov/r_governance_validation.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/gov/r_governance_validation.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/r_governance_validation.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/gov/r_governance_validation.c.s
+.PHONY : src/core/gov/r_governance_validation.c.s
 
 src/core/gov/rift-gov.0.o: src/core/gov/rift-gov.0.c.o
 .PHONY : src/core/gov/rift-gov.0.o
 
 # target to build an object file
 src/core/gov/rift-gov.0.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/rift-gov.0.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/gov/rift-gov.0.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/rift-gov.0.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/gov/rift-gov.0.c.o
 .PHONY : src/core/gov/rift-gov.0.c.o
 
 src/core/gov/rift-gov.0.i: src/core/gov/rift-gov.0.c.i
@@ -477,8 +970,9 @@ src/core/gov/rift-gov.0.i: src/core/gov/rift-gov.0.c.i
 
 # target to preprocess a source file
 src/core/gov/rift-gov.0.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/rift-gov.0.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/gov/rift-gov.0.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/rift-gov.0.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/gov/rift-gov.0.c.i
 .PHONY : src/core/gov/rift-gov.0.c.i
 
 src/core/gov/rift-gov.0.s: src/core/gov/rift-gov.0.c.s
@@ -486,8 +980,9 @@ src/core/gov/rift-gov.0.s: src/core/gov/rift-gov.0.c.s
 
 # target to generate assembly for a file
 src/core/gov/rift-gov.0.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/rift-gov.0.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/gov/rift-gov.0.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/rift-gov.0.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/gov/rift-gov.0.c.s
 .PHONY : src/core/gov/rift-gov.0.c.s
 
 src/core/gov/rift_sim.o: src/core/gov/rift_sim.c.o
@@ -495,8 +990,9 @@ src/core/gov/rift_sim.o: src/core/gov/rift_sim.c.o
 
 # target to build an object file
 src/core/gov/rift_sim.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/rift_sim.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/gov/rift_sim.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/rift_sim.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/gov/rift_sim.c.o
 .PHONY : src/core/gov/rift_sim.c.o
 
 src/core/gov/rift_sim.i: src/core/gov/rift_sim.c.i
@@ -504,8 +1000,9 @@ src/core/gov/rift_sim.i: src/core/gov/rift_sim.c.i
 
 # target to preprocess a source file
 src/core/gov/rift_sim.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/rift_sim.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/gov/rift_sim.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/rift_sim.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/gov/rift_sim.c.i
 .PHONY : src/core/gov/rift_sim.c.i
 
 src/core/gov/rift_sim.s: src/core/gov/rift_sim.c.s
@@ -513,8 +1010,9 @@ src/core/gov/rift_sim.s: src/core/gov/rift_sim.c.s
 
 # target to generate assembly for a file
 src/core/gov/rift_sim.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/rift_sim.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/gov/rift_sim.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/rift_sim.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/gov/rift_sim.c.s
 .PHONY : src/core/gov/rift_sim.c.s
 
 src/core/gov/stage_queue.o: src/core/gov/stage_queue.c.o
@@ -522,8 +1020,9 @@ src/core/gov/stage_queue.o: src/core/gov/stage_queue.c.o
 
 # target to build an object file
 src/core/gov/stage_queue.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/stage_queue.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/gov/stage_queue.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/stage_queue.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/gov/stage_queue.c.o
 .PHONY : src/core/gov/stage_queue.c.o
 
 src/core/gov/stage_queue.i: src/core/gov/stage_queue.c.i
@@ -531,8 +1030,9 @@ src/core/gov/stage_queue.i: src/core/gov/stage_queue.c.i
 
 # target to preprocess a source file
 src/core/gov/stage_queue.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/stage_queue.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/gov/stage_queue.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/stage_queue.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/gov/stage_queue.c.i
 .PHONY : src/core/gov/stage_queue.c.i
 
 src/core/gov/stage_queue.s: src/core/gov/stage_queue.c.s
@@ -540,8 +1040,9 @@ src/core/gov/stage_queue.s: src/core/gov/stage_queue.c.s
 
 # target to generate assembly for a file
 src/core/gov/stage_queue.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/stage_queue.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/gov/stage_queue.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/gov/stage_queue.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/gov/stage_queue.c.s
 .PHONY : src/core/gov/stage_queue.c.s
 
 src/core/lexer/lexer.o: src/core/lexer/lexer.c.o
@@ -549,8 +1050,9 @@ src/core/lexer/lexer.o: src/core/lexer/lexer.c.o
 
 # target to build an object file
 src/core/lexer/lexer.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/lexer.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/lexer.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/lexer.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/lexer.c.o
 .PHONY : src/core/lexer/lexer.c.o
 
 src/core/lexer/lexer.i: src/core/lexer/lexer.c.i
@@ -558,8 +1060,9 @@ src/core/lexer/lexer.i: src/core/lexer/lexer.c.i
 
 # target to preprocess a source file
 src/core/lexer/lexer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/lexer.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/lexer.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/lexer.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/lexer.c.i
 .PHONY : src/core/lexer/lexer.c.i
 
 src/core/lexer/lexer.s: src/core/lexer/lexer.c.s
@@ -567,8 +1070,9 @@ src/core/lexer/lexer.s: src/core/lexer/lexer.c.s
 
 # target to generate assembly for a file
 src/core/lexer/lexer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/lexer.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/lexer.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/lexer.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/lexer.c.s
 .PHONY : src/core/lexer/lexer.c.s
 
 src/core/lexer/lexer_flag.o: src/core/lexer/lexer_flag.c.o
@@ -576,8 +1080,9 @@ src/core/lexer/lexer_flag.o: src/core/lexer/lexer_flag.c.o
 
 # target to build an object file
 src/core/lexer/lexer_flag.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/lexer_flag.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/lexer_flag.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/lexer_flag.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/lexer_flag.c.o
 .PHONY : src/core/lexer/lexer_flag.c.o
 
 src/core/lexer/lexer_flag.i: src/core/lexer/lexer_flag.c.i
@@ -585,8 +1090,9 @@ src/core/lexer/lexer_flag.i: src/core/lexer/lexer_flag.c.i
 
 # target to preprocess a source file
 src/core/lexer/lexer_flag.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/lexer_flag.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/lexer_flag.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/lexer_flag.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/lexer_flag.c.i
 .PHONY : src/core/lexer/lexer_flag.c.i
 
 src/core/lexer/lexer_flag.s: src/core/lexer/lexer_flag.c.s
@@ -594,8 +1100,9 @@ src/core/lexer/lexer_flag.s: src/core/lexer/lexer_flag.c.s
 
 # target to generate assembly for a file
 src/core/lexer/lexer_flag.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/lexer_flag.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/lexer_flag.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/lexer_flag.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/lexer_flag.c.s
 .PHONY : src/core/lexer/lexer_flag.c.s
 
 src/core/lexer/rift_tokenizer.o: src/core/lexer/rift_tokenizer.c.o
@@ -603,8 +1110,9 @@ src/core/lexer/rift_tokenizer.o: src/core/lexer/rift_tokenizer.c.o
 
 # target to build an object file
 src/core/lexer/rift_tokenizer.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/rift_tokenizer.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/rift_tokenizer.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/rift_tokenizer.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/rift_tokenizer.c.o
 .PHONY : src/core/lexer/rift_tokenizer.c.o
 
 src/core/lexer/rift_tokenizer.i: src/core/lexer/rift_tokenizer.c.i
@@ -612,8 +1120,9 @@ src/core/lexer/rift_tokenizer.i: src/core/lexer/rift_tokenizer.c.i
 
 # target to preprocess a source file
 src/core/lexer/rift_tokenizer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/rift_tokenizer.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/rift_tokenizer.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/rift_tokenizer.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/rift_tokenizer.c.i
 .PHONY : src/core/lexer/rift_tokenizer.c.i
 
 src/core/lexer/rift_tokenizer.s: src/core/lexer/rift_tokenizer.c.s
@@ -621,8 +1130,9 @@ src/core/lexer/rift_tokenizer.s: src/core/lexer/rift_tokenizer.c.s
 
 # target to generate assembly for a file
 src/core/lexer/rift_tokenizer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/rift_tokenizer.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/rift_tokenizer.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/rift_tokenizer.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/rift_tokenizer.c.s
 .PHONY : src/core/lexer/rift_tokenizer.c.s
 
 src/core/lexer/tokenizer.o: src/core/lexer/tokenizer.c.o
@@ -630,8 +1140,9 @@ src/core/lexer/tokenizer.o: src/core/lexer/tokenizer.c.o
 
 # target to build an object file
 src/core/lexer/tokenizer.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/tokenizer.c.o
 .PHONY : src/core/lexer/tokenizer.c.o
 
 src/core/lexer/tokenizer.i: src/core/lexer/tokenizer.c.i
@@ -639,8 +1150,9 @@ src/core/lexer/tokenizer.i: src/core/lexer/tokenizer.c.i
 
 # target to preprocess a source file
 src/core/lexer/tokenizer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/tokenizer.c.i
 .PHONY : src/core/lexer/tokenizer.c.i
 
 src/core/lexer/tokenizer.s: src/core/lexer/tokenizer.c.s
@@ -648,8 +1160,9 @@ src/core/lexer/tokenizer.s: src/core/lexer/tokenizer.c.s
 
 # target to generate assembly for a file
 src/core/lexer/tokenizer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/tokenizer.c.s
 .PHONY : src/core/lexer/tokenizer.c.s
 
 src/core/lexer/tokenizer_match.o: src/core/lexer/tokenizer_match.c.o
@@ -657,8 +1170,9 @@ src/core/lexer/tokenizer_match.o: src/core/lexer/tokenizer_match.c.o
 
 # target to build an object file
 src/core/lexer/tokenizer_match.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_match.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_match.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_match.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/tokenizer_match.c.o
 .PHONY : src/core/lexer/tokenizer_match.c.o
 
 src/core/lexer/tokenizer_match.i: src/core/lexer/tokenizer_match.c.i
@@ -666,8 +1180,9 @@ src/core/lexer/tokenizer_match.i: src/core/lexer/tokenizer_match.c.i
 
 # target to preprocess a source file
 src/core/lexer/tokenizer_match.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_match.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_match.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_match.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/tokenizer_match.c.i
 .PHONY : src/core/lexer/tokenizer_match.c.i
 
 src/core/lexer/tokenizer_match.s: src/core/lexer/tokenizer_match.c.s
@@ -675,8 +1190,9 @@ src/core/lexer/tokenizer_match.s: src/core/lexer/tokenizer_match.c.s
 
 # target to generate assembly for a file
 src/core/lexer/tokenizer_match.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_match.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_match.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_match.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/tokenizer_match.c.s
 .PHONY : src/core/lexer/tokenizer_match.c.s
 
 src/core/lexer/tokenizer_rules.o: src/core/lexer/tokenizer_rules.c.o
@@ -684,8 +1200,9 @@ src/core/lexer/tokenizer_rules.o: src/core/lexer/tokenizer_rules.c.o
 
 # target to build an object file
 src/core/lexer/tokenizer_rules.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_rules.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_rules.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_rules.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/tokenizer_rules.c.o
 .PHONY : src/core/lexer/tokenizer_rules.c.o
 
 src/core/lexer/tokenizer_rules.i: src/core/lexer/tokenizer_rules.c.i
@@ -693,8 +1210,9 @@ src/core/lexer/tokenizer_rules.i: src/core/lexer/tokenizer_rules.c.i
 
 # target to preprocess a source file
 src/core/lexer/tokenizer_rules.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_rules.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_rules.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_rules.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/tokenizer_rules.c.i
 .PHONY : src/core/lexer/tokenizer_rules.c.i
 
 src/core/lexer/tokenizer_rules.s: src/core/lexer/tokenizer_rules.c.s
@@ -702,8 +1220,9 @@ src/core/lexer/tokenizer_rules.s: src/core/lexer/tokenizer_rules.c.s
 
 # target to generate assembly for a file
 src/core/lexer/tokenizer_rules.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_rules.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_rules.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_rules.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/tokenizer_rules.c.s
 .PHONY : src/core/lexer/tokenizer_rules.c.s
 
 src/core/lexer/tokenizer_utilities.o: src/core/lexer/tokenizer_utilities.c.o
@@ -711,8 +1230,9 @@ src/core/lexer/tokenizer_utilities.o: src/core/lexer/tokenizer_utilities.c.o
 
 # target to build an object file
 src/core/lexer/tokenizer_utilities.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_utilities.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_utilities.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_utilities.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/tokenizer_utilities.c.o
 .PHONY : src/core/lexer/tokenizer_utilities.c.o
 
 src/core/lexer/tokenizer_utilities.i: src/core/lexer/tokenizer_utilities.c.i
@@ -720,8 +1240,9 @@ src/core/lexer/tokenizer_utilities.i: src/core/lexer/tokenizer_utilities.c.i
 
 # target to preprocess a source file
 src/core/lexer/tokenizer_utilities.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_utilities.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_utilities.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_utilities.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/tokenizer_utilities.c.i
 .PHONY : src/core/lexer/tokenizer_utilities.c.i
 
 src/core/lexer/tokenizer_utilities.s: src/core/lexer/tokenizer_utilities.c.s
@@ -729,17 +1250,49 @@ src/core/lexer/tokenizer_utilities.s: src/core/lexer/tokenizer_utilities.c.s
 
 # target to generate assembly for a file
 src/core/lexer/tokenizer_utilities.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_utilities.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_utilities.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_utilities.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/lexer/tokenizer_utilities.c.s
 .PHONY : src/core/lexer/tokenizer_utilities.c.s
+
+src/core/parser/rift_tb_parser.o: src/core/parser/rift_tb_parser.c.o
+.PHONY : src/core/parser/rift_tb_parser.o
+
+# target to build an object file
+src/core/parser/rift_tb_parser.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/parser/rift_tb_parser.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/parser/rift_tb_parser.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/parser/rift_tb_parser.c.o
+.PHONY : src/core/parser/rift_tb_parser.c.o
+
+src/core/parser/rift_tb_parser.i: src/core/parser/rift_tb_parser.c.i
+.PHONY : src/core/parser/rift_tb_parser.i
+
+# target to preprocess a source file
+src/core/parser/rift_tb_parser.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/parser/rift_tb_parser.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/parser/rift_tb_parser.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/parser/rift_tb_parser.c.i
+.PHONY : src/core/parser/rift_tb_parser.c.i
+
+src/core/parser/rift_tb_parser.s: src/core/parser/rift_tb_parser.c.s
+.PHONY : src/core/parser/rift_tb_parser.s
+
+# target to generate assembly for a file
+src/core/parser/rift_tb_parser.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/parser/rift_tb_parser.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/parser/rift_tb_parser.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/parser/rift_tb_parser.c.s
+.PHONY : src/core/parser/rift_tb_parser.c.s
 
 src/core/rift-0.o: src/core/rift-0.c.o
 .PHONY : src/core/rift-0.o
 
 # target to build an object file
 src/core/rift-0.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/rift-0.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/rift-0.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/rift-0.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/rift-0.c.o
 .PHONY : src/core/rift-0.c.o
 
 src/core/rift-0.i: src/core/rift-0.c.i
@@ -747,8 +1300,9 @@ src/core/rift-0.i: src/core/rift-0.c.i
 
 # target to preprocess a source file
 src/core/rift-0.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/rift-0.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/rift-0.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/rift-0.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/rift-0.c.i
 .PHONY : src/core/rift-0.c.i
 
 src/core/rift-0.s: src/core/rift-0.c.s
@@ -756,8 +1310,9 @@ src/core/rift-0.s: src/core/rift-0.c.s
 
 # target to generate assembly for a file
 src/core/rift-0.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/rift-0.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0.dir/build.make CMakeFiles/rift-stage0.dir/src/core/rift-0.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-static.dir/build.make CMakeFiles/rift-stage0-static.dir/src/core/rift-0.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rift-stage0-soa.dir/build.make CMakeFiles/rift-stage0-soa.dir/src/core/rift-0.c.s
 .PHONY : src/core/rift-0.c.s
 
 # Help Target
@@ -773,16 +1328,52 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... Continuous"
+	@echo "... ContinuousBuild"
+	@echo "... ContinuousConfigure"
+	@echo "... ContinuousCoverage"
+	@echo "... ContinuousMemCheck"
+	@echo "... ContinuousStart"
+	@echo "... ContinuousSubmit"
+	@echo "... ContinuousTest"
+	@echo "... ContinuousUpdate"
+	@echo "... Experimental"
+	@echo "... ExperimentalBuild"
+	@echo "... ExperimentalConfigure"
+	@echo "... ExperimentalCoverage"
+	@echo "... ExperimentalMemCheck"
+	@echo "... ExperimentalStart"
+	@echo "... ExperimentalSubmit"
+	@echo "... ExperimentalTest"
+	@echo "... ExperimentalUpdate"
+	@echo "... Nightly"
+	@echo "... NightlyBuild"
+	@echo "... NightlyConfigure"
+	@echo "... NightlyCoverage"
+	@echo "... NightlyMemCheck"
+	@echo "... NightlyMemoryCheck"
+	@echo "... NightlyStart"
+	@echo "... NightlySubmit"
+	@echo "... NightlyTest"
+	@echo "... NightlyUpdate"
 	@echo "... clean-all"
+	@echo "... collect_artifacts"
+	@echo "... create_artifacts"
+	@echo "... generate_test_data"
 	@echo "... organize_objects"
-	@echo "... rift-stage0-soa"
-	@echo "... rift.exe"
+	@echo "... run_all_tests"
+	@echo "... run_unit_tests"
 	@echo "... validate"
-	@echo "... qa_assert"
 	@echo "... rift-0"
 	@echo "... rift-stage0"
+	@echo "... rift-stage0-soa"
 	@echo "... rift-stage0-static"
+	@echo "... rift.exe"
 	@echo "... riftlang.exe"
+	@echo "... test_policy2_matrix"
+	@echo "... test_tokenizer"
+	@echo "... test_tokenizer_validation"
+	@echo "... test_utils"
 	@echo "... src/cli/commands/ext_command.o"
 	@echo "... src/cli/commands/ext_command.i"
 	@echo "... src/cli/commands/ext_command.s"
@@ -801,6 +1392,9 @@ help:
 	@echo "... src/core/ext/r_uml.o"
 	@echo "... src/core/ext/r_uml.i"
 	@echo "... src/core/ext/r_uml.s"
+	@echo "... src/core/gov/r_governance_validation.o"
+	@echo "... src/core/gov/r_governance_validation.i"
+	@echo "... src/core/gov/r_governance_validation.s"
 	@echo "... src/core/gov/rift-gov.0.o"
 	@echo "... src/core/gov/rift-gov.0.i"
 	@echo "... src/core/gov/rift-gov.0.s"
@@ -831,6 +1425,9 @@ help:
 	@echo "... src/core/lexer/tokenizer_utilities.o"
 	@echo "... src/core/lexer/tokenizer_utilities.i"
 	@echo "... src/core/lexer/tokenizer_utilities.s"
+	@echo "... src/core/parser/rift_tb_parser.o"
+	@echo "... src/core/parser/rift_tb_parser.i"
+	@echo "... src/core/parser/rift_tb_parser.s"
 	@echo "... src/core/rift-0.o"
 	@echo "... src/core/rift-0.i"
 	@echo "... src/core/rift-0.s"

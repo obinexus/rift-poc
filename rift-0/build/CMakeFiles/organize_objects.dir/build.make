@@ -67,7 +67,7 @@ include CMakeFiles/organize_objects.dir/compiler_depend.make
 include CMakeFiles/organize_objects.dir/progress.make
 
 CMakeFiles/organize_objects:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Organizing object files"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Organizing object file directories"
 	/usr/bin/cmake -E make_directory /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/obj/core
 	/usr/bin/cmake -E make_directory /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/obj/cli
 

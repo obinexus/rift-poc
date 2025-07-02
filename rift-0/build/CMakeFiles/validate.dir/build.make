@@ -66,12 +66,14 @@ include CMakeFiles/validate.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/validate.dir/progress.make
 
-CMakeFiles/validate: riftlang.exe
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Build validation complete"
+CMakeFiles/validate:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Build validation"
 	/usr/bin/cmake -E echo Validating\ RIFT\ Stage-0\ build...
-	test -f /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/lib/librift-0.so || echo Warning:\ librift-0.so\ not\ built
-	test -f /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/lib/librift-0.a || echo Warning:\ librift-0.a\ not\ built
-	test -f /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/bin/riftlang.exe || echo Error:\ riftlang.exe\ not\ built
+	/usr/bin/cmake -E echo \ \ CMake\ Version:\ 3.25.1
+	/usr/bin/cmake -E echo \ \ Compiler:\ /usr/bin/cc
+	/usr/bin/cmake -E echo \ \ AEGIS\ Compliance:\ ON
+	/usr/bin/cmake -E echo \ \ Quantum\ Mode:\ ON
+	/usr/bin/cmake -E echo \ \ Dual\ Mode\ [tb]:\ ON
 
 validate: CMakeFiles/validate
 validate: CMakeFiles/validate.dir/build.make

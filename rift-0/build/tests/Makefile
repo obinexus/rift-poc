@@ -172,25 +172,501 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-tests/CMakeFiles/qa_assert.dir/rule:
-	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/qa_assert.dir/rule
-.PHONY : tests/CMakeFiles/qa_assert.dir/rule
+tests/CMakeFiles/Experimental.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/Experimental.dir/rule
+.PHONY : tests/CMakeFiles/Experimental.dir/rule
 
 # Convenience name for target.
-qa_assert: tests/CMakeFiles/qa_assert.dir/rule
-.PHONY : qa_assert
+Experimental: tests/CMakeFiles/Experimental.dir/rule
+.PHONY : Experimental
 
 # fast build rule for target.
-qa_assert/fast:
-	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qa_assert.dir/build.make tests/CMakeFiles/qa_assert.dir/build
-.PHONY : qa_assert/fast
+Experimental/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/Experimental.dir/build.make tests/CMakeFiles/Experimental.dir/build
+.PHONY : Experimental/fast
+
+# Convenience name for target.
+tests/CMakeFiles/Nightly.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/Nightly.dir/rule
+.PHONY : tests/CMakeFiles/Nightly.dir/rule
+
+# Convenience name for target.
+Nightly: tests/CMakeFiles/Nightly.dir/rule
+.PHONY : Nightly
+
+# fast build rule for target.
+Nightly/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/Nightly.dir/build.make tests/CMakeFiles/Nightly.dir/build
+.PHONY : Nightly/fast
+
+# Convenience name for target.
+tests/CMakeFiles/Continuous.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/Continuous.dir/rule
+.PHONY : tests/CMakeFiles/Continuous.dir/rule
+
+# Convenience name for target.
+Continuous: tests/CMakeFiles/Continuous.dir/rule
+.PHONY : Continuous
+
+# fast build rule for target.
+Continuous/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/Continuous.dir/build.make tests/CMakeFiles/Continuous.dir/build
+.PHONY : Continuous/fast
+
+# Convenience name for target.
+tests/CMakeFiles/NightlyMemoryCheck.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyMemoryCheck.dir/rule
+.PHONY : tests/CMakeFiles/NightlyMemoryCheck.dir/rule
+
+# Convenience name for target.
+NightlyMemoryCheck: tests/CMakeFiles/NightlyMemoryCheck.dir/rule
+.PHONY : NightlyMemoryCheck
+
+# fast build rule for target.
+NightlyMemoryCheck/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyMemoryCheck.dir/build.make tests/CMakeFiles/NightlyMemoryCheck.dir/build
+.PHONY : NightlyMemoryCheck/fast
+
+# Convenience name for target.
+tests/CMakeFiles/NightlyStart.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyStart.dir/rule
+.PHONY : tests/CMakeFiles/NightlyStart.dir/rule
+
+# Convenience name for target.
+NightlyStart: tests/CMakeFiles/NightlyStart.dir/rule
+.PHONY : NightlyStart
+
+# fast build rule for target.
+NightlyStart/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyStart.dir/build.make tests/CMakeFiles/NightlyStart.dir/build
+.PHONY : NightlyStart/fast
+
+# Convenience name for target.
+tests/CMakeFiles/NightlyUpdate.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyUpdate.dir/rule
+.PHONY : tests/CMakeFiles/NightlyUpdate.dir/rule
+
+# Convenience name for target.
+NightlyUpdate: tests/CMakeFiles/NightlyUpdate.dir/rule
+.PHONY : NightlyUpdate
+
+# fast build rule for target.
+NightlyUpdate/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyUpdate.dir/build.make tests/CMakeFiles/NightlyUpdate.dir/build
+.PHONY : NightlyUpdate/fast
+
+# Convenience name for target.
+tests/CMakeFiles/NightlyConfigure.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyConfigure.dir/rule
+.PHONY : tests/CMakeFiles/NightlyConfigure.dir/rule
+
+# Convenience name for target.
+NightlyConfigure: tests/CMakeFiles/NightlyConfigure.dir/rule
+.PHONY : NightlyConfigure
+
+# fast build rule for target.
+NightlyConfigure/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyConfigure.dir/build.make tests/CMakeFiles/NightlyConfigure.dir/build
+.PHONY : NightlyConfigure/fast
+
+# Convenience name for target.
+tests/CMakeFiles/NightlyBuild.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyBuild.dir/rule
+.PHONY : tests/CMakeFiles/NightlyBuild.dir/rule
+
+# Convenience name for target.
+NightlyBuild: tests/CMakeFiles/NightlyBuild.dir/rule
+.PHONY : NightlyBuild
+
+# fast build rule for target.
+NightlyBuild/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyBuild.dir/build.make tests/CMakeFiles/NightlyBuild.dir/build
+.PHONY : NightlyBuild/fast
+
+# Convenience name for target.
+tests/CMakeFiles/NightlyTest.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyTest.dir/rule
+.PHONY : tests/CMakeFiles/NightlyTest.dir/rule
+
+# Convenience name for target.
+NightlyTest: tests/CMakeFiles/NightlyTest.dir/rule
+.PHONY : NightlyTest
+
+# fast build rule for target.
+NightlyTest/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyTest.dir/build.make tests/CMakeFiles/NightlyTest.dir/build
+.PHONY : NightlyTest/fast
+
+# Convenience name for target.
+tests/CMakeFiles/NightlyCoverage.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyCoverage.dir/rule
+.PHONY : tests/CMakeFiles/NightlyCoverage.dir/rule
+
+# Convenience name for target.
+NightlyCoverage: tests/CMakeFiles/NightlyCoverage.dir/rule
+.PHONY : NightlyCoverage
+
+# fast build rule for target.
+NightlyCoverage/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyCoverage.dir/build.make tests/CMakeFiles/NightlyCoverage.dir/build
+.PHONY : NightlyCoverage/fast
+
+# Convenience name for target.
+tests/CMakeFiles/NightlyMemCheck.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlyMemCheck.dir/rule
+.PHONY : tests/CMakeFiles/NightlyMemCheck.dir/rule
+
+# Convenience name for target.
+NightlyMemCheck: tests/CMakeFiles/NightlyMemCheck.dir/rule
+.PHONY : NightlyMemCheck
+
+# fast build rule for target.
+NightlyMemCheck/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlyMemCheck.dir/build.make tests/CMakeFiles/NightlyMemCheck.dir/build
+.PHONY : NightlyMemCheck/fast
+
+# Convenience name for target.
+tests/CMakeFiles/NightlySubmit.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/NightlySubmit.dir/rule
+.PHONY : tests/CMakeFiles/NightlySubmit.dir/rule
+
+# Convenience name for target.
+NightlySubmit: tests/CMakeFiles/NightlySubmit.dir/rule
+.PHONY : NightlySubmit
+
+# fast build rule for target.
+NightlySubmit/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/NightlySubmit.dir/build.make tests/CMakeFiles/NightlySubmit.dir/build
+.PHONY : NightlySubmit/fast
+
+# Convenience name for target.
+tests/CMakeFiles/ExperimentalStart.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalStart.dir/rule
+.PHONY : tests/CMakeFiles/ExperimentalStart.dir/rule
+
+# Convenience name for target.
+ExperimentalStart: tests/CMakeFiles/ExperimentalStart.dir/rule
+.PHONY : ExperimentalStart
+
+# fast build rule for target.
+ExperimentalStart/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalStart.dir/build.make tests/CMakeFiles/ExperimentalStart.dir/build
+.PHONY : ExperimentalStart/fast
+
+# Convenience name for target.
+tests/CMakeFiles/ExperimentalUpdate.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalUpdate.dir/rule
+.PHONY : tests/CMakeFiles/ExperimentalUpdate.dir/rule
+
+# Convenience name for target.
+ExperimentalUpdate: tests/CMakeFiles/ExperimentalUpdate.dir/rule
+.PHONY : ExperimentalUpdate
+
+# fast build rule for target.
+ExperimentalUpdate/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalUpdate.dir/build.make tests/CMakeFiles/ExperimentalUpdate.dir/build
+.PHONY : ExperimentalUpdate/fast
+
+# Convenience name for target.
+tests/CMakeFiles/ExperimentalConfigure.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalConfigure.dir/rule
+.PHONY : tests/CMakeFiles/ExperimentalConfigure.dir/rule
+
+# Convenience name for target.
+ExperimentalConfigure: tests/CMakeFiles/ExperimentalConfigure.dir/rule
+.PHONY : ExperimentalConfigure
+
+# fast build rule for target.
+ExperimentalConfigure/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalConfigure.dir/build.make tests/CMakeFiles/ExperimentalConfigure.dir/build
+.PHONY : ExperimentalConfigure/fast
+
+# Convenience name for target.
+tests/CMakeFiles/ExperimentalBuild.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalBuild.dir/rule
+.PHONY : tests/CMakeFiles/ExperimentalBuild.dir/rule
+
+# Convenience name for target.
+ExperimentalBuild: tests/CMakeFiles/ExperimentalBuild.dir/rule
+.PHONY : ExperimentalBuild
+
+# fast build rule for target.
+ExperimentalBuild/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalBuild.dir/build.make tests/CMakeFiles/ExperimentalBuild.dir/build
+.PHONY : ExperimentalBuild/fast
+
+# Convenience name for target.
+tests/CMakeFiles/ExperimentalTest.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalTest.dir/rule
+.PHONY : tests/CMakeFiles/ExperimentalTest.dir/rule
+
+# Convenience name for target.
+ExperimentalTest: tests/CMakeFiles/ExperimentalTest.dir/rule
+.PHONY : ExperimentalTest
+
+# fast build rule for target.
+ExperimentalTest/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalTest.dir/build.make tests/CMakeFiles/ExperimentalTest.dir/build
+.PHONY : ExperimentalTest/fast
+
+# Convenience name for target.
+tests/CMakeFiles/ExperimentalCoverage.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalCoverage.dir/rule
+.PHONY : tests/CMakeFiles/ExperimentalCoverage.dir/rule
+
+# Convenience name for target.
+ExperimentalCoverage: tests/CMakeFiles/ExperimentalCoverage.dir/rule
+.PHONY : ExperimentalCoverage
+
+# fast build rule for target.
+ExperimentalCoverage/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalCoverage.dir/build.make tests/CMakeFiles/ExperimentalCoverage.dir/build
+.PHONY : ExperimentalCoverage/fast
+
+# Convenience name for target.
+tests/CMakeFiles/ExperimentalMemCheck.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalMemCheck.dir/rule
+.PHONY : tests/CMakeFiles/ExperimentalMemCheck.dir/rule
+
+# Convenience name for target.
+ExperimentalMemCheck: tests/CMakeFiles/ExperimentalMemCheck.dir/rule
+.PHONY : ExperimentalMemCheck
+
+# fast build rule for target.
+ExperimentalMemCheck/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalMemCheck.dir/build.make tests/CMakeFiles/ExperimentalMemCheck.dir/build
+.PHONY : ExperimentalMemCheck/fast
+
+# Convenience name for target.
+tests/CMakeFiles/ExperimentalSubmit.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ExperimentalSubmit.dir/rule
+.PHONY : tests/CMakeFiles/ExperimentalSubmit.dir/rule
+
+# Convenience name for target.
+ExperimentalSubmit: tests/CMakeFiles/ExperimentalSubmit.dir/rule
+.PHONY : ExperimentalSubmit
+
+# fast build rule for target.
+ExperimentalSubmit/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ExperimentalSubmit.dir/build.make tests/CMakeFiles/ExperimentalSubmit.dir/build
+.PHONY : ExperimentalSubmit/fast
+
+# Convenience name for target.
+tests/CMakeFiles/ContinuousStart.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousStart.dir/rule
+.PHONY : tests/CMakeFiles/ContinuousStart.dir/rule
+
+# Convenience name for target.
+ContinuousStart: tests/CMakeFiles/ContinuousStart.dir/rule
+.PHONY : ContinuousStart
+
+# fast build rule for target.
+ContinuousStart/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousStart.dir/build.make tests/CMakeFiles/ContinuousStart.dir/build
+.PHONY : ContinuousStart/fast
+
+# Convenience name for target.
+tests/CMakeFiles/ContinuousUpdate.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousUpdate.dir/rule
+.PHONY : tests/CMakeFiles/ContinuousUpdate.dir/rule
+
+# Convenience name for target.
+ContinuousUpdate: tests/CMakeFiles/ContinuousUpdate.dir/rule
+.PHONY : ContinuousUpdate
+
+# fast build rule for target.
+ContinuousUpdate/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousUpdate.dir/build.make tests/CMakeFiles/ContinuousUpdate.dir/build
+.PHONY : ContinuousUpdate/fast
+
+# Convenience name for target.
+tests/CMakeFiles/ContinuousConfigure.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousConfigure.dir/rule
+.PHONY : tests/CMakeFiles/ContinuousConfigure.dir/rule
+
+# Convenience name for target.
+ContinuousConfigure: tests/CMakeFiles/ContinuousConfigure.dir/rule
+.PHONY : ContinuousConfigure
+
+# fast build rule for target.
+ContinuousConfigure/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousConfigure.dir/build.make tests/CMakeFiles/ContinuousConfigure.dir/build
+.PHONY : ContinuousConfigure/fast
+
+# Convenience name for target.
+tests/CMakeFiles/ContinuousBuild.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousBuild.dir/rule
+.PHONY : tests/CMakeFiles/ContinuousBuild.dir/rule
+
+# Convenience name for target.
+ContinuousBuild: tests/CMakeFiles/ContinuousBuild.dir/rule
+.PHONY : ContinuousBuild
+
+# fast build rule for target.
+ContinuousBuild/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousBuild.dir/build.make tests/CMakeFiles/ContinuousBuild.dir/build
+.PHONY : ContinuousBuild/fast
+
+# Convenience name for target.
+tests/CMakeFiles/ContinuousTest.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousTest.dir/rule
+.PHONY : tests/CMakeFiles/ContinuousTest.dir/rule
+
+# Convenience name for target.
+ContinuousTest: tests/CMakeFiles/ContinuousTest.dir/rule
+.PHONY : ContinuousTest
+
+# fast build rule for target.
+ContinuousTest/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousTest.dir/build.make tests/CMakeFiles/ContinuousTest.dir/build
+.PHONY : ContinuousTest/fast
+
+# Convenience name for target.
+tests/CMakeFiles/ContinuousCoverage.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousCoverage.dir/rule
+.PHONY : tests/CMakeFiles/ContinuousCoverage.dir/rule
+
+# Convenience name for target.
+ContinuousCoverage: tests/CMakeFiles/ContinuousCoverage.dir/rule
+.PHONY : ContinuousCoverage
+
+# fast build rule for target.
+ContinuousCoverage/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousCoverage.dir/build.make tests/CMakeFiles/ContinuousCoverage.dir/build
+.PHONY : ContinuousCoverage/fast
+
+# Convenience name for target.
+tests/CMakeFiles/ContinuousMemCheck.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousMemCheck.dir/rule
+.PHONY : tests/CMakeFiles/ContinuousMemCheck.dir/rule
+
+# Convenience name for target.
+ContinuousMemCheck: tests/CMakeFiles/ContinuousMemCheck.dir/rule
+.PHONY : ContinuousMemCheck
+
+# fast build rule for target.
+ContinuousMemCheck/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousMemCheck.dir/build.make tests/CMakeFiles/ContinuousMemCheck.dir/build
+.PHONY : ContinuousMemCheck/fast
+
+# Convenience name for target.
+tests/CMakeFiles/ContinuousSubmit.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/ContinuousSubmit.dir/rule
+.PHONY : tests/CMakeFiles/ContinuousSubmit.dir/rule
+
+# Convenience name for target.
+ContinuousSubmit: tests/CMakeFiles/ContinuousSubmit.dir/rule
+.PHONY : ContinuousSubmit
+
+# fast build rule for target.
+ContinuousSubmit/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/ContinuousSubmit.dir/build.make tests/CMakeFiles/ContinuousSubmit.dir/build
+.PHONY : ContinuousSubmit/fast
+
+# Convenience name for target.
+tests/CMakeFiles/test_utils.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_utils.dir/rule
+.PHONY : tests/CMakeFiles/test_utils.dir/rule
+
+# Convenience name for target.
+test_utils: tests/CMakeFiles/test_utils.dir/rule
+.PHONY : test_utils
+
+# fast build rule for target.
+test_utils/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_utils.dir/build.make tests/CMakeFiles/test_utils.dir/build
+.PHONY : test_utils/fast
+
+# Convenience name for target.
+tests/CMakeFiles/test_tokenizer_validation.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_tokenizer_validation.dir/rule
+.PHONY : tests/CMakeFiles/test_tokenizer_validation.dir/rule
+
+# Convenience name for target.
+test_tokenizer_validation: tests/CMakeFiles/test_tokenizer_validation.dir/rule
+.PHONY : test_tokenizer_validation
+
+# fast build rule for target.
+test_tokenizer_validation/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_tokenizer_validation.dir/build.make tests/CMakeFiles/test_tokenizer_validation.dir/build
+.PHONY : test_tokenizer_validation/fast
+
+# Convenience name for target.
+tests/CMakeFiles/test_tokenizer.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_tokenizer.dir/rule
+.PHONY : tests/CMakeFiles/test_tokenizer.dir/rule
+
+# Convenience name for target.
+test_tokenizer: tests/CMakeFiles/test_tokenizer.dir/rule
+.PHONY : test_tokenizer
+
+# fast build rule for target.
+test_tokenizer/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_tokenizer.dir/build.make tests/CMakeFiles/test_tokenizer.dir/build
+.PHONY : test_tokenizer/fast
+
+# Convenience name for target.
+tests/CMakeFiles/test_policy2_matrix.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_policy2_matrix.dir/rule
+.PHONY : tests/CMakeFiles/test_policy2_matrix.dir/rule
+
+# Convenience name for target.
+test_policy2_matrix: tests/CMakeFiles/test_policy2_matrix.dir/rule
+.PHONY : test_policy2_matrix
+
+# fast build rule for target.
+test_policy2_matrix/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_policy2_matrix.dir/build.make tests/CMakeFiles/test_policy2_matrix.dir/build
+.PHONY : test_policy2_matrix/fast
+
+# Convenience name for target.
+tests/CMakeFiles/generate_test_data.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/generate_test_data.dir/rule
+.PHONY : tests/CMakeFiles/generate_test_data.dir/rule
+
+# Convenience name for target.
+generate_test_data: tests/CMakeFiles/generate_test_data.dir/rule
+.PHONY : generate_test_data
+
+# fast build rule for target.
+generate_test_data/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/generate_test_data.dir/build.make tests/CMakeFiles/generate_test_data.dir/build
+.PHONY : generate_test_data/fast
+
+# Convenience name for target.
+tests/CMakeFiles/run_unit_tests.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/run_unit_tests.dir/rule
+.PHONY : tests/CMakeFiles/run_unit_tests.dir/rule
+
+# Convenience name for target.
+run_unit_tests: tests/CMakeFiles/run_unit_tests.dir/rule
+.PHONY : run_unit_tests
+
+# fast build rule for target.
+run_unit_tests/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/run_unit_tests.dir/build.make tests/CMakeFiles/run_unit_tests.dir/build
+.PHONY : run_unit_tests/fast
+
+# Convenience name for target.
+tests/CMakeFiles/run_all_tests.dir/rule:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/run_all_tests.dir/rule
+.PHONY : tests/CMakeFiles/run_all_tests.dir/rule
+
+# Convenience name for target.
+run_all_tests: tests/CMakeFiles/run_all_tests.dir/rule
+.PHONY : run_all_tests
+
+# fast build rule for target.
+run_all_tests/fast:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/run_all_tests.dir/build.make tests/CMakeFiles/run_all_tests.dir/build
+.PHONY : run_all_tests/fast
 
 qa_assert.o: qa_assert.c.o
 .PHONY : qa_assert.o
 
 # target to build an object file
 qa_assert.c.o:
-	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qa_assert.dir/build.make tests/CMakeFiles/qa_assert.dir/qa_assert.c.o
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_utils.dir/build.make tests/CMakeFiles/test_utils.dir/qa_assert.c.o
 .PHONY : qa_assert.c.o
 
 qa_assert.i: qa_assert.c.i
@@ -198,7 +674,7 @@ qa_assert.i: qa_assert.c.i
 
 # target to preprocess a source file
 qa_assert.c.i:
-	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qa_assert.dir/build.make tests/CMakeFiles/qa_assert.dir/qa_assert.c.i
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_utils.dir/build.make tests/CMakeFiles/test_utils.dir/qa_assert.c.i
 .PHONY : qa_assert.c.i
 
 qa_assert.s: qa_assert.c.s
@@ -206,8 +682,80 @@ qa_assert.s: qa_assert.c.s
 
 # target to generate assembly for a file
 qa_assert.c.s:
-	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/qa_assert.dir/build.make tests/CMakeFiles/qa_assert.dir/qa_assert.c.s
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_utils.dir/build.make tests/CMakeFiles/test_utils.dir/qa_assert.c.s
 .PHONY : qa_assert.c.s
+
+unit/test_policy2_matrix.o: unit/test_policy2_matrix.c.o
+.PHONY : unit/test_policy2_matrix.o
+
+# target to build an object file
+unit/test_policy2_matrix.c.o:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_policy2_matrix.dir/build.make tests/CMakeFiles/test_policy2_matrix.dir/unit/test_policy2_matrix.c.o
+.PHONY : unit/test_policy2_matrix.c.o
+
+unit/test_policy2_matrix.i: unit/test_policy2_matrix.c.i
+.PHONY : unit/test_policy2_matrix.i
+
+# target to preprocess a source file
+unit/test_policy2_matrix.c.i:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_policy2_matrix.dir/build.make tests/CMakeFiles/test_policy2_matrix.dir/unit/test_policy2_matrix.c.i
+.PHONY : unit/test_policy2_matrix.c.i
+
+unit/test_policy2_matrix.s: unit/test_policy2_matrix.c.s
+.PHONY : unit/test_policy2_matrix.s
+
+# target to generate assembly for a file
+unit/test_policy2_matrix.c.s:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_policy2_matrix.dir/build.make tests/CMakeFiles/test_policy2_matrix.dir/unit/test_policy2_matrix.c.s
+.PHONY : unit/test_policy2_matrix.c.s
+
+unit/test_tokenizer.o: unit/test_tokenizer.c.o
+.PHONY : unit/test_tokenizer.o
+
+# target to build an object file
+unit/test_tokenizer.c.o:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_tokenizer.dir/build.make tests/CMakeFiles/test_tokenizer.dir/unit/test_tokenizer.c.o
+.PHONY : unit/test_tokenizer.c.o
+
+unit/test_tokenizer.i: unit/test_tokenizer.c.i
+.PHONY : unit/test_tokenizer.i
+
+# target to preprocess a source file
+unit/test_tokenizer.c.i:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_tokenizer.dir/build.make tests/CMakeFiles/test_tokenizer.dir/unit/test_tokenizer.c.i
+.PHONY : unit/test_tokenizer.c.i
+
+unit/test_tokenizer.s: unit/test_tokenizer.c.s
+.PHONY : unit/test_tokenizer.s
+
+# target to generate assembly for a file
+unit/test_tokenizer.c.s:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_tokenizer.dir/build.make tests/CMakeFiles/test_tokenizer.dir/unit/test_tokenizer.c.s
+.PHONY : unit/test_tokenizer.c.s
+
+unit/test_tokenizer_validation.o: unit/test_tokenizer_validation.c.o
+.PHONY : unit/test_tokenizer_validation.o
+
+# target to build an object file
+unit/test_tokenizer_validation.c.o:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_tokenizer_validation.dir/build.make tests/CMakeFiles/test_tokenizer_validation.dir/unit/test_tokenizer_validation.c.o
+.PHONY : unit/test_tokenizer_validation.c.o
+
+unit/test_tokenizer_validation.i: unit/test_tokenizer_validation.c.i
+.PHONY : unit/test_tokenizer_validation.i
+
+# target to preprocess a source file
+unit/test_tokenizer_validation.c.i:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_tokenizer_validation.dir/build.make tests/CMakeFiles/test_tokenizer_validation.dir/unit/test_tokenizer_validation.c.i
+.PHONY : unit/test_tokenizer_validation.c.i
+
+unit/test_tokenizer_validation.s: unit/test_tokenizer_validation.c.s
+.PHONY : unit/test_tokenizer_validation.s
+
+# target to generate assembly for a file
+unit/test_tokenizer_validation.c.s:
+	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_tokenizer_validation.dir/build.make tests/CMakeFiles/test_tokenizer_validation.dir/unit/test_tokenizer_validation.c.s
+.PHONY : unit/test_tokenizer_validation.c.s
 
 # Help Target
 help:
@@ -222,10 +770,53 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... qa_assert"
+	@echo "... Continuous"
+	@echo "... ContinuousBuild"
+	@echo "... ContinuousConfigure"
+	@echo "... ContinuousCoverage"
+	@echo "... ContinuousMemCheck"
+	@echo "... ContinuousStart"
+	@echo "... ContinuousSubmit"
+	@echo "... ContinuousTest"
+	@echo "... ContinuousUpdate"
+	@echo "... Experimental"
+	@echo "... ExperimentalBuild"
+	@echo "... ExperimentalConfigure"
+	@echo "... ExperimentalCoverage"
+	@echo "... ExperimentalMemCheck"
+	@echo "... ExperimentalStart"
+	@echo "... ExperimentalSubmit"
+	@echo "... ExperimentalTest"
+	@echo "... ExperimentalUpdate"
+	@echo "... Nightly"
+	@echo "... NightlyBuild"
+	@echo "... NightlyConfigure"
+	@echo "... NightlyCoverage"
+	@echo "... NightlyMemCheck"
+	@echo "... NightlyMemoryCheck"
+	@echo "... NightlyStart"
+	@echo "... NightlySubmit"
+	@echo "... NightlyTest"
+	@echo "... NightlyUpdate"
+	@echo "... generate_test_data"
+	@echo "... run_all_tests"
+	@echo "... run_unit_tests"
+	@echo "... test_policy2_matrix"
+	@echo "... test_tokenizer"
+	@echo "... test_tokenizer_validation"
+	@echo "... test_utils"
 	@echo "... qa_assert.o"
 	@echo "... qa_assert.i"
 	@echo "... qa_assert.s"
+	@echo "... unit/test_policy2_matrix.o"
+	@echo "... unit/test_policy2_matrix.i"
+	@echo "... unit/test_policy2_matrix.s"
+	@echo "... unit/test_tokenizer.o"
+	@echo "... unit/test_tokenizer.i"
+	@echo "... unit/test_tokenizer.s"
+	@echo "... unit/test_tokenizer_validation.o"
+	@echo "... unit/test_tokenizer_validation.i"
+	@echo "... unit/test_tokenizer_validation.s"
 .PHONY : help
 
 

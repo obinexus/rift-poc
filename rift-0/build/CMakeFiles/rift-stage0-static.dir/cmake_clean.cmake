@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rift-stage0-static.dir/src/core/ext/r_uml.c.o"
   "CMakeFiles/rift-stage0-static.dir/src/core/ext/r_uml.c.o.d"
+  "CMakeFiles/rift-stage0-static.dir/src/core/gov/r_governance_validation.c.o"
+  "CMakeFiles/rift-stage0-static.dir/src/core/gov/r_governance_validation.c.o.d"
   "CMakeFiles/rift-stage0-static.dir/src/core/gov/rift-gov.0.c.o"
   "CMakeFiles/rift-stage0-static.dir/src/core/gov/rift-gov.0.c.o.d"
   "CMakeFiles/rift-stage0-static.dir/src/core/gov/rift_sim.c.o"
@@ -21,6 +23,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_rules.c.o.d"
   "CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_utilities.c.o"
   "CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_utilities.c.o.d"
+  "CMakeFiles/rift-stage0-static.dir/src/core/parser/rift_tb_parser.c.o"
+  "CMakeFiles/rift-stage0-static.dir/src/core/parser/rift_tb_parser.c.o.d"
   "CMakeFiles/rift-stage0-static.dir/src/core/rift-0.c.o"
   "CMakeFiles/rift-stage0-static.dir/src/core/rift-0.c.o.d"
   "lib/librift-0.a"

@@ -40,4 +40,4 @@ signature_required = true
 [build]
 timestamp = "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build"
 compiler = "/usr/bin/cc"
-flags = " -Wall -Wextra -Wpedantic -fPIC"
+flags = ""
