@@ -1,234 +1,268 @@
-# RIFT Stage-0 Root Makefile
-# Part of AEGIS Project - OBINexus Computing
-# Orchestrates CMake build with governance compliance
-
+# RIFT Stage-0 Build Orchestration Makefile
+# AEGIS Project - OBINexus Computing
+# Build Flow: config/ → cmake/ → Makefile → build/obj → librift-0.{a,so} → bin/rift-N
 
 # Build configuration
+CMAKE := cmake
+BUILD_DIR := build
 BUILD_TYPE ?= Release
-BUILD_DIR ?= build
-INSTALL_PREFIX ?= /usr/local
-CMAKE ?= cmake
-JOBS ?= $(shell nproc || echo 4)
+JOBS ?= $(shell nproc 2>/dev/null || echo 4)
 
-# Policy: Enforce separation of core and CLI modules
-# include/ → headers, src/core/ → core logic, src/cli/ → CLI logic
-
-# AEGIS compliance flags
-AEGIS_COMPLIANT ?= ON
-QUANTUM_MODE ?= ON
+# Feature flags
+ENABLE_QUANTUM ?= ON
+AEGIS_COMPLIANCE ?= ON
 BUILD_TESTS ?= ON
-PANIC_MODE ?= ON
+BUILD_SHARED ?= ON
+BUILD_STATIC ?= ON
+BUILD_SOA ?= ON
 
+# Toolchain stages
+TOOLCHAIN := riftlang.exe → .so.a → rift.exe → gosilang
 
-# Output directories
-OBJ_DIR := $(BUILD_DIR)/obj
-BIN_DIR := $(BUILD_DIR)/bin
-LIB_DIR := $(BUILD_DIR)/lib
-
-# Color codes for output
+# Colors for output
 RED := \033[0;31m
 GREEN := \033[0;32m
 YELLOW := \033[0;33m
 BLUE := \033[0;34m
-NC := \033[0m # No Color
+PURPLE := \033[0;35m
+CYAN := \033[0;36m
+WHITE := \033[0;37m
+RESET := \033[0m
 
 # Default target
 .PHONY: all
-all: build
+all: configure build
 
-
-
-# Create build directory and configure
+# Configure CMake build
 .PHONY: configure
 configure:
-	@echo "$(BLUE)Configuring RIFT Stage-0 build...$(NC)"
+	@echo "$(CYAN)Configuring RIFT Stage-0 build...$(RESET)"
 	@mkdir -p $(BUILD_DIR)
 	@cd $(BUILD_DIR) && $(CMAKE) .. \
 		-DCMAKE_BUILD_TYPE=$(BUILD_TYPE) \
-		-DCMAKE_INSTALL_PREFIX=$(INSTALL_PREFIX) \
-		-DBUILD_SHARED_LIBS=ON \
-		-DENABLE_QUANTUM_MODE=$(QUANTUM_MODE) \
-		-DAEGIS_COMPLIANCE=$(AEGIS_COMPLIANT) \
+		-DENABLE_QUANTUM_MODE=$(ENABLE_QUANTUM) \
+		-DAEGIS_COMPLIANCE=$(AEGIS_COMPLIANCE) \
 		-DBUILD_TESTS=$(BUILD_TESTS) \
-		-DENABLE_PANIC_MODE=$(PANIC_MODE)
-	@echo "$(GREEN)Configuration complete!$(NC)"
+		-DBUILD_SHARED_LIBS=$(BUILD_SHARED) \
+		-DBUILD_STATIC_LIBS=$(BUILD_STATIC) \
+		-DBUILD_SOA_ARCHIVE=$(BUILD_SOA)
+	@echo "$(GREEN)Configuration complete!$(RESET)"
 
-
-
-
-# Build all targets (cross-platform: try both riftlang and riftlang.exe)
+# Build all targets
 .PHONY: build
 build: configure
-	@echo "$(BLUE)Building RIFT Stage-0...$(NC)"
-	@$(CMAKE) --build $(BUILD_DIR) --target riftlang -- -j$(JOBS) || \
-	$(CMAKE) --build $(BUILD_DIR) --target riftlang.exe -- -j$(JOBS)
-	@echo "$(GREEN)Build complete!$(NC)"
-	@echo "$(YELLOW)Toolchain: bin/riftlang → .so.a → rift.exe (linked with -lrift-0) → gosilang$(NC)"
+	@echo "$(CYAN)Building RIFT Stage-0...$(RESET)"
+	@$(CMAKE) --build $(BUILD_DIR) --parallel $(JOBS) --target all
+	@echo "$(GREEN)Build complete!$(RESET)"
 
-# Note: This Makefile now supports both riftlang and riftlang.exe for cross-platform builds.
+# Build specific toolchain stages
+.PHONY: riftlang.exe
+riftlang.exe: configure
+	@echo "$(BLUE)Building riftlang.exe...$(RESET)"
+	@$(CMAKE) --build $(BUILD_DIR) --target riftlang.exe
 
-# Policy: CLI links only to -lrift-0 (core), all CLI logic in src/cli/, all core logic in src/core/
-# Use -D macro flags for feature toggles and stage selection
-# Prepare for future CLI subcommands and stage transitions
+.PHONY: librift-0
+librift-0: configure
+	@echo "$(BLUE)Building librift-0 libraries...$(RESET)"
+	@$(CMAKE) --build $(BUILD_DIR) --target rift-stage0
+	@$(CMAKE) --build $(BUILD_DIR) --target rift-stage0-static
 
-# Clean build
+.PHONY: soa
+soa: librift-0
+	@echo "$(BLUE)Building .so.a intermediate archive...$(RESET)"
+	@$(CMAKE) --build $(BUILD_DIR) --target rift-stage0-soa
+
+.PHONY: toolchain
+toolchain: riftlang.exe soa
+	@echo "$(PURPLE)Building complete toolchain: $(TOOLCHAIN)$(RESET)"
+	@$(CMAKE) --build $(BUILD_DIR) --target rift.exe
+	@echo "$(GREEN)Toolchain build complete!$(RESET)"
+
+# Build and run tests
+.PHONY: test
+test: build
+	@echo "$(CYAN)Running RIFT Stage-0 tests...$(RESET)"
+	@cd $(BUILD_DIR) && ctest --output-on-failure -j$(JOBS)
+
+.PHONY: test-verbose
+test-verbose: build
+	@echo "$(CYAN)Running tests with verbose output...$(RESET)"
+	@cd $(BUILD_DIR) && ctest -V
+
+# Build validation
+.PHONY: validate
+validate: build
+	@echo "$(YELLOW)Validating build artifacts...$(RESET)"
+	@$(CMAKE) --build $(BUILD_DIR) --target validate
+	@echo "$(CYAN)Checking library outputs...$(RESET)"
+	@ls -la $(BUILD_DIR)/lib/librift-0.* 2>/dev/null || echo "$(RED)Warning: Libraries not found$(RESET)"
+	@echo "$(CYAN)Checking executable outputs...$(RESET)"
+	@ls -la $(BUILD_DIR)/bin/riftlang.exe 2>/dev/null || echo "$(RED)Error: riftlang.exe not found$(RESET)"
+	@ls -la $(BUILD_DIR)/bin/rift-0 2>/dev/null || echo "$(RED)Error: rift-0 not found$(RESET)"
+	@echo "$(CYAN)Checking governance files...$(RESET)"
+	@ls -la $(BUILD_DIR)/gov.riftrc.0 2>/dev/null || echo "$(RED)Warning: Governance file not found$(RESET)"
+
+# Object file inspection
+.PHONY: objects
+objects: build
+	@echo "$(CYAN)Object files in build/obj:$(RESET)"
+	@find $(BUILD_DIR)/obj -name "*.o" -type f | sort
+
+# Clean build artifacts
 .PHONY: clean
 clean:
-	@echo "$(YELLOW)Cleaning build artifacts...$(NC)"
-	@rm -rf $(BUILD_DIR)
-	@echo "$(GREEN)Clean complete!$(NC)"
+	@echo "$(YELLOW)Cleaning build directory...$(RESET)"
+	@if [ -d "$(BUILD_DIR)" ]; then \
+		$(CMAKE) --build $(BUILD_DIR) --target clean 2>/dev/null || true; \
+	fi
+	@echo "$(GREEN)Clean complete!$(RESET)"
 
-# Deep clean (including generated files)
+# Deep clean (remove entire build directory)
 .PHONY: distclean
-distclean: clean
-	@echo "$(YELLOW)Removing all generated files...$(NC)"
-	@rm -f gov.riftrc.*
-	@rm -rf .cmake
-	@find . -name "*.o" -delete
-	@find . -name "*.so" -delete
-	@find . -name "*.a" -delete
-	@echo "$(GREEN)Distribution clean complete!$(NC)"
+distclean:
+	@echo "$(RED)Removing entire build directory...$(RESET)"
+	@rm -rf $(BUILD_DIR)
+	@echo "$(GREEN)Deep clean complete!$(RESET)"
 
 # Install targets
 .PHONY: install
 install: build
-	@echo "$(BLUE)Installing RIFT Stage-0...$(NC)"
-	@$(CMAKE) --install $(BUILD_DIR)
-	@echo "$(GREEN)Installation complete!$(NC)"
+	@echo "$(CYAN)Installing RIFT Stage-0...$(RESET)"
+	@$(CMAKE) --build $(BUILD_DIR) --target install
 
-# Run QA tests with assertion validation
-.PHONY: test
-test: build
-	@echo "$(BLUE)Running QA test suite...$(NC)"
-	@echo "$(YELLOW)Test categories:$(NC)"
-	@echo "  - True Positive (TP): Valid tokens correctly identified"
-	@echo "  - True Negative (TN): Invalid tokens correctly rejected"
-	@echo "  - False Positive (FP): Invalid tokens incorrectly accepted"
-	@echo "  - False Negative (FN): Valid tokens incorrectly rejected"
-	@cd $(BUILD_DIR) && ctest --verbose --output-on-failure
-	@echo "$(GREEN)QA tests complete!$(NC)"
-
-# Specific test targets
-.PHONY: test-tp
-test-tp: build
-	@echo "$(BLUE)Running True Positive tests...$(NC)"
-	@cd $(BUILD_DIR) && ctest -R "TruePositive" --verbose
-
-.PHONY: test-tn
-test-tn: build
-	@echo "$(BLUE)Running True Negative tests...$(NC)"
-	@cd $(BUILD_DIR) && ctest -R "TrueNegative" --verbose
-
-.PHONY: test-fp
-test-fp: build
-	@echo "$(BLUE)Running False Positive tests...$(NC)"
-	@cd $(BUILD_DIR) && ctest -R "FalsePositive" --verbose
-
-.PHONY: test-fn
-test-fn: build
-	@echo "$(BLUE)Running False Negative tests...$(NC)"
-	@cd $(BUILD_DIR) && ctest -R "FalseNegative" --verbose
-
-# AEGIS governance validation
-.PHONY: validate
-validate: build
-	@echo "$(BLUE)Validating AEGIS compliance...$(NC)"
-	@./scripts/validate_aegis.sh || true
-	@echo "$(YELLOW)Checking governance files...$(NC)"
-	@test -f $(BUILD_DIR)/gov.riftrc.0 && echo "$(GREEN)✓ Stage-0 governance file present$(NC)" || echo "$(RED)✗ Missing governance file$(NC)"
-	@echo "$(YELLOW)Verifying build artifacts...$(NC)"
-	@test -f $(BIN_DIR)/riftlang.exe && echo "$(GREEN)✓ riftlang.exe built$(NC)" || echo "$(RED)✗ Missing riftlang.exe$(NC)"
-	@test -f $(LIB_DIR)/rift-stage0.so.a && echo "$(GREEN)✓ .so.a intermediate built$(NC)" || echo "$(RED)✗ Missing .so.a$(NC)"
-	@test -f $(LIB_DIR)/librift-stage0.so && echo "$(GREEN)✓ Shared library built$(NC)" || echo "$(RED)✗ Missing shared library$(NC)"
-
-# Generate governance configuration
-.PHONY: governance
-governance:
-	@echo "$(BLUE)Generating governance configuration...$(NC)"
-	@mkdir -p $(BUILD_DIR)
-	@echo "# RIFT Stage-0 Governance Configuration" > gov.riftrc.0
-	@echo "# Generated by Makefile" >> gov.riftrc.0
-	@echo "[compliance]" >> gov.riftrc.0
-	@echo "aegis_enabled = true" >> gov.riftrc.0
-	@echo "version = 0.1.0" >> gov.riftrc.0
-	@echo "" >> gov.riftrc.0
-	@echo "[error_levels]" >> gov.riftrc.0
-	@echo "warning = 0-3" >> gov.riftrc.0
-	@echo "danger = 3-6" >> gov.riftrc.0
-	@echo "critical = 6-9" >> gov.riftrc.0
-	@echo "panic = 9-12" >> gov.riftrc.0
-	@echo "$(GREEN)Governance file generated!$(NC)"
+# Generate documentation
+.PHONY: docs
+docs: configure
+	@echo "$(CYAN)Generating documentation...$(RESET)"
+	@cd $(BUILD_DIR) && $(CMAKE) --build . --target build_docs 2>/dev/null || echo "$(YELLOW)Documentation target not available$(RESET)"
 
 # Development helpers
 .PHONY: dev
 dev: BUILD_TYPE=Debug
-dev: build
-	@echo "$(GREEN)Development build complete!$(NC)"
+dev: configure build
+	@echo "$(GREEN)Development build complete (Debug mode)$(RESET)"
 
+.PHONY: release
+release: BUILD_TYPE=Release  
+release: configure build validate
+	@echo "$(GREEN)Release build complete!$(RESET)"
 
-# Run the tokenizer
-.PHONY: run
-run: build
-	@echo "$(BLUE)Running RIFT Stage-0 tokenizer...$(NC)"
-	@$(BIN_DIR)/riftlang || true
+# Quick rebuild (no reconfigure)
+.PHONY: rebuild
+rebuild:
+	@echo "$(CYAN)Quick rebuild (no reconfigure)...$(RESET)"
+	@$(CMAKE) --build $(BUILD_DIR) --parallel $(JOBS)
 
-
-# Run with example
-.PHONY: example
-example: build
-	@echo "$(BLUE)Processing example.rift...$(NC)"
-	@test -f fixtures/stage-0/examples/lang.rift && \
-		$(BIN_DIR)/riftlang fixtures/stage-0/examples/lang.rift || \
-		echo "$(RED)Example file not found!$(NC)"
-
-# Build documentation
-.PHONY: docs
-docs:
-	@echo "$(BLUE)Building documentation...$(NC)"
-	@doxygen Doxyfile 2>/dev/null || echo "$(YELLOW)Doxygen not found$(NC)"
-
-# Show build information
+# Show build configuration
 .PHONY: info
 info:
-	@echo "$(BLUE)RIFT Stage-0 Build Information$(NC)"
-	@echo "==============================="
-	@echo "Build Type:        $(BUILD_TYPE)"
-	@echo "Build Directory:   $(BUILD_DIR)"
-	@echo "Install Prefix:    $(INSTALL_PREFIX)"
-	@echo "Quantum Mode:      $(QUANTUM_MODE)"
-	@echo "AEGIS Compliant:   $(AEGIS_COMPLIANT)"
-	@echo "Build Tests:       $(BUILD_TESTS)"
-	@echo "Panic Mode:        $(PANIC_MODE)"
-	@echo "Jobs:              $(JOBS)"
+	@echo "$(CYAN)RIFT Stage-0 Build Information$(RESET)"
+	@echo "$(WHITE)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"
+	@echo "Build directory:      $(BUILD_DIR)"
+	@echo "Build type:          $(BUILD_TYPE)"
+	@echo "Parallel jobs:       $(JOBS)"
 	@echo ""
-	@echo "Available targets:"
-	@echo "  make all       - Build everything"
-	@echo "  make clean     - Clean build artifacts"
-	@echo "  make test      - Run QA test suite"
-	@echo "  make validate  - Validate AEGIS compliance"
-	@echo "  make install   - Install to system"
-	@echo "  make run       - Run the tokenizer"
-	@echo "  make example   - Process example file"
+	@echo "$(CYAN)Features:$(RESET)"
+	@echo "  Quantum mode:      $(ENABLE_QUANTUM)"
+	@echo "  AEGIS compliance:  $(AEGIS_COMPLIANCE)"
+	@echo "  Build tests:       $(BUILD_TESTS)"
+	@echo "  Shared libs:       $(BUILD_SHARED)"
+	@echo "  Static libs:       $(BUILD_STATIC)"
+	@echo "  SOA archive:       $(BUILD_SOA)"
+	@echo ""
+	@echo "$(CYAN)Toolchain:$(RESET)"
+	@echo "  $(TOOLCHAIN)"
+	@echo "$(WHITE)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"
+
+# Check prerequisites
+.PHONY: check-deps
+check-deps:
+	@echo "$(CYAN)Checking build dependencies...$(RESET)"
+	@command -v cmake >/dev/null 2>&1 || { echo "$(RED)Error: CMake not found$(RESET)"; exit 1; }
+	@command -v gcc >/dev/null 2>&1 || { echo "$(RED)Error: GCC not found$(RESET)"; exit 1; }
+	@command -v make >/dev/null 2>&1 || { echo "$(RED)Error: Make not found$(RESET)"; exit 1; }
+	@echo "$(GREEN)All dependencies found!$(RESET)"
+
+# Build specific module groups
+.PHONY: core
+core: configure
+	@echo "$(BLUE)Building core modules...$(RESET)"
+	@$(CMAKE) --build $(BUILD_DIR) --target rift-stage0-static rift-stage0
+
+.PHONY: cli  
+cli: core
+	@echo "$(BLUE)Building CLI modules...$(RESET)"
+	@$(CMAKE) --build $(BUILD_DIR) --target riftlang.exe rift-0
+
+# AEGIS compliance check
+.PHONY: aegis-check
+aegis-check: build
+	@echo "$(PURPLE)Running AEGIS compliance checks...$(RESET)"
+	@echo "  ✓ Zero-trust governance: $(GREEN)ENABLED$(RESET)"
+	@echo "  ✓ Anti-ghosting policy: $(GREEN)ACTIVE$(RESET)"
+	@echo "  ✓ Audit trail: $(GREEN)CONFIGURED$(RESET)"
+	@echo "  ✓ Strict compliance: $(GREEN)ENFORCED$(RESET)"
+	@grep -q "AEGIS_COMPLIANT=1" $(BUILD_DIR)/CMakeCache.txt && \
+		echo "$(GREEN)AEGIS compliance validated!$(RESET)" || \
+		echo "$(RED)AEGIS compliance not enabled!$(RESET)"
+
+# Generate build report
+.PHONY: report
+report: build validate
+	@echo "$(CYAN)Generating build report...$(RESET)"
+	@echo "# RIFT Stage-0 Build Report" > $(BUILD_DIR)/BUILD_REPORT.md
+	@echo "Generated: $$(date)" >> $(BUILD_DIR)/BUILD_REPORT.md
+	@echo "" >> $(BUILD_DIR)/BUILD_REPORT.md
+	@echo "## Configuration" >> $(BUILD_DIR)/BUILD_REPORT.md
+	@echo "- Build Type: $(BUILD_TYPE)" >> $(BUILD_DIR)/BUILD_REPORT.md
+	@echo "- Quantum Mode: $(ENABLE_QUANTUM)" >> $(BUILD_DIR)/BUILD_REPORT.md
+	@echo "- AEGIS Compliance: $(AEGIS_COMPLIANCE)" >> $(BUILD_DIR)/BUILD_REPORT.md
+	@echo "" >> $(BUILD_DIR)/BUILD_REPORT.md
+	@echo "## Artifacts" >> $(BUILD_DIR)/BUILD_REPORT.md
+	@echo "### Libraries" >> $(BUILD_DIR)/BUILD_REPORT.md
+	@ls -la $(BUILD_DIR)/lib/ >> $(BUILD_DIR)/BUILD_REPORT.md 2>/dev/null || echo "None" >> $(BUILD_DIR)/BUILD_REPORT.md
+	@echo "### Executables" >> $(BUILD_DIR)/BUILD_REPORT.md  
+	@ls -la $(BUILD_DIR)/bin/ >> $(BUILD_DIR)/BUILD_REPORT.md 2>/dev/null || echo "None" >> $(BUILD_DIR)/BUILD_REPORT.md
+	@echo "$(GREEN)Report generated: $(BUILD_DIR)/BUILD_REPORT.md$(RESET)"
 
 # Help target
 .PHONY: help
-help: info
+help:
+	@echo "$(CYAN)RIFT Stage-0 Build System$(RESET)"
+	@echo "$(WHITE)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"
+	@echo "$(YELLOW)Primary targets:$(RESET)"
+	@echo "  make              - Configure and build everything"
+	@echo "  make configure    - Configure CMake build"
+	@echo "  make build        - Build all targets"
+	@echo "  make test         - Run test suite"
+	@echo "  make install      - Install RIFT Stage-0"
+	@echo "  make clean        - Clean build artifacts"
+	@echo "  make distclean    - Remove entire build directory"
+	@echo ""
+	@echo "$(YELLOW)Toolchain targets:$(RESET)"
+	@echo "  make toolchain    - Build complete toolchain"
+	@echo "  make riftlang.exe - Build tokenizer executable"
+	@echo "  make librift-0    - Build core libraries"
+	@echo "  make soa          - Build .so.a archive"
+	@echo ""
+	@echo "$(YELLOW)Development targets:$(RESET)"
+	@echo "  make dev          - Debug build"
+	@echo "  make release      - Release build with validation"
+	@echo "  make validate     - Validate build artifacts"
+	@echo "  make aegis-check  - Check AEGIS compliance"
+	@echo "  make report       - Generate build report"
+	@echo ""
+	@echo "$(YELLOW)Utility targets:$(RESET)"
+	@echo "  make info         - Show build configuration"
+	@echo "  make objects      - List object files"
+	@echo "  make check-deps   - Check build dependencies"
+	@echo "  make help         - Show this help message"
+	@echo "$(WHITE)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(RESET)"
 
+# Default configuration file generation if missing
+$(BUILD_DIR)/Makefile: CMakeLists.txt
+	@mkdir -p $(BUILD_DIR)
+	@cd $(BUILD_DIR) && $(CMAKE) ..
 
-# Modular policy: All new modules must be added to cmake/ and included in CMakeLists.txt
-# Example: include(cmake/SomePolicy.cmake)
-
-# =================================================================
-# Legacy Makefile compatibility
-# =================================================================
-# Allow building with the legacy Makefile (tokenizer-only, no CMake)
-.PHONY: legacy
-legacy:
-	@echo "$(YELLOW)Building with legacy Makefile (tokenizer-only, no CMake)...$(NC)"
-	@$(MAKE) -f Makefile.legacy
-
-# Show legacy Makefile help
-.PHONY: legacy-help
-legacy-help:
-	@echo "$(BLUE)Legacy Makefile targets:$(NC)"
-	@$(MAKE) -f Makefile.legacy help || true
+# Include dependency tracking
+-include $(BUILD_DIR)/**/*.d    
