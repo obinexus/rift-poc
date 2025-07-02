@@ -11,12 +11,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <strings.h> // For strdup on some systems
 #include <regex.h>
 #include <stdbool.h>
 #include <pthread.h>
 #include "rift-0/core/lexer/lexer.h"
 #include "rift-0/core/gov/rift-gov.0.h"
 #include "rift-0/core/rift-0.h"
+
+// Forward declarations if not included by headers
+DualChannelOutput* create_dual_channel_output(void);
+void set_error_level(DualChannelOutput* output, int level, const char* msg);
+
+// Extern declaration for stage0_patterns if defined elsewhere
+extern const TokenPattern stage0_patterns[];
 
 
 /* ===================================================================
@@ -25,16 +33,11 @@
 
 RiftStage0Context* rift_stage0_create(void) {
     RiftStage0Context* ctx = calloc(1, sizeof(RiftStage0Context));
-    if (!ctx) return NULL;
-    
-    /* Initialize core state */
-    ctx->initialized = true;
-    ctx->stage_id = RIFT_STAGE_ID;
-    ctx->version = (RIFT_VERSION_MAJOR << 16) | (RIFT_VERSION_MINOR << 8) | RIFT_VERSION_PATCH;
-    
-    /* Initialize memory governor */
     ctx->mem_gov = create_memory_governor(1024 * 1024, 16 * 1024 * 1024); // 1MB min, 16MB max
     if (!ctx->mem_gov) {
+        free(ctx);
+        return NULL;
+    }
     ctx->pattern_count = sizeof(stage0_patterns) / sizeof(stage0_patterns[0]);
     ctx->patterns = calloc(ctx->pattern_count, sizeof(regex_t));
     if (!ctx->patterns) {
@@ -58,11 +61,8 @@ RiftStage0Context* rift_stage0_create(void) {
             return NULL;
         }
     }
-            free(ctx->mem_gov);
-            free(ctx);
-            return NULL;
-        }
     
+/* Enable dual-channel mode by default */
     
     /* Enable dual-channel mode by default */
     ctx->dual_mode_enabled = true;

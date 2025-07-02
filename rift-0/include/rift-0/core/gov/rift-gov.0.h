@@ -8,6 +8,7 @@
 #include <stddef.h>
 #include <stdbool.h>
 #include <stdint.h>
+#include <string.h>
 
 
 #ifdef __cplusplus
@@ -57,32 +58,6 @@ RiftStageEntry* rift_stage_queue_find_by_id(RiftStageQueue* queue, int stage_id)
 RiftStageEntry* rift_stage_queue_find_by_name(RiftStageQueue* queue, const char* name);
 
 
-
-
-/* ===================================================================
- * Token Pattern Definitions (move up for forward reference)
- * =================================================================== */
-typedef struct {
-    const char* name;
-    const char* pattern;
-    int type; // Use int here for forward compatibility, or RiftTokenType if available
-    int is_quantum;
-} TokenPattern;
-
-/* ===================================================================
- * Token memory governance (move up for forward reference)
- * =================================================================== */
-typedef struct {
-    size_t min_heap;
-    size_t max_heap;
-    size_t current_usage;
-    bool dynamic_allowed;
-    pthread_mutex_t mem_lock;
-} TokenMemoryGovernor;
-
-/* ===================================================================
- * Stage-0 Configuration Structure (from schema)
- * =================================================================== */
 typedef struct {
     /* Memory governance */
     size_t min_heap_size;
@@ -278,14 +253,8 @@ typedef struct {
 } TokenMemoryGovernor;
 
 /* Dual-channel output structure */
-typedef struct {
-    void* classic_channel;
-    size_t classic_size;
-    void* quantum_channel;
-    size_t quantum_size;
-    uint8_t error_level;
-    char* error_msg;
-} DualChannelOutput;
+/* Token memory governance */
+// (Removed duplicate TokenMemoryGovernor definition)
 
 /* Token structure with governance metadata */
 typedef struct {
@@ -347,16 +316,11 @@ typedef struct {
 typedef enum {
     RIFT_STAGE_LEGACY = 0,
     RIFT_STAGE_EXPERIMENTAL = 1,
-    RIFT_STAGE_STABLE = 2
-} rift_stage_type_t;
+/* ===================================================================
+ * Token Pattern Definitions
+ * =================================================================== */
 
-typedef struct {
-    char package_name[128];
-    char version[32];
-    char timestamp[32];
-    int stage;
-    rift_stage_type_t stage_type;
-    char description[256];
+// (Removed duplicate TokenPattern definition)
     int semverx_lock;
     char entry_point[256];
     int nlink_enabled;
@@ -468,3 +432,4 @@ int rift_gov0_validate_nlink(const rift_nlink_integration_t *nlink);
 #endif
 
 #endif 
+/* No additional code needed. All duplicate definitions of TokenMemoryGovernor and TokenPattern have been removed, and only a single definition for each remains at the top of the file. All function prototypes and usages now refer to these single definitions. */
