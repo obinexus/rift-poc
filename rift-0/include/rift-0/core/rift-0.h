@@ -7,7 +7,9 @@
 
 #ifndef RIFT_CORE_0_H
 #define RIFT_CORE_0_H
+#if defined(__unix__) || defined(__APPLE__)
 #include <regex.h>
+#endif
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
@@ -16,7 +18,10 @@
 extern "C" {
 #endif
 
-
+// Versioning macros
+#define RIFT_VERSION_MAJOR 0
+#define RIFT_VERSION_MINOR 1
+#define RIFT_VERSION_PATCH 0
 
 
 // Public API declarations (implementations elsewhere)
