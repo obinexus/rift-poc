@@ -5,6 +5,7 @@
         "assert.h": "c",
         "rift-gov.0.h": "c",
         "r_uml.h": "c",
-        "windows.h": "c"
+        "windows.h": "c",
+        "stddef.h": "c"
     }
 }

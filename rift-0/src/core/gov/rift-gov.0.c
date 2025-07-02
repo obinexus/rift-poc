@@ -17,74 +17,8 @@
 #include <sys/stat.h>
 #include <errno.h>
 #include <cjson/cJSON.h>
-
 #include "rift-0/core/gov/rift-gov.0.h"
 
-// AEGIS Governance Constants
-#define MAX_PATH_LENGTH 512
-#define MAX_STAGE_COUNT 7
-#define MAX_SUBSTAGES_PER_STAGE 4
-#define GOVERNANCE_EXPIRY_DAYS 90
-#define SHA256_DIGEST_LENGTH 32
-
-// Stage Type Enumeration
-typedef enum {
-    STAGE_TYPE_LEGACY = 0,
-    STAGE_TYPE_EXPERIMENTAL = 1,
-    STAGE_TYPE_STABLE = 2
-} stage_type_t;
-
-// Validation Result Codes
-typedef enum {
-    VALIDATION_SUCCESS = 0,
-    VALIDATION_SCHEMA_VIOLATION = 1,
-    VALIDATION_EXPIRED_GOVERNANCE = 2,
-    VALIDATION_SEMVERX_VIOLATION = 3,
-    VALIDATION_MISSING_GOVERNANCE = 4,
-    VALIDATION_STAKEHOLDER_UNAUTHORIZED = 5,
-    VALIDATION_CRITICAL_FAILURE = 6
-} validation_result_t;
-
-// Stakeholder Authorization Classes
-typedef enum {
-    STAKEHOLDER_USER = 1,
-    STAKEHOLDER_DEVELOPER = 2,
-    STAKEHOLDER_VENDOR = 4
-} stakeholder_class_t;
-
-// Governance Configuration Structure
-typedef struct {
-    char package_name[128];
-    char version[32];
-    char timestamp[32];
-    int stage;
-    stage_type_t stage_type;
-    int semverx_lock;
-    char entry_point[256];
-    int nlink_enabled;
-    stakeholder_class_t authorized_stakeholders;
-} governance_config_t;
-
-// Stage 5 Optimizer Security Structure
-typedef struct {
-    char optimizer_model[64];
-    int minimization_verified;
-    char path_hash[65];          // SHA-256 hex string + null terminator
-    char post_optimization_hash[65];
-    int audit_enabled;
-    char security_level[32];
-    int semantic_equivalence_proof;
-} stage5_optimizer_t;
-
-// Validation Context Structure
-typedef struct {
-    char project_root[MAX_PATH_LENGTH];
-    int verbose_mode;
-    int strict_mode;
-    FILE *validation_log;
-    governance_config_t stage_configs[MAX_STAGE_COUNT];
-    int validated_stages;
-} validation_context_t;
 
 /**
  * @brief Initialize validation context with project root
