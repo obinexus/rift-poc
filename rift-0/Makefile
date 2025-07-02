@@ -52,7 +52,7 @@ build: configure
 	@echo "$(BLUE)Building RIFT Stage-0...$(NC)"
 	@$(CMAKE) --build $(BUILD_DIR) -- -j$(JOBS)
 	@echo "$(GREEN)Build complete!$(NC)"
-	@echo "$(YELLOW)Toolchain: riftlang.exe → .so.a → rift.exe → gosilang$(NC)"
+	@echo "$(YELLOW)Toolchain: riftlang.exe → .so.a → rift.exe (linked with -lrift-0) → gosilang$(NC)"
 
 # Clean build
 .PHONY: clean
