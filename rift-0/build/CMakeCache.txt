@@ -295,6 +295,12 @@ MEMORYCHECK_COMMAND:FILEPATH=/usr/bin/valgrind
 //File that contains suppressions for the memory checker
 MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
 
+//No help, variable specified on the command line.
+RIFT_CLI:UNINITIALIZED=ON
+
+//No help, variable specified on the command line.
+RIFT_CORE:UNINITIALIZED=ON
+
 //Value Computed by CMake
 RIFT_Stage0_BINARY_DIR:STATIC=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build
 

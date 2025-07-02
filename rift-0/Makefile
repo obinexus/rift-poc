@@ -37,6 +37,7 @@ NC := \033[0m # No Color
 all: build
 
 
+
 # Create build directory and configure
 .PHONY: configure
 configure:
@@ -49,20 +50,22 @@ configure:
 		-DENABLE_QUANTUM_MODE=$(QUANTUM_MODE) \
 		-DAEGIS_COMPLIANCE=$(AEGIS_COMPLIANT) \
 		-DBUILD_TESTS=$(BUILD_TESTS) \
-		-DENABLE_PANIC_MODE=$(PANIC_MODE) \
-		-DRIFT_CLI=ON \
-		-DRIFT_CORE=ON
+		-DENABLE_PANIC_MODE=$(PANIC_MODE)
 	@echo "$(GREEN)Configuration complete!$(NC)"
 
 
 
-# Build all targets
+
+# Build all targets (cross-platform: try both riftlang and riftlang.exe)
 .PHONY: build
 build: configure
 	@echo "$(BLUE)Building RIFT Stage-0...$(NC)"
-	@$(CMAKE) --build $(BUILD_DIR) --target riftlang -- -j$(JOBS)
+	@$(CMAKE) --build $(BUILD_DIR) --target riftlang -- -j$(JOBS) || \
+	$(CMAKE) --build $(BUILD_DIR) --target riftlang.exe -- -j$(JOBS)
 	@echo "$(GREEN)Build complete!$(NC)"
 	@echo "$(YELLOW)Toolchain: bin/riftlang → .so.a → rift.exe (linked with -lrift-0) → gosilang$(NC)"
+
+# Note: This Makefile now supports both riftlang and riftlang.exe for cross-platform builds.
 
 # Policy: CLI links only to -lrift-0 (core), all CLI logic in src/cli/, all core logic in src/core/
 # Use -D macro flags for feature toggles and stage selection
