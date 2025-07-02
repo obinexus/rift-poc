@@ -17,6 +17,10 @@ typedef void* pthread_mutex_t;
 #include <pthread.h>
 #endif
 
+#include <stdio.h>
+#include <stdint.h>
+#include <string.h>
+#include <stdlib.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -261,6 +265,13 @@ typedef struct {
 } RiftToken;
 
 /* Stage-0 tokenizer context */
+#if defined(__unix__) || defined(__APPLE__)
+#include <regex.h>
+#else
+// Provide a stub for regex_t if not available
+typedef void* regex_t;
+#endif
+
 typedef struct {
     /* Core state */
     bool initialized;

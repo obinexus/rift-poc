@@ -31,9 +31,8 @@ CMakeFiles/rift-stage0.dir/src/core/rift-0.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
- /usr/lib/gcc/x86_64-linux-gnu/12/include/stdbool.h \
- /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h /usr/include/pthread.h \
+ /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
  /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endianness.h /usr/include/time.h \
@@ -52,9 +51,9 @@ CMakeFiles/rift-stage0.dir/src/core/rift-0.c.o: \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
- /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0/core/lexer/lexer.h \
+ /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0/core/rift-0.h \
  /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0/core/gov/rift-gov.0.h \
- /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0/core/rift-0.h
+ /usr/lib/gcc/x86_64-linux-gnu/12/include/stdbool.h \
+ /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0/core/gov/rift-gov.0.h
