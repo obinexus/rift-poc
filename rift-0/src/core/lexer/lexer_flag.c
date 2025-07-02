@@ -1,85 +1,89 @@
-
-
-#include "rift-0/core/rift_compat.h"
-#include <stdio.h>
-
-/* RIFT_CLEANUP: Forward declarations to resolve type issues */
-#ifndef RIFT_CLEANUP_FORWARD_DECLS
-#define RIFT_CLEANUP_FORWARD_DECLS
-
-/* Forward declare missing types if not already defined */
-#ifndef RIFT_TOKEN_TYPE_DEFINED
-#define RIFT_TOKEN_TYPE_DEFINED
-typedef enum TokenType RiftTokenType;
-#endif
-
-/* Resolve HeapQueue issues in lexer_flag.h */
-#ifndef HEAPQUEUE_FORWARD_DECLARED
-#define HEAPQUEUE_FORWARD_DECLARED
-struct HeapQueue;
-typedef struct HeapQueue HeapQueue;
-
-typedef struct {
-    int priority;
-    int value;
-} Item;
-#endif
-
-/* Add strdup declaration if missing */
-#ifndef HAVE_STRDUP
-#ifdef __cplusplus
-extern "C" {
-#endif
-char* strdup(const char* s);
-#ifdef __cplusplus
-}
-#endif
-#endif
-
-#endif /* RIFT_CLEANUP_FORWARD_DECLS */
-
-
-
-/* RIFT_CLEANUP: Forward declarations to resolve type issues */
-#ifndef RIFT_CLEANUP_FORWARD_DECLS
-#define RIFT_CLEANUP_FORWARD_DECLS
-
-/* Forward declare missing types if not already defined */
-#ifndef RIFT_TOKEN_TYPE_DEFINED
-#define RIFT_TOKEN_TYPE_DEFINED
-typedef enum TokenType RiftTokenType;
-#endif
-
-/* Resolve HeapQueue issues in lexer_flag.h */
-#ifndef HEAPQUEUE_FORWARD_DECLARED
-#define HEAPQUEUE_FORWARD_DECLARED
-struct HeapQueue;
-typedef struct HeapQueue HeapQueue;
-
-typedef struct {
-    int priority;
-    int value;
-} Item;
-#endif
-
-/* Add strdup declaration if missing */
-#ifndef HAVE_STRDUP
-#ifdef __cplusplus
-extern "C" {
-#endif
-char* strdup(const char* s);
-#ifdef __cplusplus
-}
-#endif
-#endif
-
-#endif /* RIFT_CLEANUP_FORWARD_DECLS */
-
-
+#include <stddef.h>
+#include <stdint.h>
+#include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
-#include <pthread.h>
-#include "rift-0/core/lexer/lexer_flag.h"
+#include <stdio.h>
+#include <sys/types.h>
+#include <errno.h>
+
+/* Project headers */
+#include "rift-0/core/lexer/tokenizer_types.h"
+
+
+
+
+/* RIFT_CLEANUP: Forward declarations to resolve type issues */
+#ifndef RIFT_CLEANUP_FORWARD_DECLS
+#define RIFT_CLEANUP_FORWARD_DECLS
+
+/* Forward declare missing types if not already defined */
+#ifndef RIFT_TOKEN_TYPE_DEFINED
+#define RIFT_TOKEN_TYPE_DEFINED
+#endif
+
+/* Resolve HeapQueue issues in lexer_flag.h */
+#ifndef HEAPQUEUE_FORWARD_DECLARED
+#define HEAPQUEUE_FORWARD_DECLARED
+struct HeapQueue;
+typedef struct HeapQueue HeapQueue;
+
+typedef struct {
+    int priority;
+    int value;
+} Item;
+#endif
+
+/* Add strdup declaration if missing */
+#ifndef HAVE_STRDUP
+#ifdef __cplusplus
+extern "C" {
+#endif
+char* strdup(const char* s);
+#ifdef __cplusplus
+}
+#endif
+#endif
+
+#endif /* RIFT_CLEANUP_FORWARD_DECLS */
+
+
+
+/* RIFT_CLEANUP: Forward declarations to resolve type issues */
+#ifndef RIFT_CLEANUP_FORWARD_DECLS
+#define RIFT_CLEANUP_FORWARD_DECLS
+
+/* Forward declare missing types if not already defined */
+#ifndef RIFT_TOKEN_TYPE_DEFINED
+#define RIFT_TOKEN_TYPE_DEFINED
+#endif
+
+/* Resolve HeapQueue issues in lexer_flag.h */
+#ifndef HEAPQUEUE_FORWARD_DECLARED
+#define HEAPQUEUE_FORWARD_DECLARED
+struct HeapQueue;
+typedef struct HeapQueue HeapQueue;
+
+typedef struct {
+    int priority;
+    int value;
+} Item;
+#endif
+
+/* Add strdup declaration if missing */
+#ifndef HAVE_STRDUP
+#ifdef __cplusplus
+extern "C" {
+#endif
+char* strdup(const char* s);
+#ifdef __cplusplus
+}
+#endif
+#endif
+
+#endif /* RIFT_CLEANUP_FORWARD_DECLS */
+
+
 
 
 // --- Thread-safe HeapQueue implementation ---
@@ -224,10 +228,6 @@ void demo_token_creation() {
 /* RIFT_CLEANUP: Commented out missing header
  * #include "rift_common.h"
  */
-#include "rift_telemetry.h"
-#include <stdint.h>
-#include <stdbool.h>
-#include <pthread.h>
 
 // =============================================================================
 // MEMORY SEGMENT BOUNDARY DEFINITIONS
@@ -518,11 +518,6 @@ void rift_envelope_destroy(rift_token_access_envelope_t* envelope);
 #ifndef RIFT_COMMON_H
 #define RIFT_COMMON_H
 
-#include <stdint.h>
-#include <stdbool.h>
-#include <pthread.h>
-#include <sys/types.h>
-#include <time.h>
 
 // Maximum hierarchy constraints per RIFT governance
 #define RIFT_MAX_CHILDREN_PER_PROCESS 32

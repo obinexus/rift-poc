@@ -1,3 +1,15 @@
+#include <stddef.h>
+#include <stdint.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <errno.h>
+
+/* Project headers */
+#include "rift-0/core/lexer/tokenizer_types.h"
+
 /**
  * =================================================================
  * tokenizer_rules.c - RIFT-0 Rule Processing Implementation
@@ -10,8 +22,6 @@
 /* RIFT_CLEANUP: Commented out missing header
  * #include "rift-0/core/tokenizer_rules.h"
  */
-#include "rift-0/core/rift_compat.h"
-#include <stdlib.h>
 
 /* RIFT_CLEANUP: Forward declarations to resolve type issues */
 #ifndef RIFT_CLEANUP_FORWARD_DECLS
@@ -20,7 +30,6 @@
 /* Forward declare missing types if not already defined */
 #ifndef RIFT_TOKEN_TYPE_DEFINED
 #define RIFT_TOKEN_TYPE_DEFINED
-typedef enum TokenType RiftTokenType;
 #endif
 
 /* Resolve HeapQueue issues in lexer_flag.h */
@@ -57,7 +66,6 @@ char* strdup(const char* s);
 /* Forward declare missing types if not already defined */
 #ifndef RIFT_TOKEN_TYPE_DEFINED
 #define RIFT_TOKEN_TYPE_DEFINED
-typedef enum TokenType RiftTokenType;
 #endif
 
 /* Resolve HeapQueue issues in lexer_flag.h */
@@ -86,9 +94,6 @@ char* strdup(const char* s);
 #endif /* RIFT_CLEANUP_FORWARD_DECLS */
 
 
-#include <string.h>
-#include <errno.h>
-#include <stdio.h>
 
 /* Forward declaration for internal helper */
 static bool _compile_simple_pattern(RegexComposition* regex, const char* pattern);

@@ -1,3 +1,15 @@
+#include <stddef.h>
+#include <stdint.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <errno.h>
+
+/* Project headers */
+#include "rift-0/core/lexer/tokenizer_types.h"
+
 /*
  * =================================================================
  * rift_tokenizer.c - RIFT-0 Tokenization Implementation (Corrected)
@@ -18,8 +30,6 @@
 /* RIFT_CLEANUP: Commented out missing header
  * #include "rift-0/core/rift_tokenizer.h"
  */
-#include "rift-0/core/rift_compat.h"
-#include <stdlib.h>
 
 /* RIFT_CLEANUP: Forward declarations to resolve type issues */
 #ifndef RIFT_CLEANUP_FORWARD_DECLS
@@ -28,7 +38,6 @@
 /* Forward declare missing types if not already defined */
 #ifndef RIFT_TOKEN_TYPE_DEFINED
 #define RIFT_TOKEN_TYPE_DEFINED
-typedef enum TokenType RiftTokenType;
 #endif
 
 /* Resolve HeapQueue issues in lexer_flag.h */
@@ -65,7 +74,6 @@ char* strdup(const char* s);
 /* Forward declare missing types if not already defined */
 #ifndef RIFT_TOKEN_TYPE_DEFINED
 #define RIFT_TOKEN_TYPE_DEFINED
-typedef enum TokenType RiftTokenType;
 #endif
 
 /* Resolve HeapQueue issues in lexer_flag.h */
@@ -94,13 +102,6 @@ char* strdup(const char* s);
 #endif /* RIFT_CLEANUP_FORWARD_DECLS */
 
 
-#include <string.h>
-#include <stddef.h>
-#include <stdint.h>
-#include <stdio.h>
-#include <pthread.h>
-#include <stdbool.h>
-#include <string.h>
 
 /* Provide strdup if not available */
 #ifndef HAVE_STRDUP

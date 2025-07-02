@@ -1,11 +1,21 @@
+#include <stddef.h>
+#include <stdint.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <errno.h>
+
+/* Project headers */
+#include "rift-0/core/lexer/tokenizer_types.h"
+
 /*
  * RIFT-Core-0 Lexer Module
  * Handles Stage-0 lexical analysis (tokenization) using RIFT regular expressions (R""/r"").
  * Governance: #[gov:stage_0_core]
  */
 
-#include "rift-0/core/rift_compat.h"
-#include "rift-0/core/lexer/lexer.h"
 
 /* RIFT_CLEANUP: Forward declarations to resolve type issues */
 #ifndef RIFT_CLEANUP_FORWARD_DECLS
@@ -14,7 +24,6 @@
 /* Forward declare missing types if not already defined */
 #ifndef RIFT_TOKEN_TYPE_DEFINED
 #define RIFT_TOKEN_TYPE_DEFINED
-typedef enum TokenType RiftTokenType;
 #endif
 
 /* Resolve HeapQueue issues in lexer_flag.h */
@@ -51,7 +60,6 @@ char* strdup(const char* s);
 /* Forward declare missing types if not already defined */
 #ifndef RIFT_TOKEN_TYPE_DEFINED
 #define RIFT_TOKEN_TYPE_DEFINED
-typedef enum TokenType RiftTokenType;
 #endif
 
 /* Resolve HeapQueue issues in lexer_flag.h */
@@ -80,15 +88,6 @@ char* strdup(const char* s);
 #endif /* RIFT_CLEANUP_FORWARD_DECLS */
 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
-#include <stdbool.h>
-#include <regex.h>
-#include <stdint.h>
-#include <pthread.h>
-#include <assert.h>
 
 
 // Helper functions

@@ -1,3 +1,15 @@
+#include <stddef.h>
+#include <stdint.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <errno.h>
+
+/* Project headers */
+#include "rift-0/core/lexer/tokenizer_types.h"
+
 /**
  * =================================================================
  * tokenizer.c - RIFT-0 Core Tokenizer Implementation
@@ -11,8 +23,6 @@
     #define _POSIX_C_SOURCE 199309L
   #endif
 #endif
-#include "rift-0/core/rift_compat.h"
-#include <time.h>
 
 /* RIFT_CLEANUP: Forward declarations to resolve type issues */
 #ifndef RIFT_CLEANUP_FORWARD_DECLS
@@ -21,7 +31,6 @@
 /* Forward declare missing types if not already defined */
 #ifndef RIFT_TOKEN_TYPE_DEFINED
 #define RIFT_TOKEN_TYPE_DEFINED
-typedef enum TokenType RiftTokenType;
 #endif
 
 /* Resolve HeapQueue issues in lexer_flag.h */
@@ -58,7 +67,6 @@ char* strdup(const char* s);
 /* Forward declare missing types if not already defined */
 #ifndef RIFT_TOKEN_TYPE_DEFINED
 #define RIFT_TOKEN_TYPE_DEFINED
-typedef enum TokenType RiftTokenType;
 #endif
 
 /* Resolve HeapQueue issues in lexer_flag.h */
@@ -94,11 +102,6 @@ char* strdup(const char* s);
 
 // Ignore non-standard pragma warning (optional)
 #pragma GCC diagnostic ignored "-Wunknown-pragmas"
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <errno.h>
-#include <sys/types.h> // For ssize_t
 
 /* =================================================================
  * INTERNAL HELPER FUNCTIONS - STATIC SCOPE
