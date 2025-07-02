@@ -18,6 +18,121 @@
 #include <stddef.h>
 #include <stdbool.h>
 #include <stdint.h>
+#include <pthread.h>
+
+
+/* ===================================================================
+ * RIFT Stage-0 Core Definitions
+ * =================================================================== */
+
+#define RIFT_VERSION_MAJOR 0
+#define RIFT_VERSION_MINOR 1
+#define RIFT_VERSION_PATCH 0
+#define RIFT_STAGE_ID 0
+
+/* Error severity levels */
+typedef enum {
+    RIFT_WARNING_MIN = 0,
+    RIFT_WARNING_MAX = 3,
+    RIFT_DANGER_MIN = 3,
+    RIFT_DANGER_MAX = 6,
+    RIFT_CRITICAL_MIN = 6,
+    RIFT_CRITICAL_MAX = 9,
+    RIFT_PANIC_MIN = 9,
+    RIFT_PANIC_MAX = 12
+} RiftErrorSeverity;
+
+/* Token types - from R_INIT_EMPTY to complex patterns */
+typedef enum {
+    R_INIT_EMPTY = 0,
+    R_IDENTIFIER,
+    R_NUMBER,
+    R_OPERATOR,
+    R_KEYWORD,
+    R_STRING,
+    R_COMMENT,
+    R_WHITESPACE,
+    R_QUANTUM_TOKEN,
+    R_COLLAPSE_MARKER,
+    R_ENTANGLE_MARKER,
+    R_GOVERNANCE_TAG,
+    R_CUSTOM_PATTERN,
+    R_EOF
+} RiftTokenType;
+
+/* Token memory governance */
+typedef struct {
+    size_t min_heap;
+    size_t max_heap;
+    size_t current_usage;
+    bool dynamic_allowed;
+    pthread_mutex_t mem_lock;
+} TokenMemoryGovernor;
+
+/* Dual-channel output structure */
+typedef struct {
+    void* classic_channel;
+    size_t classic_size;
+    void* quantum_channel;
+    size_t quantum_size;
+    uint8_t error_level;
+    char* error_msg;
+} DualChannelOutput;
+
+/* Token structure with governance metadata */
+typedef struct {
+    RiftTokenType type;
+    char* pattern;
+    char* value;
+    size_t line;
+    size_t column;
+    bool is_quantum;
+    bool is_collapsed;
+    uint64_t governance_flags;
+    void* metadata;
+} RiftToken;
+
+/* Stage-0 tokenizer context */
+typedef struct {
+    /* Core state */
+    bool initialized;
+    uint32_t stage_id;
+    uint32_t version;
+    
+    /* Token patterns */
+    regex_t* patterns;
+    size_t pattern_count;
+    
+    /* Memory governance */
+    TokenMemoryGovernor* mem_gov;
+    
+    /* Dual-channel configuration */
+    bool dual_mode_enabled;
+    bool quantum_mode_active;
+    
+    /* Error tracking */
+    uint8_t current_error_level;
+    char error_buffer[1024];
+    
+    /* AEGIS compliance */
+    bool aegis_compliant;
+    uint64_t compliance_flags;
+    
+    /* Thread management */
+    pthread_mutex_t ctx_lock;
+    uint32_t thread_count;
+} RiftStage0Context;
+
+/* ===================================================================
+ * Token Pattern Definitions
+ * =================================================================== */
+
+typedef struct {
+    const char* name;
+    const char* pattern;
+    RiftTokenType type;
+    bool is_quantum;
+} TokenPattern;
 
 // --- Governance Config Structures (mirroring schema.json) ---
 
