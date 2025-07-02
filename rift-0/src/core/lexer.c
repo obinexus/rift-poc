@@ -14,9 +14,3 @@
 #include <stdint.h>
 #include <pthread.h>
 #include <assert.h>
-
-// ... TokenPattern, RiftToken, TokenMemoryGovernor, DualChannelOutput, RiftStage0Context definitions ...
-// ... Token pattern definitions and memory governance functions ...
-// ... Lexer/tokenizer functions ...
-
-// Implementation will be moved from rift-0.c
