@@ -3,6 +3,7 @@
         "string.h": "c",
         "lexer.h": "c",
         "assert.h": "c",
-        "rift-gov.0.h": "c"
+        "rift-gov.0.h": "c",
+        "r_uml.h": "c"
     }
 }
