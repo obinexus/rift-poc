@@ -1,10 +1,25 @@
+
+#ifndef RIFT_GOV_0_TYPES_DEFINED
+#define RIFT_GOV_0_TYPES_DEFINED
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
 
-/* ===================================================================
- * Stage Tracker and Priority Queue for Stage-Bound Processing
- * =================================================================== */
+// --- Core Stage-Bound Types ---
+typedef struct {
+    const char* name;
+    const char* pattern;
+    int type; // Use RiftTokenType if available
+    bool is_quantum;
+} TokenPattern;
+
+typedef struct TokenMemoryGovernor {
+    size_t min_heap;
+    size_t max_heap;
+    size_t current_usage;
+    bool dynamic_allowed;
+    pthread_mutex_t mem_lock;
+} TokenMemoryGovernor;
 
 typedef struct {
     int stage_id;
@@ -20,6 +35,7 @@ typedef struct {
     size_t capacity;
     // Heap property: entries[0] is always the min (highest priority)
 } RiftStageQueue;
+#endif
 
 // Priority queue API
 void rift_stage_queue_init(RiftStageQueue* queue, size_t capacity);
@@ -198,24 +214,7 @@ typedef struct {
     int validated_stages;
 } validation_context_t;
 
-/* ===================================================================
- * Core Type Definitions (must be first)
- * =================================================================== */
 
-typedef struct {
-    const char* name;
-    const char* pattern;
-    int type; // Use RiftTokenType if available
-    bool is_quantum;
-} TokenPattern;
-
-typedef struct TokenMemoryGovernor {
-    size_t min_heap;
-    size_t max_heap;
-    size_t current_usage;
-    bool dynamic_allowed;
-    pthread_mutex_t mem_lock;
-} TokenMemoryGovernor;
 
 /* ===================================================================
  * RIFT Stage-0 Core Definitions
@@ -330,7 +329,7 @@ typedef struct {
     bool is_quantum;
 } TokenPattern;
 
-// --- Governance Config Structures (mirroring schema.json) ---
+
 
 typedef enum {
     RIFT_STAGE_LEGACY = 0,
@@ -420,7 +419,7 @@ typedef struct {
     int polybuild_coordination;
 } rift_nlink_integration_t;
 
-// --- API: Governance Validation for rift-0 ---
+
 
 /**
  * Parse and validate rift-0 governance configuration from JSON file
