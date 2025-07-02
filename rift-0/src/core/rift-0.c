@@ -5,9 +5,14 @@
  * Fixed implementation with corrected regex patterns
  */
 
+#ifndef _POSIX_C_SOURCE
+#define _POSIX_C_SOURCE 200809L
+#endif
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include <stdbool.h>
 #include <regex.h>
 #include <stdint.h>
@@ -118,7 +123,7 @@ typedef struct {
 static TokenPattern stage0_patterns[] = {
     {"identifier", "^[a-zA-Z_][a-zA-Z0-9_]*$", R_IDENTIFIER, false},
     {"number", "^[0-9]+(\\.[0-9]+)?$", R_NUMBER, false},
-    {"operator", "^[+\\-*/=<>!&|~%\\^]$", R_OPERATOR, false},  /* Fixed: escaped caret */
+    {"operator", "^[-+*/=<>!&|^~%]$", R_OPERATOR, false},
     {"quantum_init", "^@quantum", R_QUANTUM_TOKEN, true},
     {"collapse", "^!collapse", R_COLLAPSE_MARKER, true},
     {"entangle", "^@entangle", R_ENTANGLE_MARKER, true},
@@ -262,7 +267,7 @@ RiftStage0Context* rift_stage0_create(void) {
     ctx->dual_mode_enabled = true;
     ctx->quantum_mode_active = false;
     ctx->aegis_compliant = true;
-    ctx->compliance_flags = 0xAEG15;
+    ctx->compliance_flags = 0xAE615;
     ctx->thread_count = 4;
     
     pthread_mutex_init(&ctx->ctx_lock, NULL);

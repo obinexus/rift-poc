@@ -53,7 +53,7 @@ typedef struct {
 static TestPattern test_patterns[] = {
     {"identifier", "^[a-zA-Z_][a-zA-Z0-9_]*$", {0}, false},
     {"number", "^[0-9]+(\\.[0-9]+)?$", {0}, false},
-    {"operator", "^[+\\-*/=<>!&|~%\\^]$", {0}, false},
+    {"operator", "^[-+*/=<>!&|^~%]$", {0}, false},
     {"quantum_init", "^@quantum", {0}, false},
     {"collapse", "^!collapse", {0}, false},
     {"governance", "^#\\[gov:.*\\]", {0}, false},
