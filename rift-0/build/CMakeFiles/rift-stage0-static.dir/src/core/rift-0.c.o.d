@@ -1,4 +1,4 @@
-CMakeFiles/rift-stage0.dir/src/core/rift-0.c.o: \
+CMakeFiles/rift-stage0-static.dir/src/core/rift-0.c.o: \
  /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/rift-0.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \

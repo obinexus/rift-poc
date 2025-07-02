@@ -1,78 +1,185 @@
-/*
- * RIFT-Core-0 Header: Stage-0 Tokenization Interface
- * Part of AEGIS Project - OBINexus Computing
+/**
+ * @file rift-0.h
+ * @brief RIFT Stage-0 Core API - Fixed type definitions
+ * @author OBINexus AEGIS Project
  * 
- * Public API for RIFT Stage-0 dual-channel tokenizer
+ * This header defines the core API for RIFT Stage-0 tokenizer with
+ * proper type definitions to avoid conflicts.
  */
-#ifndef RIFT_CORE_0_H
-#define RIFT_CORE_0_H
 
-#include <stdint.h>
-#include <stdbool.h>
+#ifndef RIFT_0_CORE_H
+#define RIFT_0_CORE_H
+
 #include <stddef.h>
-#include <pthread.h>
-#if defined(__unix__) || defined(__APPLE__)
-#include <regex.h>
-#endif
+#include <stdbool.h>
+#include <stdint.h>
 
-#include "rift-0/core/gov/rift-gov.0.h"
+/* Include sub-headers in correct order to avoid conflicts */
+#include "rift-0/core/lexer/tokenizer_types.h"
 
-// Provide a portable strdup if not available
-#ifndef HAVE_STRDUP
-#include <string.h>
-#include <stdlib.h>
-static inline char* portable_strdup(const char* s) {
-    if (!s) return NULL;
-    size_t len = strlen(s) + 1;
-    char* copy = (char*)malloc(len);
-    if (copy) memcpy(copy, s, len);
-    return copy;
-}
-#define strdup portable_strdup
-#endif
+/* Forward declarations to avoid circular dependencies */
+typedef struct RiftStage0Context RiftStage0Context;
+typedef struct RiftStage0Config RiftStage0Config;
+typedef struct DualChannelOutput DualChannelOutput;
+typedef struct BuildArtifact BuildArtifact;
 
+/* RIFT Stage-0 Configuration Structure */
+struct RiftStage0Config {
+    /* Memory configuration */
+    size_t min_heap_size;
+    size_t max_heap_size;
+    const char* memory_scheduler;
+    
+    /* Feature flags */
+    bool enable_quantum_mode;
+    bool enable_panic_mode;
+    bool aegis_compliance;
+    
+    /* Error handling */
+    int warning_threshold;
+    int danger_threshold;
+    int critical_threshold;
+    int panic_threshold;
+    
+    /* Governance */
+    const char* governance_file;
+    bool zero_trust_enabled;
+    bool anti_ghosting_enabled;
+};
 
+/* RIFT Stage-0 Context Structure */
+struct RiftStage0Context {
+    /* Configuration */
+    RiftStage0Config config;
+    
+    /* State management */
+    void* lexer_state;
+    void* parser_state;
+    uint32_t compliance_flags;
+    
+    /* Error tracking */
+    int error_level;
+    char* last_error;
+    
+    /* Memory management */
+    void* heap_base;
+    size_t heap_used;
+    
+    /* Dual channel state */
+    bool quantum_channel_active;
+    void* quantum_state;
+};
+
+/* Token Pattern Structure - Removed to avoid conflict with gov header */
+/* Use TokenPattern from rift-gov.0.h instead */
+
+/* Dual Channel Output Structure */
+struct DualChannelOutput {
+    /* Classic channel */
+    RiftToken** classic_tokens;
+    size_t classic_count;
+    
+    /* Quantum channel */
+    void* quantum_data;
+    size_t quantum_size;
+    
+    /* Metadata */
+    uint32_t governance_flags;
+    bool channels_synchronized;
+};
+
+/* Build Artifact Structure */
+struct BuildArtifact {
+    char* obj_path;
+    char* bin_path;
+    char* lib_path;
+    bool build_success;
+};
+
+/* ===================================================================
+ * Core API Functions
+ * ===================================================================*/
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-// Versioning macros
-#define RIFT_VERSION_MAJOR 0
-#define RIFT_VERSION_MINOR 1
-#define RIFT_VERSION_PATCH 0
-
-
-// Public API declarations (implementations elsewhere)
+/**
+ * Create a new RIFT Stage-0 context with default configuration
+ * @return Pointer to new context or NULL on failure
+ */
 RiftStage0Context* rift_stage0_create(void);
+
+/**
+ * Create a new RIFT Stage-0 context with custom configuration
+ * @param config Configuration structure
+ * @return Pointer to new context or NULL on failure
+ */
 RiftStage0Context* rift_stage0_create_with_config(const RiftStage0Config* config);
+
+/**
+ * Destroy a RIFT Stage-0 context and free resources
+ * @param ctx Context to destroy
+ */
 void rift_stage0_destroy(RiftStage0Context* ctx);
 
-// Forward declarations if not included by headers
-DualChannelOutput* create_dual_channel_output(void);
-void set_error_level(DualChannelOutput* output, int level, const char* msg);
+/**
+ * Process input through Stage-0 tokenizer
+ * @param ctx Stage-0 context
+ * @param input Input string to tokenize
+ * @return Dual channel output structure
+ */
+DualChannelOutput* rift_stage0_process(RiftStage0Context* ctx, const char* input);
 
-// Extern declaration for stage0_patterns if defined elsewhere
-// Forward declaration for TokenPattern if not already defined
-#ifndef TOKEN_PATTERN_DEFINED
-#define TOKEN_PATTERN_DEFINED
-typedef struct TokenPattern {
-    const char* name;
-    const char* pattern;
-    int token_type;
-} TokenPattern;
-#endif
+/**
+ * Free dual channel output structure
+ * @param output Output to free
+ */
+void rift_stage0_free_output(DualChannelOutput* output);
 
+/**
+ * Get current error level
+ * @param ctx Stage-0 context
+ * @return Error level (0-12)
+ */
+int rift_stage0_get_error_level(const RiftStage0Context* ctx);
 
-// Extern declaration for stage0_patterns if defined elsewhere
-// Memory governance API
-// Memory governance API
-TokenMemoryGovernor* create_memory_governor(size_t min_heap, size_t max_heap);
-void* governed_malloc(TokenMemoryGovernor* gov, size_t size);
-void governed_free(TokenMemoryGovernor* gov, void* ptr, size_t size);
+/**
+ * Get last error message
+ * @param ctx Stage-0 context
+ * @return Error message or NULL
+ */
+const char* rift_stage0_get_last_error(const RiftStage0Context* ctx);
+
+/**
+ * Enable quantum channel
+ * @param ctx Stage-0 context
+ * @return true on success, false on failure
+ */
+bool rift_stage0_enable_quantum_channel(RiftStage0Context* ctx);
+
+/**
+ * Validate AEGIS compliance
+ * @param ctx Stage-0 context
+ * @return true if compliant, false otherwise
+ */
+bool rift_stage0_validate_aegis_compliance(const RiftStage0Context* ctx);
+
+/**
+ * Generate build artifacts
+ * @param ctx Stage-0 context
+ * @return Build artifact structure
+ */
+BuildArtifact* rift_stage0_generate_build(RiftStage0Context* ctx);
+
+/**
+ * Free build artifact structure
+ * @param artifact Artifact to free
+ */
+void rift_stage0_free_build_artifact(BuildArtifact* artifact);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* RIFT_CORE_0_H */
+#endif /* RIFT_0_CORE_H */

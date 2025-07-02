@@ -13,10 +13,168 @@ typedef void* pthread_mutex_t;
 #define pthread_mutex_destroy(mutex)      (0)
 #define pthread_mutex_lock(mutex)         (0)
 #define pthread_mutex_unlock(mutex)       (0)
+// Provide a stub for regex_t on Windows
+typedef void* regex_t;
 #else
 #include <pthread.h>
+#include <regex.h>
 #endif
 
+
+/* ===================================================================
+ * Governance Structures
+ * ===================================================================*/
+
+/**
+ * Token pattern definition for Stage-0 tokenizer
+ */
+typedef struct {
+    const char* name;           /* Pattern name */
+    const char* pattern;        /* Regular expression pattern */
+    RiftTokenType type;         /* Token type to assign */
+    int is_quantum;             /* Quantum channel flag */
+    int priority;               /* Pattern matching priority */
+    regex_t compiled_regex;     /* Compiled regex (runtime) */
+} TokenPattern;
+
+/**
+ * Governance configuration structure
+ */
+typedef struct {
+    /* Compliance flags */
+    uint32_t zero_trust_enabled : 1;
+    uint32_t anti_ghosting_enabled : 1;
+    uint32_t audit_trail_enabled : 1;
+    uint32_t strict_mode : 1;
+    uint32_t reserved_flags : 28;
+    
+    /* Error thresholds */
+    int warning_min;
+    int warning_max;
+    int danger_min;
+    int danger_max;
+    int critical_min;
+    int critical_max;
+    int panic_min;
+    int panic_max;
+    
+    /* Memory governance */
+    size_t min_allocation;
+    size_t max_allocation;
+    const char* scheduler_type;
+} GovernanceConfig;
+
+/**
+ * AEGIS compliance record
+ */
+typedef struct {
+    uint64_t timestamp;
+    uint32_t compliance_level;
+    uint32_t violations;
+    const char* audit_log;
+} AegisComplianceRecord;
+
+/* ===================================================================
+ * Pattern Definitions
+ * ===================================================================*/
+
+/**
+ * Stage-0 token patterns array
+ * Defined in implementation file to avoid multiple definition errors
+ */
+extern const TokenPattern stage0_patterns[];
+extern const size_t stage0_patterns_count;
+
+/* ===================================================================
+ * Governance Functions
+ * ===================================================================*/
+
+/**
+ * Initialize governance subsystem
+ * @param config Governance configuration
+ * @return 0 on success, error code on failure
+ */
+int rift_gov_init(const GovernanceConfig* config);
+
+/**
+ * Cleanup governance subsystem
+ */
+void rift_gov_cleanup(void);
+
+/**
+ * Compile token patterns for use
+ * @param patterns Array of token patterns
+ * @param count Number of patterns
+ * @return 0 on success, error code on failure
+ */
+int rift_gov_compile_patterns(TokenPattern* patterns, size_t count);
+
+/**
+ * Free compiled patterns
+ * @param patterns Array of token patterns
+ * @param count Number of patterns
+ */
+void rift_gov_free_patterns(TokenPattern* patterns, size_t count);
+
+/**
+ * Check governance compliance
+ * @param flags Compliance flags to check
+ * @return true if compliant, false otherwise
+ */
+bool rift_gov_check_compliance(uint32_t flags);
+
+/**
+ * Record compliance violation
+ * @param violation_type Type of violation
+ * @param details Violation details
+ */
+void rift_gov_record_violation(uint32_t violation_type, const char* details);
+
+/**
+ * Get compliance record
+ * @return Current compliance record
+ */
+AegisComplianceRecord rift_gov_get_compliance_record(void);
+
+/**
+ * Validate memory allocation against governance rules
+ * @param size Requested allocation size
+ * @return true if allowed, false otherwise
+ */
+bool rift_gov_validate_allocation(size_t size);
+
+/**
+ * Get error level color code
+ * @param level Error level (0-12)
+ * @return Color name string
+ */
+const char* rift_gov_get_error_color(int level);
+
+/* ===================================================================
+ * Error Level Definitions
+ * ===================================================================*/
+
+#define RIFT_ERROR_WARNING_MIN 0
+#define RIFT_ERROR_WARNING_MAX 3
+#define RIFT_ERROR_DANGER_MIN  3
+#define RIFT_ERROR_DANGER_MAX  6
+#define RIFT_ERROR_CRITICAL_MIN 6
+#define RIFT_ERROR_CRITICAL_MAX 9
+#define RIFT_ERROR_PANIC_MIN   9
+#define RIFT_ERROR_PANIC_MAX   12
+
+/* ===================================================================
+ * Compliance Flags
+ * ===================================================================*/
+
+#define RIFT_GOV_ZERO_TRUST    0x00000001
+#define RIFT_GOV_ANTI_GHOST    0x00000002
+#define RIFT_GOV_AUDIT_TRAIL   0x00000004
+#define RIFT_GOV_STRICT_MODE   0x00000008
+#define RIFT_GOV_QUANTUM_SAFE  0x00000010
+#define RIFT_GOV_MEMORY_SAFE   0x00000020
+#define RIFT_GOV_THREAD_SAFE   0x00000040
+#define RIFT_GOV_AEGIS_FULL    0x000000FF
 // --- Core Types: always visible, only one definition ---
 typedef struct {
     const char* name;
@@ -368,3 +526,12 @@ int rift_gov0_validate_nlink(const rift_nlink_integration_t *nlink);
 #endif
 
 #endif 
+/**
+ * @file rift-gov.0.h
+ * @brief RIFT Stage-0 Governance and Pattern Definitions
+ * @author OBINexus AEGIS Project
+ * 
+ * This header defines the governance structures and token patterns
+ * for RIFT Stage-0 with proper type isolation.
+ */
+

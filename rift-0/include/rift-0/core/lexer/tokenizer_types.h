@@ -233,3 +233,36 @@ typedef enum {
 #endif
 
 #endif /* RIFT_0_CORE_TOKENIZER_TYPES_H */
+/* =================================================================
+ * COMPATIBILITY ALIAS FOR RIFT-GOV-0.H
+ * =================================================================
+ * This section provides compatibility with the new RiftTokenType and
+ * RiftToken structures as defined in rift-gov.0.h and the new tokenizer_types.h.
+ * This avoids duplication and circular dependencies.
+ */
+
+/* If RiftTokenType is not already defined, provide a typedef alias */
+#ifndef RIFT_TOKENIZER_TYPES_COMPAT
+#define RIFT_TOKENIZER_TYPES_COMPAT
+
+/* Map canonical TokenType to RiftTokenType for compatibility */
+typedef TokenType RiftTokenType;
+
+/* Minimal RiftToken struct for compatibility with new codebases */
+typedef struct RiftToken {
+    RiftTokenType type;
+    char* value;
+    size_t length;
+    int line;
+    int column;
+    size_t offset;
+    uint32_t quantum_state;
+    void* quantum_data;
+    uint32_t governance_flags;
+    void* metadata;
+    void* pattern;
+    struct RiftToken* next;
+    struct RiftToken* prev;
+} RiftToken;
+
+#endif /* RIFT_TOKENIZER_TYPES_COMPAT */
