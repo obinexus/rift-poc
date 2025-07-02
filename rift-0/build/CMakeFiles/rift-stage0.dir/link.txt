@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O3 -DNDEBUG -shared -Wl,-soname,librift-stage0.so.0 -o lib/librift-stage0.so.0.1.0 "CMakeFiles/rift-stage0.dir/src/core/rift-0.c.o"  -lm -ldl 

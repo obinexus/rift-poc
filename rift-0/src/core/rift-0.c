@@ -10,8 +10,13 @@
 // Only standard includes needed for main/test
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <regex.h>
+#include <stdbool.h>
+#include <pthread.h>
 #include "rift-0/core/lexer/lexer.h"
 #include "rift-0/core/gov/rift-gov.0.h"
+#include "rift-0/core/rift-0.h"
 
 
 /* ===================================================================
@@ -30,12 +35,7 @@ RiftStage0Context* rift_stage0_create(void) {
     /* Initialize memory governor */
     ctx->mem_gov = create_memory_governor(1024 * 1024, 16 * 1024 * 1024); // 1MB min, 16MB max
     if (!ctx->mem_gov) {
-        free(ctx);
-        return NULL;
-    }
-    
-    /* Initialize token patterns */
-    ctx->pattern_count = sizeof(stage0_patterns) / sizeof(TokenPattern);
+    ctx->pattern_count = sizeof(stage0_patterns) / sizeof(stage0_patterns[0]);
     ctx->patterns = calloc(ctx->pattern_count, sizeof(regex_t));
     if (!ctx->patterns) {
         free(ctx->mem_gov);
@@ -53,6 +53,11 @@ RiftStage0Context* rift_stage0_create(void) {
                 regfree(&ctx->patterns[j]);
             }
             free(ctx->patterns);
+            free(ctx->mem_gov);
+            free(ctx);
+            return NULL;
+        }
+    }
             free(ctx->mem_gov);
             free(ctx);
             return NULL;
@@ -412,3 +417,4 @@ void rift_stage0_destroy(RiftStage0Context* ctx) {
     pthread_mutex_destroy(&ctx->ctx_lock);
     free(ctx);
 }
+

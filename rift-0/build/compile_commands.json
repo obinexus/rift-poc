@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build",
+  "command": "/usr/bin/cc -Drift_stage0_EXPORTS -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0 -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0/core -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build -O3 -DNDEBUG -fPIC -Wall -Wextra -Wpedantic -Wno-unused-parameter -Wno-unused-variable -O3 -DNDEBUG -std=c11 -o CMakeFiles/rift-stage0.dir/src/core/rift-0.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/rift-0.c",
+  "file": "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/rift-0.c"
+},
+{
+  "directory": "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build",
+  "command": "/usr/bin/cc  -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0 -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0/core -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build -O3 -DNDEBUG -fPIC -Wall -Wextra -Wpedantic -Wno-unused-parameter -Wno-unused-variable -O3 -DNDEBUG -std=c11 -o CMakeFiles/rift-stage0-static.dir/src/core/rift-0.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/rift-0.c",
+  "file": "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/rift-0.c"
+},
+{
+  "directory": "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build",
+  "command": "/usr/bin/cc  -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0 -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0/core -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build -O3 -DNDEBUG -Wall -Wextra -Wpedantic -Wno-unused-parameter -Wno-unused-variable -O3 -DNDEBUG -std=c11 -o CMakeFiles/riftlang.exe.dir/src/cli/main.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/main.c",
+  "file": "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/main.c"
+},
+{
+  "directory": "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build",
+  "command": "/usr/bin/cc  -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0 -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0/core -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build -O3 -DNDEBUG -Wall -Wextra -Wpedantic -Wno-unused-parameter -Wno-unused-variable -O3 -DNDEBUG -std=c11 -o CMakeFiles/rift-0.dir/src/cli/main.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/main.c",
+  "file": "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/main.c"
+},
+{
+  "directory": "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/tests",
+  "command": "/usr/bin/cc  -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0 -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0/core -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build -O3 -DNDEBUG -Wall -Wextra -Wpedantic -Wno-unused-parameter -Wno-unused-variable -O3 -DNDEBUG -std=c11 -o CMakeFiles/qa_assert.dir/qa_assert.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/tests/qa_assert.c",
+  "file": "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/tests/qa_assert.c"
+}
+]
