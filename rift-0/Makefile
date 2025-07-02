@@ -218,4 +218,17 @@ help: info
 # Modular policy: All new modules must be added to cmake/ and included in CMakeLists.txt
 # Example: include(cmake/SomePolicy.cmake)
 
-.DEFAULT_GOAL := all
+# =================================================================
+# Legacy Makefile compatibility
+# =================================================================
+# Allow building with the legacy Makefile (tokenizer-only, no CMake)
+.PHONY: legacy
+legacy:
+	@echo "$(YELLOW)Building with legacy Makefile (tokenizer-only, no CMake)...$(NC)"
+	@$(MAKE) -f Makefile.legacy
+
+# Show legacy Makefile help
+.PHONY: legacy-help
+legacy-help:
+	@echo "$(BLUE)Legacy Makefile targets:$(NC)"
+	@$(MAKE) -f Makefile.legacy help || true
