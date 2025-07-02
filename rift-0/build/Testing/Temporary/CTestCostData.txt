@@ -1,7 +1,0 @@
-QA_TruePositive 1 0.00760114
-QA_TrueNegative 1 0.00616089
-QA_FalsePositive 1 0.00600636
-QA_FalseNegative 1 0.00704905
-QA_All 1 0.0120409
-QA_Suite 1 0.0135835
----

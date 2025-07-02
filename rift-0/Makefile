@@ -2,6 +2,7 @@
 # Part of AEGIS Project - OBINexus Computing
 # Orchestrates CMake build with governance compliance
 
+
 # Build configuration
 BUILD_TYPE ?= Release
 BUILD_DIR ?= build
@@ -9,11 +10,15 @@ INSTALL_PREFIX ?= /usr/local
 CMAKE ?= cmake
 JOBS ?= $(shell nproc || echo 4)
 
+# Policy: Enforce separation of core and CLI modules
+# include/ → headers, src/core/ → core logic, src/cli/ → CLI logic
+
 # AEGIS compliance flags
 AEGIS_COMPLIANT ?= ON
 QUANTUM_MODE ?= ON
 BUILD_TESTS ?= ON
 PANIC_MODE ?= ON
+
 
 # Output directories
 OBJ_DIR := $(BUILD_DIR)/obj
@@ -46,13 +51,14 @@ configure:
 		-DENABLE_PANIC_MODE=$(PANIC_MODE)
 	@echo "$(GREEN)Configuration complete!$(NC)"
 
+
 # Build all targets
 .PHONY: build
 build: configure
 	@echo "$(BLUE)Building RIFT Stage-0...$(NC)"
 	@$(CMAKE) --build $(BUILD_DIR) -- -j$(JOBS)
 	@echo "$(GREEN)Build complete!$(NC)"
-	@echo "$(YELLOW)Toolchain: riftlang.exe → .so.a → rift.exe (linked with -lrift-0) → gosilang$(NC)"
+	@echo "$(YELLOW)Toolchain: bin/riftlang → .so.a → rift.exe (linked with -lrift-0) → gosilang$(NC)"
 
 # Clean build
 .PHONY: clean
@@ -148,18 +154,20 @@ dev: BUILD_TYPE=Debug
 dev: build
 	@echo "$(GREEN)Development build complete!$(NC)"
 
+
 # Run the tokenizer
 .PHONY: run
 run: build
 	@echo "$(BLUE)Running RIFT Stage-0 tokenizer...$(NC)"
-	@$(BIN_DIR)/riftlang.exe || true
+	@$(BIN_DIR)/riftlang || true
+
 
 # Run with example
 .PHONY: example
 example: build
 	@echo "$(BLUE)Processing example.rift...$(NC)"
 	@test -f fixtures/stage-0/examples/lang.rift && \
-		$(BIN_DIR)/riftlang.exe fixtures/stage-0/examples/lang.rift || \
+		$(BIN_DIR)/riftlang fixtures/stage-0/examples/lang.rift || \
 		echo "$(RED)Example file not found!$(NC)"
 
 # Build documentation
@@ -195,9 +203,8 @@ info:
 .PHONY: help
 help: info
 
-# RIFT toolchain demonstration
-.PHONY: toolchain
-toolchain:
-	@echo "RIFT (.rift): RIFT is a flexible translator and a direct competitor to Yacc, providing a compiler for programs written in DSL for the Gossip language."
+
+# Modular policy: All new modules must be added to cmake/ and included in CMakeLists.txt
+# Example: include(cmake/SomePolicy.cmake)
 
 .DEFAULT_GOAL := all

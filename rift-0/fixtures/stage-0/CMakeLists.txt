@@ -7,6 +7,9 @@ project(RIFT_Stage0
     LANGUAGES C
 )
 
+# Policy: Enforce separation of core and CLI modules
+# include/ → headers, src/core/ → core logic, src/cli/ → CLI logic
+
 # ===================================================================
 # Build Options
 # ===================================================================
@@ -35,17 +38,18 @@ find_package(Threads REQUIRED)
 # ===================================================================
 # Source Files
 # ===================================================================
-set(RIFT_STAGE0_SOURCES
-    rift-core-0.c
-    rift_poc.c
-    tokenziation.c  # Note: this appears to be the original filename
-)
 
-set(RIFT_STAGE0_HEADERS
-    rift-core-0.h
-    rift-types.h
-    dual-channel.h
-    governance.h
+# Core sources
+file(GLOB RIFT_CORE_SOURCES
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/core/*.c"
+)
+# CLI sources
+file(GLOB RIFT_CLI_SOURCES
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/cli/*.c"
+)
+# Headers
+file(GLOB RIFT_STAGE0_HEADERS
+    "${CMAKE_CURRENT_SOURCE_DIR}/include/rift-0/*.h"
 )
 
 # ===================================================================
@@ -64,11 +68,11 @@ file(MAKE_DIRECTORY ${CMAKE_ARCHIVE_OUTPUT_DIRECTORY})
 # RIFT Stage-0 Core Library
 # ===================================================================
 add_library(rift-stage0 SHARED
-    rift-core-0.c
+    ${RIFT_CORE_SOURCES}
 )
 
 target_include_directories(rift-stage0 PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
 )
 
@@ -88,11 +92,11 @@ set_target_properties(rift-stage0 PROPERTIES
 # ===================================================================
 # RIFT Stage-0 Executable
 # ===================================================================
-add_executable(riftlang.exe
-    rift-core-0.c
+add_executable(riftlang
+    ${RIFT_CLI_SOURCES}
 )
 
-target_link_libraries(riftlang.exe PRIVATE
+target_link_libraries(riftlang PRIVATE
     rift-stage0
     Threads::Threads
 )
@@ -103,7 +107,7 @@ target_link_libraries(riftlang.exe PRIVATE
 
 # Static library (.a)
 add_library(rift-stage0-static STATIC
-    rift-core-0.c
+    ${RIFT_CORE_SOURCES}
 )
 
 set_target_properties(rift-stage0-static PROPERTIES
@@ -216,7 +220,7 @@ endif()
 # ===================================================================
 include(GNUInstallDirs)
 
-install(TARGETS rift-stage0 rift-stage0-static riftlang.exe
+install(TARGETS rift-stage0 rift-stage0-static riftlang
     EXPORT RiftStage0Targets
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
@@ -230,7 +234,7 @@ install(FILES
 
 install(FILES
     ${RIFT_STAGE0_HEADERS}
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/rift
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/rift-0
 )
 
 # ===================================================================
@@ -239,9 +243,14 @@ install(FILES
 
 # Main build target
 add_custom_target(build_all ALL
-    DEPENDS rift-stage0 rift-stage0-static riftlang.exe rift-stage0.so.a
+    DEPENDS rift-stage0 rift-stage0-static riftlang rift-stage0.so.a
     COMMENT "Building all RIFT Stage-0 components"
 )
+
+######################################################################
+# Modular policy: All new modules must be added to cmake/ and included here
+# Example: include(cmake/SomePolicy.cmake)
+######################################################################
 
 # Clean build directory
 add_custom_target(clean_build
