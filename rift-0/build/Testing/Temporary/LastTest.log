@@ -1,4 +1,4 @@
-Start testing: Jul 02 05:22 BST
+Start testing: Jul 02 05:30 BST
 ----------------------------------------------------------
 Failed to change working directory to /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/tests/unit : No such file or directory
 1/4 Testing: test_tokenizer_validation
@@ -12,7 +12,7 @@ Output:
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_tokenizer_validation" end time: Jul 02 05:22 BST
+"test_tokenizer_validation" end time: Jul 02 05:30 BST
 "test_tokenizer_validation" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -28,7 +28,7 @@ Output:
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_tokenizer" end time: Jul 02 05:22 BST
+"test_tokenizer" end time: Jul 02 05:30 BST
 "test_tokenizer" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -44,7 +44,7 @@ Output:
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"test_policy2_matrix" end time: Jul 02 05:22 BST
+"test_policy2_matrix" end time: Jul 02 05:30 BST
 "test_policy2_matrix" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -52,7 +52,7 @@ Test Passed.
 4/4 Test: aegis_compliance_check
 Command: "/usr/bin/cmake" "-E" "echo" "AEGIS Compliance Validation Passed"
 Directory: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build
-"aegis_compliance_check" start time: Jul 02 05:22 BST
+"aegis_compliance_check" start time: Jul 02 05:30 BST
 Output:
 ----------------------------------------------------------
 AEGIS Compliance Validation Passed
@@ -61,11 +61,11 @@ Test time =   0.01 sec
 ----------------------------------------------------------
 Test Pass Reason:
 Required regular expression found. Regex=[Passed]
-"aegis_compliance_check" end time: Jul 02 05:22 BST
+"aegis_compliance_check" end time: Jul 02 05:30 BST
 "aegis_compliance_check" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Jul 02 05:22 BST
+End testing: Jul 02 05:30 BST
 
 AEGIS =   0.01 sec*proc
 

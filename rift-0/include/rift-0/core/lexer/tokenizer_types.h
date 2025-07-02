@@ -207,3 +207,21 @@ typedef enum {
     TOKEN_DSL_COUNT
 } DSLTokenType;
 
+
+/* Additional token types for comprehensive testing */
+#ifndef TOKEN_LITERAL_INT
+#define TOKEN_LITERAL_INT TOKEN_LITERAL_NUMBER
+#endif
+
+#ifndef TOKEN_LITERAL_FLOAT  
+#define TOKEN_LITERAL_FLOAT TOKEN_LITERAL_NUMBER
+#endif
+
+/* DFA state definitions */
+enum {
+    DFA_STATE_START = 0,
+    DFA_STATE_ACCEPT = 1,
+    DFA_STATE_REJECT = -1
+};
+
+#endif /* Include guard end */
