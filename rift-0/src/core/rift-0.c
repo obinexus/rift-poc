@@ -17,12 +17,9 @@
 #include <strings.h> // For strdup on some systems
 #endif
 #include <regex.h>
-#include <stdbool.h>
 #include <pthread.h>
-#include "rift-0/core/lexer/lexer.h"
-#include "rift-0/core/gov/rift-gov.0.h"
 #include "rift-0/core/rift-0.h"
-
+#include "rift-0/core/gov/rift-gov.0.h"
 
 /* ===================================================================
  * Stage-0 Core Implementation
@@ -78,24 +75,24 @@ RiftStage0Context* rift_stage0_create(void) {
     printf("  Memory limits: %zu - %zu bytes\n", ctx->mem_gov->min_heap, ctx->mem_gov->max_heap);
     
     return ctx;
-
-}
-    
-
-RiftToken* create_token(RiftStage0Context* ctx, RiftTokenType type, 
-                       const char* value, size_t line, size_t col) {
-    if (!ctx || !value) return NULL;
-    
-    size_t token_size = sizeof(RiftToken) + strlen(value) + 1;
-    RiftToken* token = governed_malloc(ctx->mem_gov, token_size);
-    if (!token) return NULL;
-    
     token->type = type;
     token->value = strdup(value);
     token->line = line;
     token->column = col;
     token->is_quantum = false;
     token->is_collapsed = false;
+    // Set governance_flags from context, or default to 0 if unavailable
+    token->governance_flags = ctx ? ctx->compliance_flags : 0;
+    token->metadata = NULL;
+    token->pattern = NULL;
+
+    /* Set quantum flag based on token type */
+    if (type == R_QUANTUM_TOKEN || type == R_COLLAPSE_MARKER || type == R_ENTANGLE_MARKER) {
+        token->is_quantum = true;
+    }
+
+    return token;
+}
     // Set governance_flags from context, or default to 0 if unavailable
     token->governance_flags = ctx ? ctx->compliance_flags : 0;
     token->metadata = NULL;
@@ -150,22 +147,25 @@ RiftToken** tokenize_input(RiftStage0Context* ctx, const char* input, size_t* to
         /* Skip whitespace while tracking position */
         if (*ptr == ' ' || *ptr == '\t') {
             col++;
-            ptr++;
-            continue;
-        }
-        if (*ptr == '\n') {
-            line++;
-            col = 1;
-            ptr++;
-            continue;
-        }
-        
-        /* Try to match against patterns */
-        for (size_t i = 0; i < ctx->pattern_count; i++) {
             regmatch_t match;
             char test_buffer[256];
-            
+
             /* Extract a test string */
+            size_t test_len = 0;
+            const char* test_ptr = ptr;
+            while (*test_ptr && *test_ptr != ' ' && *test_ptr != '\n' &&
+                   *test_ptr != '\t' && test_len < 255) {
+                test_buffer[test_len++] = *test_ptr++;
+            }
+            test_buffer[test_len] = '\0';
+
+            // Use the correct field for token type in stage0_patterns
+            // If your TokenPattern struct does not have 'type', replace with the correct field (e.g., .token_type)
+            RiftTokenType pattern_type = stage0_patterns[i].type;
+            if (test_len > 0 && regexec(&ctx->patterns[i], test_buffer, 1, &match, 0) == 0) {
+                /* Create token */
+                RiftToken* token = create_token(ctx, pattern_type,
+                                              test_buffer, line, col);
             size_t test_len = 0;
             const char* test_ptr = ptr;
             while (*test_ptr && *test_ptr != ' ' && *test_ptr != '\n' && 
@@ -368,18 +368,18 @@ DualChannelOutput* process_stage0(RiftStage0Context* ctx, const char* input) {
  * =================================================================== */
 
 // BuildOutput is typedef'd in rift-0.h, do not redefine here.
+    build->obj_path = strdup("build/obj/rift-stage0.o");
+    build->bin_path = strdup("build/bin/rift-stage0");
+    build->lib_path = strdup("build/lib/librift-stage0.so");
+    build->build_success = true;
 
-BuildOutput* generate_build_output(RiftStage0Context* ctx, DualChannelOutput* dual_output) {
-    if (!ctx || !dual_output) return NULL;
-    
-    BuildOutput* build = calloc(1, sizeof(BuildOutput));
-    if (!build) return NULL;
-    
-    /* Check for critical errors */
-    if (dual_output->error_level >= RIFT_CRITICAL_MIN) {
-        build->build_success = false;
-        printf("Build failed due to critical errors\n");
-        return build;
+    printf("Build output generated:\n");
+    printf("  Object: %s\n", build->obj_path);
+    printf("  Binary: %s\n", build->bin_path);
+    printf("  Library: %s\n", build->lib_path);
+
+    return build;
+}
     }
     
     /* Generate paths */

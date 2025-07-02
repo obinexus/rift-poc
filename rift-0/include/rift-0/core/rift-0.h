@@ -4,16 +4,34 @@
  * 
  * Public API for RIFT Stage-0 dual-channel tokenizer
  */
-
 #ifndef RIFT_CORE_0_H
 #define RIFT_CORE_0_H
-#if defined(__unix__) || defined(__APPLE__)
-#include <regex.h>
-#endif
+
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
+#include <pthread.h>
+#if defined(__unix__) || defined(__APPLE__)
+#include <regex.h>
+#endif
+
 #include "rift-0/core/gov/rift-gov.0.h"
+
+// Provide a portable strdup if not available
+#ifndef HAVE_STRDUP
+#include <string.h>
+#include <stdlib.h>
+static inline char* portable_strdup(const char* s) {
+    if (!s) return NULL;
+    size_t len = strlen(s) + 1;
+    char* copy = (char*)malloc(len);
+    if (copy) memcpy(copy, s, len);
+    return copy;
+}
+#define strdup portable_strdup
+#endif
+
+
 
 #ifdef __cplusplus
 extern "C" {
