@@ -326,3 +326,10 @@ message(STATUS "")
 message(STATUS "Toolchain: riftlang.exe → .so.a → rift.exe → gosilang")
 message(STATUS "==================================")
 message(STATUS "")
+
+# ===================================================================
+# Subdirectory: rift-0 (Tokenizer Stage)
+# ===================================================================
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/rift-0/CMakeLists.txt)
+    add_subdirectory(rift-0)
+endif()

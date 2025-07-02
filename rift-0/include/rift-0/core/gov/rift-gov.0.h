@@ -135,7 +135,7 @@ typedef struct {
     /* Threading */
     uint32_t thread_count;
     bool enable_parallel_tokenization;
-} RiftStage0Config;
+} rift_gov_config_t;
 
 /* ===================================================================
  * Build Output Structure
