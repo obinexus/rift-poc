@@ -83,28 +83,204 @@ CMakeFiles/rift-stage0.dir/src/core/rift-0.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rift-stage0.dir/src/core/rift-0.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/rift-0.c -o CMakeFiles/rift-stage0.dir/src/core/rift-0.c.s
 
+CMakeFiles/rift-stage0.dir/src/core/gov/rift-gov.0.c.o: CMakeFiles/rift-stage0.dir/flags.make
+CMakeFiles/rift-stage0.dir/src/core/gov/rift-gov.0.c.o: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/gov/rift-gov.0.c
+CMakeFiles/rift-stage0.dir/src/core/gov/rift-gov.0.c.o: CMakeFiles/rift-stage0.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/rift-stage0.dir/src/core/gov/rift-gov.0.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rift-stage0.dir/src/core/gov/rift-gov.0.c.o -MF CMakeFiles/rift-stage0.dir/src/core/gov/rift-gov.0.c.o.d -o CMakeFiles/rift-stage0.dir/src/core/gov/rift-gov.0.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/gov/rift-gov.0.c
+
+CMakeFiles/rift-stage0.dir/src/core/gov/rift-gov.0.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/rift-stage0.dir/src/core/gov/rift-gov.0.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/gov/rift-gov.0.c > CMakeFiles/rift-stage0.dir/src/core/gov/rift-gov.0.c.i
+
+CMakeFiles/rift-stage0.dir/src/core/gov/rift-gov.0.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rift-stage0.dir/src/core/gov/rift-gov.0.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/gov/rift-gov.0.c -o CMakeFiles/rift-stage0.dir/src/core/gov/rift-gov.0.c.s
+
+CMakeFiles/rift-stage0.dir/src/core/gov/rift_sim.c.o: CMakeFiles/rift-stage0.dir/flags.make
+CMakeFiles/rift-stage0.dir/src/core/gov/rift_sim.c.o: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/gov/rift_sim.c
+CMakeFiles/rift-stage0.dir/src/core/gov/rift_sim.c.o: CMakeFiles/rift-stage0.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/rift-stage0.dir/src/core/gov/rift_sim.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rift-stage0.dir/src/core/gov/rift_sim.c.o -MF CMakeFiles/rift-stage0.dir/src/core/gov/rift_sim.c.o.d -o CMakeFiles/rift-stage0.dir/src/core/gov/rift_sim.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/gov/rift_sim.c
+
+CMakeFiles/rift-stage0.dir/src/core/gov/rift_sim.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/rift-stage0.dir/src/core/gov/rift_sim.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/gov/rift_sim.c > CMakeFiles/rift-stage0.dir/src/core/gov/rift_sim.c.i
+
+CMakeFiles/rift-stage0.dir/src/core/gov/rift_sim.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rift-stage0.dir/src/core/gov/rift_sim.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/gov/rift_sim.c -o CMakeFiles/rift-stage0.dir/src/core/gov/rift_sim.c.s
+
+CMakeFiles/rift-stage0.dir/src/core/gov/stage_queue.c.o: CMakeFiles/rift-stage0.dir/flags.make
+CMakeFiles/rift-stage0.dir/src/core/gov/stage_queue.c.o: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/gov/stage_queue.c
+CMakeFiles/rift-stage0.dir/src/core/gov/stage_queue.c.o: CMakeFiles/rift-stage0.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/rift-stage0.dir/src/core/gov/stage_queue.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rift-stage0.dir/src/core/gov/stage_queue.c.o -MF CMakeFiles/rift-stage0.dir/src/core/gov/stage_queue.c.o.d -o CMakeFiles/rift-stage0.dir/src/core/gov/stage_queue.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/gov/stage_queue.c
+
+CMakeFiles/rift-stage0.dir/src/core/gov/stage_queue.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/rift-stage0.dir/src/core/gov/stage_queue.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/gov/stage_queue.c > CMakeFiles/rift-stage0.dir/src/core/gov/stage_queue.c.i
+
+CMakeFiles/rift-stage0.dir/src/core/gov/stage_queue.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rift-stage0.dir/src/core/gov/stage_queue.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/gov/stage_queue.c -o CMakeFiles/rift-stage0.dir/src/core/gov/stage_queue.c.s
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/lexer.c.o: CMakeFiles/rift-stage0.dir/flags.make
+CMakeFiles/rift-stage0.dir/src/core/lexer/lexer.c.o: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/lexer.c
+CMakeFiles/rift-stage0.dir/src/core/lexer/lexer.c.o: CMakeFiles/rift-stage0.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/rift-stage0.dir/src/core/lexer/lexer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rift-stage0.dir/src/core/lexer/lexer.c.o -MF CMakeFiles/rift-stage0.dir/src/core/lexer/lexer.c.o.d -o CMakeFiles/rift-stage0.dir/src/core/lexer/lexer.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/lexer.c
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/lexer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/rift-stage0.dir/src/core/lexer/lexer.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/lexer.c > CMakeFiles/rift-stage0.dir/src/core/lexer/lexer.c.i
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/lexer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rift-stage0.dir/src/core/lexer/lexer.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/lexer.c -o CMakeFiles/rift-stage0.dir/src/core/lexer/lexer.c.s
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/lexer_flag.c.o: CMakeFiles/rift-stage0.dir/flags.make
+CMakeFiles/rift-stage0.dir/src/core/lexer/lexer_flag.c.o: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/lexer_flag.c
+CMakeFiles/rift-stage0.dir/src/core/lexer/lexer_flag.c.o: CMakeFiles/rift-stage0.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/rift-stage0.dir/src/core/lexer/lexer_flag.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rift-stage0.dir/src/core/lexer/lexer_flag.c.o -MF CMakeFiles/rift-stage0.dir/src/core/lexer/lexer_flag.c.o.d -o CMakeFiles/rift-stage0.dir/src/core/lexer/lexer_flag.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/lexer_flag.c
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/lexer_flag.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/rift-stage0.dir/src/core/lexer/lexer_flag.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/lexer_flag.c > CMakeFiles/rift-stage0.dir/src/core/lexer/lexer_flag.c.i
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/lexer_flag.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rift-stage0.dir/src/core/lexer/lexer_flag.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/lexer_flag.c -o CMakeFiles/rift-stage0.dir/src/core/lexer/lexer_flag.c.s
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/rift_tokenizer.c.o: CMakeFiles/rift-stage0.dir/flags.make
+CMakeFiles/rift-stage0.dir/src/core/lexer/rift_tokenizer.c.o: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/rift_tokenizer.c
+CMakeFiles/rift-stage0.dir/src/core/lexer/rift_tokenizer.c.o: CMakeFiles/rift-stage0.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/rift-stage0.dir/src/core/lexer/rift_tokenizer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rift-stage0.dir/src/core/lexer/rift_tokenizer.c.o -MF CMakeFiles/rift-stage0.dir/src/core/lexer/rift_tokenizer.c.o.d -o CMakeFiles/rift-stage0.dir/src/core/lexer/rift_tokenizer.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/rift_tokenizer.c
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/rift_tokenizer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/rift-stage0.dir/src/core/lexer/rift_tokenizer.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/rift_tokenizer.c > CMakeFiles/rift-stage0.dir/src/core/lexer/rift_tokenizer.c.i
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/rift_tokenizer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rift-stage0.dir/src/core/lexer/rift_tokenizer.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/rift_tokenizer.c -o CMakeFiles/rift-stage0.dir/src/core/lexer/rift_tokenizer.c.s
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer.c.o: CMakeFiles/rift-stage0.dir/flags.make
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer.c.o: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer.c
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer.c.o: CMakeFiles/rift-stage0.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer.c.o -MF CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer.c.o.d -o CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer.c
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer.c > CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer.c.i
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer.c -o CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer.c.s
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_match.c.o: CMakeFiles/rift-stage0.dir/flags.make
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_match.c.o: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer_match.c
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_match.c.o: CMakeFiles/rift-stage0.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_match.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_match.c.o -MF CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_match.c.o.d -o CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_match.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer_match.c
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_match.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_match.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer_match.c > CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_match.c.i
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_match.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_match.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer_match.c -o CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_match.c.s
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_rules.c.o: CMakeFiles/rift-stage0.dir/flags.make
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_rules.c.o: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer_rules.c
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_rules.c.o: CMakeFiles/rift-stage0.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_rules.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_rules.c.o -MF CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_rules.c.o.d -o CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_rules.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer_rules.c
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_rules.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_rules.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer_rules.c > CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_rules.c.i
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_rules.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_rules.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer_rules.c -o CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_rules.c.s
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_utilities.c.o: CMakeFiles/rift-stage0.dir/flags.make
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_utilities.c.o: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer_utilities.c
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_utilities.c.o: CMakeFiles/rift-stage0.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_utilities.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_utilities.c.o -MF CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_utilities.c.o.d -o CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_utilities.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer_utilities.c
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_utilities.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_utilities.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer_utilities.c > CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_utilities.c.i
+
+CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_utilities.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_utilities.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer_utilities.c -o CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_utilities.c.s
+
+CMakeFiles/rift-stage0.dir/src/core/ext/r_uml.c.o: CMakeFiles/rift-stage0.dir/flags.make
+CMakeFiles/rift-stage0.dir/src/core/ext/r_uml.c.o: /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/ext/r_uml.c
+CMakeFiles/rift-stage0.dir/src/core/ext/r_uml.c.o: CMakeFiles/rift-stage0.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/rift-stage0.dir/src/core/ext/r_uml.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/rift-stage0.dir/src/core/ext/r_uml.c.o -MF CMakeFiles/rift-stage0.dir/src/core/ext/r_uml.c.o.d -o CMakeFiles/rift-stage0.dir/src/core/ext/r_uml.c.o -c /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/ext/r_uml.c
+
+CMakeFiles/rift-stage0.dir/src/core/ext/r_uml.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/rift-stage0.dir/src/core/ext/r_uml.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/ext/r_uml.c > CMakeFiles/rift-stage0.dir/src/core/ext/r_uml.c.i
+
+CMakeFiles/rift-stage0.dir/src/core/ext/r_uml.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/rift-stage0.dir/src/core/ext/r_uml.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/ext/r_uml.c -o CMakeFiles/rift-stage0.dir/src/core/ext/r_uml.c.s
+
 # Object files for target rift-stage0
 rift__stage0_OBJECTS = \
-"CMakeFiles/rift-stage0.dir/src/core/rift-0.c.o"
+"CMakeFiles/rift-stage0.dir/src/core/rift-0.c.o" \
+"CMakeFiles/rift-stage0.dir/src/core/gov/rift-gov.0.c.o" \
+"CMakeFiles/rift-stage0.dir/src/core/gov/rift_sim.c.o" \
+"CMakeFiles/rift-stage0.dir/src/core/gov/stage_queue.c.o" \
+"CMakeFiles/rift-stage0.dir/src/core/lexer/lexer.c.o" \
+"CMakeFiles/rift-stage0.dir/src/core/lexer/lexer_flag.c.o" \
+"CMakeFiles/rift-stage0.dir/src/core/lexer/rift_tokenizer.c.o" \
+"CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer.c.o" \
+"CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_match.c.o" \
+"CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_rules.c.o" \
+"CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_utilities.c.o" \
+"CMakeFiles/rift-stage0.dir/src/core/ext/r_uml.c.o"
 
 # External object files for target rift-stage0
 rift__stage0_EXTERNAL_OBJECTS =
 
-lib/librift-stage0.so.0.1.0: CMakeFiles/rift-stage0.dir/src/core/rift-0.c.o
-lib/librift-stage0.so.0.1.0: CMakeFiles/rift-stage0.dir/build.make
-lib/librift-stage0.so.0.1.0: CMakeFiles/rift-stage0.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C shared library lib/librift-stage0.so"
+lib/librift-0.so.0.1.0: CMakeFiles/rift-stage0.dir/src/core/rift-0.c.o
+lib/librift-0.so.0.1.0: CMakeFiles/rift-stage0.dir/src/core/gov/rift-gov.0.c.o
+lib/librift-0.so.0.1.0: CMakeFiles/rift-stage0.dir/src/core/gov/rift_sim.c.o
+lib/librift-0.so.0.1.0: CMakeFiles/rift-stage0.dir/src/core/gov/stage_queue.c.o
+lib/librift-0.so.0.1.0: CMakeFiles/rift-stage0.dir/src/core/lexer/lexer.c.o
+lib/librift-0.so.0.1.0: CMakeFiles/rift-stage0.dir/src/core/lexer/lexer_flag.c.o
+lib/librift-0.so.0.1.0: CMakeFiles/rift-stage0.dir/src/core/lexer/rift_tokenizer.c.o
+lib/librift-0.so.0.1.0: CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer.c.o
+lib/librift-0.so.0.1.0: CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_match.c.o
+lib/librift-0.so.0.1.0: CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_rules.c.o
+lib/librift-0.so.0.1.0: CMakeFiles/rift-stage0.dir/src/core/lexer/tokenizer_utilities.c.o
+lib/librift-0.so.0.1.0: CMakeFiles/rift-stage0.dir/src/core/ext/r_uml.c.o
+lib/librift-0.so.0.1.0: CMakeFiles/rift-stage0.dir/build.make
+lib/librift-0.so.0.1.0: CMakeFiles/rift-stage0.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C shared library lib/librift-0.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rift-stage0.dir/link.txt --verbose=$(VERBOSE)
-	$(CMAKE_COMMAND) -E cmake_symlink_library lib/librift-stage0.so.0.1.0 lib/librift-stage0.so.0 lib/librift-stage0.so
+	$(CMAKE_COMMAND) -E cmake_symlink_library lib/librift-0.so.0.1.0 lib/librift-0.so.0 lib/librift-0.so
 
-lib/librift-stage0.so.0: lib/librift-stage0.so.0.1.0
-	@$(CMAKE_COMMAND) -E touch_nocreate lib/librift-stage0.so.0
+lib/librift-0.so.0: lib/librift-0.so.0.1.0
+	@$(CMAKE_COMMAND) -E touch_nocreate lib/librift-0.so.0
 
-lib/librift-stage0.so: lib/librift-stage0.so.0.1.0
-	@$(CMAKE_COMMAND) -E touch_nocreate lib/librift-stage0.so
+lib/librift-0.so: lib/librift-0.so.0.1.0
+	@$(CMAKE_COMMAND) -E touch_nocreate lib/librift-0.so
 
 # Rule to build all files generated by this target.
-CMakeFiles/rift-stage0.dir/build: lib/librift-stage0.so
+CMakeFiles/rift-stage0.dir/build: lib/librift-0.so
 .PHONY : CMakeFiles/rift-stage0.dir/build
 
 CMakeFiles/rift-stage0.dir/clean:

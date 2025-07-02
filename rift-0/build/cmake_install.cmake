@@ -49,8 +49,8 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   foreach(file
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-stage0.so.0.1.0"
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-stage0.so.0"
+      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-0.so.0.1.0"
+      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-0.so.0"
       )
     if(EXISTS "${file}" AND
        NOT IS_SYMLINK "${file}")
@@ -60,12 +60,12 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     endif()
   endforeach()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES
-    "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/lib/librift-stage0.so.0.1.0"
-    "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/lib/librift-stage0.so.0"
+    "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/lib/librift-0.so.0.1.0"
+    "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/lib/librift-0.so.0"
     )
   foreach(file
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-stage0.so.0.1.0"
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-stage0.so.0"
+      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-0.so.0.1.0"
+      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-0.so.0"
       )
     if(EXISTS "${file}" AND
        NOT IS_SYMLINK "${file}")
@@ -77,23 +77,23 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-stage0.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-stage0.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-0.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-0.so")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-stage0.so"
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-0.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/lib/librift-stage0.so")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-stage0.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-stage0.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/lib/librift-0.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-0.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-0.so")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-stage0.so")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librift-0.so")
     endif()
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/obj/librift-stage0.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/lib/librift-0.a")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -137,15 +137,19 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0" FILES_MATCHING REGEX "/[^/]*\\.h$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE FILE FILES "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/lib/rift-stage0.so.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/rift-0" TYPE FILE FILES "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/rift_config.h")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/etc/rift" TYPE FILE FILES "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/gov.riftrc.0")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/rift-0.pc")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

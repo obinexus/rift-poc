@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0 -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0/core -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build
+C_INCLUDES = -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include -I/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build
 
-C_FLAGS = -O3 -DNDEBUG -Wall -Wextra -Wpedantic -Wno-unused-parameter -Wno-unused-variable -O3 -DNDEBUG -std=c11
+C_FLAGS =  -Wall -Wextra -Wpedantic -fPIC -O3 -DNDEBUG -DRIFT_RELEASE_MODE=1 -fPIE -std=c11
 

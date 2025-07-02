@@ -66,14 +66,11 @@ include CMakeFiles/rift-stage0-soa.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/rift-stage0-soa.dir/progress.make
 
-CMakeFiles/rift-stage0-soa: lib/rift-stage0.so.a
-
-lib/rift-stage0.so.a: obj/librift-stage0.a
+CMakeFiles/rift-stage0-soa: lib/librift-0.a
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Creating intermediate .so.a archive for toolchain"
-	/usr/bin/ar rcs /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/lib/rift-stage0.so.a /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/obj/librift-stage0.a
+	/usr/bin/ar rcs /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/lib/librift-0.so.a /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/rift-stage0-static.dir/src/core/rift-0.c.o;/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/rift-stage0-static.dir/src/core/gov/rift-gov.0.c.o;/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/rift-stage0-static.dir/src/core/gov/rift_sim.c.o;/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/rift-stage0-static.dir/src/core/gov/stage_queue.c.o;/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/rift-stage0-static.dir/src/core/lexer/lexer.c.o;/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/rift-stage0-static.dir/src/core/lexer/lexer_flag.c.o;/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/rift-stage0-static.dir/src/core/lexer/rift_tokenizer.c.o;/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer.c.o;/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_match.c.o;/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_rules.c.o;/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_utilities.c.o;/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles/rift-stage0-static.dir/src/core/ext/r_uml.c.o
 
 rift-stage0-soa: CMakeFiles/rift-stage0-soa
-rift-stage0-soa: lib/rift-stage0.so.a
 rift-stage0-soa: CMakeFiles/rift-stage0-soa.dir/build.make
 .PHONY : rift-stage0-soa
 

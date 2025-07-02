@@ -66,12 +66,12 @@ include CMakeFiles/validate.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/validate.dir/progress.make
 
-CMakeFiles/validate: lib/librift-stage0.so.0.1.0
-	/usr/bin/cmake -E echo Validating\ AEGIS\ compliance...
-	/usr/bin/cmake -E echo \ \ ✓\ Zero-trust\ governance
-	/usr/bin/cmake -E echo \ \ ✓\ Dual-channel\ output
-	/usr/bin/cmake -E echo \ \ ✓\ Anti-ghosting\ protocol
-	/usr/bin/cmake -E echo \ \ ✓\ Quantum\ resource\ management
+CMakeFiles/validate: riftlang.exe
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Build validation complete"
+	/usr/bin/cmake -E echo Validating\ RIFT\ Stage-0\ build...
+	test -f /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/lib/librift-0.so || echo Warning:\ librift-0.so\ not\ built
+	test -f /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/lib/librift-0.a || echo Warning:\ librift-0.a\ not\ built
+	test -f /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/bin/riftlang.exe || echo Error:\ riftlang.exe\ not\ built
 
 validate: CMakeFiles/validate
 validate: CMakeFiles/validate.dir/build.make

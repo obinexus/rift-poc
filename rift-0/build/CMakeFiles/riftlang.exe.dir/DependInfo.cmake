@@ -8,6 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/ext_command.c" "CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.o" "gcc" "CMakeFiles/riftlang.exe.dir/src/cli/commands/ext_command.c.o.d"
+  "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/lexer_command.c" "CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.o" "gcc" "CMakeFiles/riftlang.exe.dir/src/cli/commands/lexer_command.c.o.d"
+  "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/r_command.c" "CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.o" "gcc" "CMakeFiles/riftlang.exe.dir/src/cli/commands/r_command.c.o.d"
+  "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/commands/rift_gov_command.c" "CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.o" "gcc" "CMakeFiles/riftlang.exe.dir/src/cli/commands/rift_gov_command.c.o.d"
   "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/cli/main.c" "CMakeFiles/riftlang.exe.dir/src/cli/main.c.o" "gcc" "CMakeFiles/riftlang.exe.dir/src/cli/main.c.o.d"
   )
 

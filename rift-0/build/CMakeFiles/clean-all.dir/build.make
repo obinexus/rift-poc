@@ -67,10 +67,12 @@ include CMakeFiles/clean-all.dir/compiler_depend.make
 include CMakeFiles/clean-all.dir/progress.make
 
 CMakeFiles/clean-all:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Cleaning all build artifacts"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Deep clean of all build artifacts"
 	/usr/bin/cmake -E remove_directory /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/bin
 	/usr/bin/cmake -E remove_directory /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/lib
 	/usr/bin/cmake -E remove_directory /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/obj
+	/usr/bin/cmake -E remove_directory /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles
+	/usr/bin/cmake -E remove /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeCache.txt
 
 clean-all: CMakeFiles/clean-all
 clean-all: CMakeFiles/clean-all.dir/build.make

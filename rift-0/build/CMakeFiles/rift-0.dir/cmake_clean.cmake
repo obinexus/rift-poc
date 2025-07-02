@@ -1,4 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/rift-0.dir/src/cli/commands/ext_command.c.o"
+  "CMakeFiles/rift-0.dir/src/cli/commands/ext_command.c.o.d"
+  "CMakeFiles/rift-0.dir/src/cli/commands/lexer_command.c.o"
+  "CMakeFiles/rift-0.dir/src/cli/commands/lexer_command.c.o.d"
+  "CMakeFiles/rift-0.dir/src/cli/commands/r_command.c.o"
+  "CMakeFiles/rift-0.dir/src/cli/commands/r_command.c.o.d"
+  "CMakeFiles/rift-0.dir/src/cli/commands/rift_gov_command.c.o"
+  "CMakeFiles/rift-0.dir/src/cli/commands/rift_gov_command.c.o.d"
   "CMakeFiles/rift-0.dir/src/cli/main.c.o"
   "CMakeFiles/rift-0.dir/src/cli/main.c.o.d"
   "bin/rift-0"

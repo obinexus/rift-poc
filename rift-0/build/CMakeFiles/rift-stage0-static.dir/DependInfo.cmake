@@ -8,6 +8,17 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/ext/r_uml.c" "CMakeFiles/rift-stage0-static.dir/src/core/ext/r_uml.c.o" "gcc" "CMakeFiles/rift-stage0-static.dir/src/core/ext/r_uml.c.o.d"
+  "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/gov/rift-gov.0.c" "CMakeFiles/rift-stage0-static.dir/src/core/gov/rift-gov.0.c.o" "gcc" "CMakeFiles/rift-stage0-static.dir/src/core/gov/rift-gov.0.c.o.d"
+  "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/gov/rift_sim.c" "CMakeFiles/rift-stage0-static.dir/src/core/gov/rift_sim.c.o" "gcc" "CMakeFiles/rift-stage0-static.dir/src/core/gov/rift_sim.c.o.d"
+  "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/gov/stage_queue.c" "CMakeFiles/rift-stage0-static.dir/src/core/gov/stage_queue.c.o" "gcc" "CMakeFiles/rift-stage0-static.dir/src/core/gov/stage_queue.c.o.d"
+  "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/lexer.c" "CMakeFiles/rift-stage0-static.dir/src/core/lexer/lexer.c.o" "gcc" "CMakeFiles/rift-stage0-static.dir/src/core/lexer/lexer.c.o.d"
+  "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/lexer_flag.c" "CMakeFiles/rift-stage0-static.dir/src/core/lexer/lexer_flag.c.o" "gcc" "CMakeFiles/rift-stage0-static.dir/src/core/lexer/lexer_flag.c.o.d"
+  "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/rift_tokenizer.c" "CMakeFiles/rift-stage0-static.dir/src/core/lexer/rift_tokenizer.c.o" "gcc" "CMakeFiles/rift-stage0-static.dir/src/core/lexer/rift_tokenizer.c.o.d"
+  "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer.c" "CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer.c.o" "gcc" "CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer.c.o.d"
+  "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer_match.c" "CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_match.c.o" "gcc" "CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_match.c.o.d"
+  "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer_rules.c" "CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_rules.c.o" "gcc" "CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_rules.c.o.d"
+  "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/lexer/tokenizer_utilities.c" "CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_utilities.c.o" "gcc" "CMakeFiles/rift-stage0-static.dir/src/core/lexer/tokenizer_utilities.c.o.d"
   "/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/src/core/rift-0.c" "CMakeFiles/rift-stage0-static.dir/src/core/rift-0.c.o" "gcc" "CMakeFiles/rift-stage0-static.dir/src/core/rift-0.c.o.d"
   )
 

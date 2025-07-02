@@ -1,1 +1,1 @@
-/usr/bin/cc -O3 -DNDEBUG CMakeFiles/qa_assert.dir/qa_assert.c.o -o ../bin/qa_assert  -Wl,-rpath,/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/lib ../lib/librift-stage0.so.0.1.0 
+/usr/bin/cc  -Wall -Wextra -Wpedantic -fPIC -O3 -DNDEBUG -DRIFT_RELEASE_MODE=1 CMakeFiles/qa_assert.dir/qa_assert.c.o -o ../bin/qa_assert  -Wl,-rpath,/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/lib ../lib/librift-0.so.0.1.0 

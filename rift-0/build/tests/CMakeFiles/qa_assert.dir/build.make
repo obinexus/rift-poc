@@ -92,7 +92,7 @@ qa_assert_EXTERNAL_OBJECTS =
 
 bin/qa_assert: tests/CMakeFiles/qa_assert.dir/qa_assert.c.o
 bin/qa_assert: tests/CMakeFiles/qa_assert.dir/build.make
-bin/qa_assert: lib/librift-stage0.so.0.1.0
+bin/qa_assert: lib/librift-0.so.0.1.0
 bin/qa_assert: tests/CMakeFiles/qa_assert.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ../bin/qa_assert"
 	cd /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/build/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/qa_assert.dir/link.txt --verbose=$(VERBOSE)
