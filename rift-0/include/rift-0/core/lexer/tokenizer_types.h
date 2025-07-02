@@ -4,7 +4,17 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <stdbool.h>
+
 #include <sys/types.h>
+#if defined(_WIN32) || defined(_WIN64)
+typedef void* pthread_mutex_t;
+#define pthread_mutex_init(mutex, attr)   (0)
+#define pthread_mutex_destroy(mutex)      (0)
+#define pthread_mutex_lock(mutex)         (0)
+#define pthread_mutex_unlock(mutex)       (0)
+#else
+#include <pthread.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -155,34 +165,50 @@ struct TokenizerContext {
     TokenTriplet* token_buffer;
     size_t token_count;
     size_t token_capacity;
-    
+
     /* Pattern storage */
     RegexComposition** regex_patterns;
     size_t pattern_count;
     size_t pattern_capacity;
-    
+
     /* Input handling */
     const char* input_buffer;
     size_t input_length;
     size_t current_position;
-    
+
     /* Position tracking */
     size_t line_number;
     size_t column_number;
-    
+
     /* Configuration */
     TokenFlags global_flags;
     bool debug_mode;
     bool strict_mode;
     bool thread_safe_mode;
-    
+
     /* Error handling */
     bool has_error;
     TokenizerErrorCode error_code;
     char* error_message;
-    
+
     /* Statistics */
     TokenizerStats stats;
+
+    /* --- Added for thread safety and dual-mode operation --- */
+    unsigned int version;
+    bool initialized;
+    unsigned int thread_count;
+    bool dual_mode_enabled;
+    bool aegis_compliant;
+    pthread_mutex_t context_mutex;
+    void* stage_data;
+    void* next_stage_input;
+    // For enhanced DFA/regex
+    struct DFAState* dfa_root;
+    RegexComposition* compositions;
+    size_t composition_count;
+    // For error message buffer
+    char error_message_buffer[256];
 };
 
 /* Alternative context type name */
@@ -192,36 +218,5 @@ typedef struct TokenizerContext rift_tokenizer_context_t;
 }
 #endif
 
+
 #endif /* RIFT_TOKENIZER_TYPES_H */
-
-/* Additional token types for DSL processing */
-#define TOKEN_DELIMITER TOKEN_OPERATOR  /* Temporary alias until proper implementation */
-#define TOKEN_R_PATTERN TOKEN_LITERAL_STRING  /* R-pattern tokens */
-
-/* DSL-specific token categories */
-typedef enum {
-    TOKEN_DSL_RULE = TOKEN_TYPE_COUNT,
-    TOKEN_DSL_ACTION,
-    TOKEN_DSL_DIRECTIVE,
-    TOKEN_DSL_PATTERN,
-    TOKEN_DSL_COUNT
-} DSLTokenType;
-
-
-/* Additional token types for comprehensive testing */
-#ifndef TOKEN_LITERAL_INT
-#define TOKEN_LITERAL_INT TOKEN_LITERAL_NUMBER
-#endif
-
-#ifndef TOKEN_LITERAL_FLOAT  
-#define TOKEN_LITERAL_FLOAT TOKEN_LITERAL_NUMBER
-#endif
-
-/* DFA state definitions */
-enum {
-    DFA_STATE_START = 0,
-    DFA_STATE_ACCEPT = 1,
-    DFA_STATE_REJECT = -1
-};
-
-#endif /* Include guard end */
