@@ -305,46 +305,35 @@ void print_qa_report(const QATestResults* results) {
 /* ===================================================================
  * Main Test Runner
  * =================================================================== */
-
 int main(int argc, char* argv[]) {
     printf("RIFT Stage-0 QA Test Suite\n");
     printf("AEGIS Project - OBINexus Computing\n");
     printf("=======================================================\n\n");
-    
+
     /* Compile patterns */
     if (!compile_test_patterns()) {
         fprintf(stderr, "Failed to compile test patterns\n");
         return 1;
     }
-    
+
     /* Initialize results */
     QATestResults results = {0};
-    
-    /* Run tests by category */
-    const char* categories[] = {
-        "True Positive", "True Negative", 
-        "False Positive", "False Negative"
-    };
-    
+
+    /* Run all tests in order, showing case name and result */
     size_t test_count = sizeof(qa_test_cases) / sizeof(QATestCase);
-    
-    for (int cat = 0; cat < 4; cat++) {
-        printf("\n%s Tests:\n", categories[cat]);
-        printf("-------------------------------------------------------\n");
-        
-        for (size_t i = 0; i < test_count; i++) {
-            if (qa_test_cases[i].type == (QAAssertionType)cat) {
-                run_single_test(&qa_test_cases[i], &results);
-            }
-        }
+
+    printf("Running All QA Assertion Cases:\n");
+    printf("-------------------------------------------------------\n");
+    for (size_t i = 0; i < test_count; i++) {
+        run_single_test(&qa_test_cases[i], &results);
     }
-    
+
     /* Generate report */
     print_qa_report(&results);
-    
+
     /* Cleanup */
     cleanup_test_patterns();
-    
+
     /* Return appropriate exit code */
     return (results.passed_tests == results.total_tests) ? 0 : 1;
 }

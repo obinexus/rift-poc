@@ -10,5 +10,6 @@
 // Only standard includes needed for main/test
 #include <stdio.h>
 #include <stdlib.h>
-#include "rift-0/lexer.h"
+#include "rift-0/core/lexer/lexer.h"
+
 
