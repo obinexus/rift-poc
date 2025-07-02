@@ -4,7 +4,6 @@
 #include <string.h>
 #include "rift-0/core/rift-0.h"
 #include "rift-0/lexer.h"
-#include "r_extensions/uml/r_uml_patterns.h"
 
 void print_usage() {
     printf("RIFT Stage-0 CLI\n");
