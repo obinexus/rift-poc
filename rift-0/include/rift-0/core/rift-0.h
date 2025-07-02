@@ -70,8 +70,8 @@ struct RiftStage0Context {
     void* quantum_state;
 };
 
-/* Token Pattern Structure - Removed to avoid conflict with gov header */
-/* Use TokenPattern from rift-gov.0.h instead */
+
+// Use TokenPattern from rift-gov.0.h only
 
 /* Dual Channel Output Structure */
 struct DualChannelOutput {
