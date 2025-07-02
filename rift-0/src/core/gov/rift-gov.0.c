@@ -17,10 +17,7 @@
 #include <sys/stat.h>
 #include <errno.h>
 #include <cjson/cJSON.h>
-#include <openssl/sha.h>
-/*
-// See docs/gov/README.md for governance enforcement policy and schema mapping.
-*/
+
 #include "rift-0/core/gov/rift-gov.0.h"
 
 // AEGIS Governance Constants
@@ -420,4 +417,5 @@ void rift_validation_cleanup(validation_context_t *ctx) {
         fclose(ctx->validation_log);
     }
 }
+
 
