@@ -7,6 +7,7 @@
 
 #ifndef RIFT_CORE_0_H
 #define RIFT_CORE_0_H
+#include <regex.h>
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -106,6 +107,25 @@ typedef struct DualChannelOutput DualChannelOutput;
 typedef struct RiftToken RiftToken;
 typedef struct TokenMemoryGovernor TokenMemoryGovernor;
 typedef struct BuildOutput BuildOutput;
+
+/* ===================================================================
+ * Stage-0 Context Structure Definition
+ * =================================================================== */
+struct RiftStage0Context {
+    bool initialized;
+    uint32_t stage_id;
+    uint32_t version;
+    TokenMemoryGovernor* mem_gov;
+    size_t pattern_count;
+    regex_t* patterns;
+    bool dual_mode_enabled;
+    bool quantum_mode_active;
+    bool aegis_compliant;
+    uint64_t compliance_flags;
+    uint32_t thread_count;
+    pthread_mutex_t ctx_lock;
+    // Add other fields as needed for your implementation
+};
 
 /* ===================================================================
  * Configuration Structures

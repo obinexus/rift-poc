@@ -25,17 +25,13 @@ CMakeFiles/rift-stage0.dir/src/core/rift-0.c.o: \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
  /usr/include/x86_64-linux-gnu/bits/stdio.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0/core/lexer/lexer.h \
- /usr/lib/gcc/x86_64-linux-gnu/12/include/stdbool.h \
- /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h /usr/include/stdint.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h /usr/include/regex.h \
- /usr/include/x86_64-linux-gnu/sys/types.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/string.h \
+ /usr/include/regex.h /usr/include/x86_64-linux-gnu/sys/types.h \
  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+ /usr/lib/gcc/x86_64-linux-gnu/12/include/stdbool.h \
  /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
  /usr/include/x86_64-linux-gnu/bits/endian.h \
@@ -55,5 +51,9 @@ CMakeFiles/rift-stage0.dir/src/core/rift-0.c.o: \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
- /usr/include/string.h \
- /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0/core/gov/rift-gov.0.h
+ /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0/core/lexer/lexer.h \
+ /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0/core/gov/rift-gov.0.h \
+ /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0/core/rift-0.h

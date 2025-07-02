@@ -62,7 +62,7 @@ RiftStage0Context* rift_stage0_create(void) {
             free(ctx);
             return NULL;
         }
-    }
+    
     
     /* Enable dual-channel mode by default */
     ctx->dual_mode_enabled = true;
@@ -81,6 +81,7 @@ RiftStage0Context* rift_stage0_create(void) {
     
     return ctx;
 }
+
 RiftToken* create_token(RiftStage0Context* ctx, RiftTokenType type, 
                        const char* value, size_t line, size_t col) {
     if (!ctx || !value) return NULL;
