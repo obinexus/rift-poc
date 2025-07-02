@@ -51,6 +51,7 @@
 │   │   │   ├── 30
 │   │   │   ├── 31
 │   │   │   ├── 32
+│   │   │   ├── 33
 │   │   │   └── count.txt
 │   │   ├── progress.marks
 │   │   ├── rift-0.dir
@@ -176,7 +177,6 @@
 ├── cmake
 │   ├── RIFTStage0.cmake
 │   └── rift_stage_macros.cmake
-├── CMakeLists.txt
 ├── config
 │   ├── gob.riftrc.0.in.json
 │   ├── gov.riftrc.0
@@ -356,10 +356,12 @@
 │           │   ├── tokenizer.h
 │           │   ├── tokenizer_rules.h
 │           │   └── tokenizer_types.h
+│           ├── parser
+│           │   └── rift_tb_parser.h
 │           ├── rift-0.h
 │           └── rift-gov.0.h
 ├── Makefile
-├── rift-gov.txt
+├── rift.tx
 ├── src
 │   ├── cli
 │   │   ├── commands
@@ -384,6 +386,8 @@
 │       │   ├── tokenizer_match.c
 │       │   ├── tokenizer_rules.c
 │       │   └── tokenizer_utilities.c
+│       ├── parser
+│       │   └── rift_tb_parser.c
 │       └── rift-0.c
 └── tests
     ├── benchmark
@@ -395,4 +399,4 @@
         ├── test_tokenizer.c
         └── test_tokenizer_validation.c
 
-79 directories, 317 files
+81 directories, 319 files

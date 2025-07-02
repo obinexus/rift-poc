@@ -9,6 +9,43 @@
 
 // Only standard includes needed for main/test
 #include <stdio.h>
+
+/* RIFT_CLEANUP: Forward declarations to resolve type issues */
+#ifndef RIFT_CLEANUP_FORWARD_DECLS
+#define RIFT_CLEANUP_FORWARD_DECLS
+
+/* Forward declare missing types if not already defined */
+#ifndef RIFT_TOKEN_TYPE_DEFINED
+#define RIFT_TOKEN_TYPE_DEFINED
+typedef enum TokenType RiftTokenType;
+#endif
+
+/* Resolve HeapQueue issues in lexer_flag.h */
+#ifndef HEAPQUEUE_FORWARD_DECLARED
+#define HEAPQUEUE_FORWARD_DECLARED
+struct HeapQueue;
+typedef struct HeapQueue HeapQueue;
+
+typedef struct {
+    int priority;
+    int value;
+} Item;
+#endif
+
+/* Add strdup declaration if missing */
+#ifndef HAVE_STRDUP
+#ifdef __cplusplus
+extern "C" {
+#endif
+char* strdup(const char* s);
+#ifdef __cplusplus
+}
+#endif
+#endif
+
+#endif /* RIFT_CLEANUP_FORWARD_DECLS */
+
+
 #include <stdlib.h>
 #include <string.h>
 #if defined(_WIN32)
