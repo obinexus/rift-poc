@@ -18,6 +18,10 @@
 #include <errno.h>
 #include <cjson/cJSON.h>
 #include <openssl/sha.h>
+/*
+// See docs/gov/README.md for governance enforcement policy and schema mapping.
+*/
+#include "rift-0/core/gov/rift-gov.0.h"
 
 // AEGIS Governance Constants
 #define MAX_PATH_LENGTH 512

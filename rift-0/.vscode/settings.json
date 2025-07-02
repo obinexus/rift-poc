@@ -2,6 +2,7 @@
     "files.associations": {
         "string.h": "c",
         "lexer.h": "c",
-        "assert.h": "c"
+        "assert.h": "c",
+        "rift-gov.0.h": "c"
     }
 }
