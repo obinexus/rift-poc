@@ -54,5 +54,4 @@ CMakeFiles/rift-stage0.dir/src/core/rift-0.c.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
- /mnt/c/Users/OBINexus/Projects/github/rift-poc/rift-0/include/rift-0/core/rift-0.h
+ /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h
