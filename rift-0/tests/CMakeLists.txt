@@ -8,3 +8,6 @@ target_link_libraries(qa_assert PRIVATE
 )
 
 add_test(NAME QA_All COMMAND qa_assert)
+add_executable(qa_assert qa_assert.c)
+
+add_test(NAME QA_Suite COMMAND qa_assert)

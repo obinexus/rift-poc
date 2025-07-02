@@ -82,6 +82,9 @@ include_directories(
 set(RIFT_CORE_SOURCES
     src/core/rift-0.c
 )
+set(RIFT_CORE_SOURCES
+    src/core/rift-0.c
+)
 
 set(RIFT_CLI_SOURCES
     src/cli/main.c
@@ -240,7 +243,7 @@ endif()
 # Examples
 # ===================================================================
 if(BUILD_EXAMPLES AND EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/fixtures/stage-0/examples)
-    add_subdirectory(fixtures/stage-0)
+#    add_subdirectory(fixtures/stage-0)
 endif()
 
 # ===================================================================
