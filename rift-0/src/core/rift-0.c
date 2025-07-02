@@ -11,20 +11,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#if defined(_WIN32)
+#include <malloc.h>
+#else
 #include <strings.h> // For strdup on some systems
+#endif
 #include <regex.h>
 #include <stdbool.h>
 #include <pthread.h>
 #include "rift-0/core/lexer/lexer.h"
 #include "rift-0/core/gov/rift-gov.0.h"
 #include "rift-0/core/rift-0.h"
-
-// Forward declarations if not included by headers
-DualChannelOutput* create_dual_channel_output(void);
-void set_error_level(DualChannelOutput* output, int level, const char* msg);
-
-// Extern declaration for stage0_patterns if defined elsewhere
-extern const TokenPattern stage0_patterns[];
 
 
 /* ===================================================================
@@ -34,8 +31,10 @@ extern const TokenPattern stage0_patterns[];
 RiftStage0Context* rift_stage0_create(void) {
     RiftStage0Context* ctx = calloc(1, sizeof(RiftStage0Context));
     ctx->mem_gov = create_memory_governor(1024 * 1024, 16 * 1024 * 1024); // 1MB min, 16MB max
-    if (!ctx->mem_gov) {
-        free(ctx);
+    // Use a fixed pattern count or define stage0_patterns in one place only
+    extern size_t stage0_patterns_count; // Declare this in a header and define it where stage0_patterns is defined
+    ctx->pattern_count = stage0_patterns_count;
+    ctx->patterns = calloc(ctx->pattern_count, sizeof(regex_t));
         return NULL;
     }
     ctx->pattern_count = sizeof(stage0_patterns) / sizeof(stage0_patterns[0]);
@@ -170,8 +169,8 @@ RiftToken** tokenize_input(RiftStage0Context* ctx, const char* input, size_t* to
             const char* test_ptr = ptr;
             while (*test_ptr && *test_ptr != ' ' && *test_ptr != '\n' && 
                    *test_ptr != '\t' && test_len < 255) {
-                test_buffer[test_len++] = *test_ptr++;
-            }
+                RiftToken* token = create_token(ctx, stage0_patterns[i].type,
+                                              test_buffer, line, col);
             test_buffer[test_len] = '\0';
             
             if (test_len > 0 && regexec(&ctx->patterns[i], test_buffer, 1, &match, 0) == 0) {

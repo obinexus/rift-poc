@@ -14,6 +14,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include "rift-0/core/gov/rift-gov.0.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -28,7 +29,28 @@ extern "C" {
 RiftStage0Context* rift_stage0_create(void);
 RiftStage0Context* rift_stage0_create_with_config(const RiftStage0Config* config);
 void rift_stage0_destroy(RiftStage0Context* ctx);
-// ...other API declarations as needed...
+
+// Forward declarations if not included by headers
+DualChannelOutput* create_dual_channel_output(void);
+void set_error_level(DualChannelOutput* output, int level, const char* msg);
+
+// Extern declaration for stage0_patterns if defined elsewhere
+// Forward declaration for TokenPattern if not already defined
+#ifndef TOKEN_PATTERN_DEFINED
+#define TOKEN_PATTERN_DEFINED
+typedef struct TokenPattern {
+	const char* name;
+	const char* pattern;
+	int token_type;
+} TokenPattern;
+#endif
+
+extern const TokenPattern stage0_patterns[];
+extern const size_t stage0_patterns_count;
+// Memory governance API
+TokenMemoryGovernor* create_memory_governor(size_t min_heap, size_t max_heap);
+void* governed_malloc(TokenMemoryGovernor* gov, size_t size);
+void governed_free(TokenMemoryGovernor* gov, void* ptr, size_t size);
 
 #ifdef __cplusplus
 }
