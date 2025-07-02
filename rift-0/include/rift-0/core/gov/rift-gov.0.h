@@ -301,60 +301,8 @@ typedef enum {
 
 
 
-typedef enum {
-    RIFT_STAGE_LEGACY = 0,
-    RIFT_STAGE_EXPERIMENTAL = 1,
-/* ===================================================================
- * Token Pattern Definitions
- * =================================================================== */
 
 // ...existing code...
-    int semverx_lock;
-    char entry_point[256];
-    int nlink_enabled;
-    // --- Tokenizer substage ---
-    struct {
-        int lexeme_validation;
-        int token_memory_constraints;
-        int encoding_normalization;
-    } tokenizer;
-    // --- Parser substage ---
-    struct {
-        int ast_depth_limit;
-        char syntax_strictness[16];
-        int error_recovery;
-    } parser;
-    // --- Semantic substage ---
-    struct {
-        int type_checking;
-        int scope_validation;
-        int symbol_table_integrity;
-    } semantic;
-    // --- Validator substage ---
-    struct {
-        int structural_acyclicity;
-        int cost_bounds_enforced;
-        int governance_hash_required;
-    } validator;
-    // --- Bytecode substage ---
-    struct {
-        int opcode_validation;
-        int complexity_limits;
-        int operand_alignment;
-    } bytecode;
-    // --- Verifier substage ---
-    struct {
-        int bytecode_integrity;
-        int stack_safety;
-        int memory_bounds;
-    } verifier;
-    // --- Emitter substage ---
-    struct {
-        char target_architecture[32];
-        int optimization_level;
-        int debug_symbols;
-    } emitter;
-} rift_gov_config_t;
 
 // --- Stage 5 Optimizer Security (future-proof) ---
 typedef struct {
